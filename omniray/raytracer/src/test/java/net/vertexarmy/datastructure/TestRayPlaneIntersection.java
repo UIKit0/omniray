@@ -1,4 +1,4 @@
-package org.vertexarmy.datastructure;
+package net.vertexarmy.datastructure;
 
 import com.hackoeur.jglm.Vec3;
 import net.vertexarmy.omniray.raytracer.HitResult;
