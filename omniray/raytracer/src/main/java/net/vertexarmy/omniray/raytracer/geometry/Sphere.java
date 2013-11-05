@@ -45,6 +45,7 @@ public class Sphere implements GeometricObject {
                         .rayHitLocation(t)
                         .localHitLocation(ray.getOrigin().add(ray.getDirection().multiply(t)))
                         .normal(temp.add(ray.getDirection().multiply(t)).scale(1.0f / radius))
+                        .color(new Vec3(FastMath.min(255,FastMath.max(0,t)), 0, 0))
                         .build();
             }
         }

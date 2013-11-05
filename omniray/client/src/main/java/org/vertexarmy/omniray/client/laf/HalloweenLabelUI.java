@@ -20,8 +20,7 @@ public class HalloweenLabelUI extends BasicLabelUI {
     @Override
     public void installUI(JComponent component) {
         super.installUI(component);
-        component.setForeground(new Color(0xB8B8B8));
-        component.getInsets().set(0, 0, 0, 0);
-        component.setOpaque(true);
+        component.setForeground(new Color(0xC1C1C1));
+        component.setFont(new javax.swing.plaf.FontUIResource("Sans",Font.PLAIN,10));
     }
 }

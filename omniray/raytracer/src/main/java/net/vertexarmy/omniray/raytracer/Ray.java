@@ -2,6 +2,7 @@ package net.vertexarmy.omniray.raytracer;
 
 import com.hackoeur.jglm.Vec3;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * User: Alex
@@ -10,9 +11,11 @@ import lombok.Getter;
  */
 public class Ray {
     @Getter
-    private final Vec3 direction;
+    @Setter
+    private Vec3 direction;
     @Getter
-    private final Vec3 origin;
+    @Setter
+    private Vec3 origin;
 
     public Ray(Vec3 origin, Vec3 direction) {
         this.direction = direction;

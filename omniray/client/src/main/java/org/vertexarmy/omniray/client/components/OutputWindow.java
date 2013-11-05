@@ -1,5 +1,7 @@
 package org.vertexarmy.omniray.client.components;
 
+import lombok.Getter;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,8 @@ import java.awt.*;
  * Date: 11/3/13
  */
 public class OutputWindow extends JFrame {
-    private Canvas outputCanvas;
+    @Getter
+    private Canvas canvas;
     private StatusBar statusBar;
     private JLabel statusLabel;
 
@@ -19,10 +22,10 @@ public class OutputWindow extends JFrame {
     }
 
     private void initComponents() {
-        outputCanvas = new Canvas(800, 600);
+        canvas = new Canvas(800, 600);
         statusBar = new StatusBar();
 
-        statusLabel = new JLabel("Ready!");
+        statusLabel = new JLabel("Idle");
         statusLabel.setSize(new Dimension(200, 16));
         statusLabel.getInsets().set(0, 0, 0, 0);
         statusLabel.setBorder(BorderFactory.createEmptyBorder());
@@ -37,7 +40,7 @@ public class OutputWindow extends JFrame {
 
         statusBar.add(statusLabel);
 
-        getContentPane().add(outputCanvas, BorderLayout.CENTER);
+        getContentPane().add(canvas, BorderLayout.CENTER);
         getContentPane().add(statusBar, BorderLayout.SOUTH);
         pack();
         setVisible(true);
