@@ -1,0 +1,55 @@
+package org.vertexarmy.omniray.raytracer;
+
+message Vec3 {
+        required float x = 1;
+        required float y = 2;
+        required float z = 3;
+}
+
+message GeometricObject {
+    message Sphere {
+        required Vec3 center = 1;
+        required float radius = 2;
+    }
+
+    message Plane {
+        required Vec3 origin = 1;
+        required Vec3 normal = 2;
+    }
+
+    optional Sphere sphere = 1;
+    optional Plane plane = 2;
+}
+
+message World {
+    repeated GeometricObject geometric_object = 1;
+}
+
+message ViewPlane {
+    required int32 x = 1;
+    required int32 y = 2;
+    required int32 width = 3;
+    required int32 height = 4;
+}
+
+message Sampler {
+    enum SamplingTechnique {
+        NONE = 1;
+        RANDOM = 2;
+        MULTI_JITTERED = 3;
+    }
+
+    required SamplingTechnique sampling_technique = 1;
+    optional int32 sample_count = 2;
+}
+
+message Settings {
+    required Sampler sampler = 1;
+}
+
+message Task {
+    required string id = 1;
+    required ViewPlane viewPlane = 2;
+    required Settings settings = 3;
+    required World world = 4;
+}
