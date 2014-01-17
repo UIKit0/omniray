@@ -7,3 +7,7 @@
 
 *.iml
 .idea
+*.pdf
+
+*target/
+*documentation/bibliography/
