@@ -35,6 +35,7 @@ public class Canvas extends JPanel {
             @Override
             public void setColor(int x, int y, int color) {
                 Canvas.this.setColor(x, y, color);
+                repaint();
             }
 
             @Override

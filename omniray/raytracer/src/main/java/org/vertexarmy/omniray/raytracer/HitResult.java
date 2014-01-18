@@ -12,6 +12,7 @@ import org.vertexarmy.omniray.jglm.Vec3;
 @Builder
 public class HitResult {
     public static final HitResult NO_HIT = builder().hit(false).build();
+
     @Getter
     private final boolean hit;
     @Getter

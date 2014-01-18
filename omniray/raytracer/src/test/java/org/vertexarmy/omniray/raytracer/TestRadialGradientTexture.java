@@ -19,7 +19,7 @@ public class TestRadialGradientTexture {
     public void testRadiantGradientTexture() {
         final int width = 600;
         final int height = 400;
-        final RadialGradientTexture texture = new RadialGradientTexture(ColorToolkit.fromRGB(100, 100, 100), ColorToolkit.fromRGB(50, 50, 50));
+        final RadialGradientTexture texture = new RadialGradientTexture(ColorToolkit.fromRGB(150, 150, 150), ColorToolkit.fromRGB(50, 50, 50));
         final TextureSampler sampler = new TextureSampler(texture, TextureSampler.FilterType.NEAREST);
 
         final BufferedImage internalBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -38,10 +38,10 @@ public class TestRadialGradientTexture {
 
         outputFrame.setTitle("TextureSampler Test");
         outputFrame.setSize(width, height);
-//        outputFrame.setVisible(true);
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//        }
+        outputFrame.setVisible(true);
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+        }
     }
 }

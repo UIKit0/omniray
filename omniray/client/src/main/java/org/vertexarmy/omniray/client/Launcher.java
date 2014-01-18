@@ -79,10 +79,10 @@ public class Launcher {
 
     private static Datastructures.ViewPlane createViewPlane() {
         return Datastructures.ViewPlane.newBuilder()
-                .setX(0)
-                .setY(0)
-                .setWidth(800)
-                .setHeight(600)
+                .setX(-400)
+                .setY(-300)
+                .setWidth(400)
+                .setHeight(300)
                 .build();
     }
 
@@ -95,13 +95,13 @@ public class Launcher {
     private static Datastructures.World createSingleSphereWorld() {
         return Datastructures.World.newBuilder().
                 addGeometricObject(
-                        GeometryToolkit.toGeometricObject(GeometryToolkit.buildSphere(new Vec3(0, 100, 200), 160)))
+                        GeometryToolkit.toGeometricObject(GeometryToolkit.buildSphere(new Vec3(0, 0, 200), 160)))
                 .build();
     }
 
     private static Datastructures.World createMultipleSpheresWorld() {
         final float MAIN_SPHERE_RADIUS = 140;
-        final int MINOR_SPHERE_COUNT = 240;
+        final int MINOR_SPHERE_COUNT = 120;
 
         Datastructures.World.Builder worldBuilder = Datastructures.World.newBuilder();
         worldBuilder.addGeometricObject(GeometryToolkit.toGeometricObject(
@@ -110,13 +110,13 @@ public class Launcher {
         Random random = new Random();
 
         for (int i = 0; i < MINOR_SPHERE_COUNT; ++i) {
-            double a1 = random.nextFloat() * Math.PI * 2;
-            double a2 = random.nextFloat() * Math.PI * 2;
+            double a1 = random.nextFloat() * Math.PI - Math.PI / 2;
+            double a2 = random.nextFloat() * Math.PI + Math.PI / 2;
             Vec3 origin = new Vec3(
                     (float) (Math.cos(a2) * Math.sin(a1) * MAIN_SPHERE_RADIUS),
                     (float) (Math.sin(a2) * MAIN_SPHERE_RADIUS),
                     (float) (Math.cos(a2) * Math.cos(a1) * MAIN_SPHERE_RADIUS) + 200);
-            float r = (random.nextFloat() + 0.2f) * 30;
+            float r = (random.nextFloat() + 0.1f) * 20;
 
             worldBuilder.addGeometricObject(GeometryToolkit.toGeometricObject(
                     GeometryToolkit.buildSphere(origin, r)));

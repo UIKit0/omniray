@@ -10,7 +10,7 @@ import java.util.List;
  * Date: 1/17/14
  */
 public abstract class Sampler {
-    private final static int SAMPLE_SET_COUNT = 83;
+    final static int SAMPLE_SET_COUNT = 83;
     private final List<Vec3> samples;
     private int sampleCount;
 
