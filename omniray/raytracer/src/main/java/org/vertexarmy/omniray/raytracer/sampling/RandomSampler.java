@@ -1,9 +1,9 @@
 package org.vertexarmy.omniray.raytracer.sampling;
 
-import com.beust.jcommander.internal.Lists;
 import org.vertexarmy.omniray.jglm.Vec3;
 import org.vertexarmy.omniray.jglm.support.FastMath;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +34,7 @@ public class RandomSampler extends Sampler {
      */
     @Override
     protected List<Vec3> generateSamples(int samplesPerPattern, int patternCount) {
-        List<Vec3> samples = Lists.newArrayList();
+        List<Vec3> samples = new ArrayList<Vec3>();
 
         for (int set = 0; set < patternCount; ++set) {
             for (int sample = 0; sample < samplesPerPattern; ++sample) {
