@@ -11,10 +11,20 @@ import org.vertexarmy.omniray.raytracer.Ray;
  * Date: 10/27/13
  * Time: 12:31 PM
  */
+
+/**
+ * A hit resolver that can intersect rays and planes.
+ */
 public class PlaneHitResolver implements HitResolver {
     @Setter
     private Datastructures.GeometricObject.Plane plane;
 
+    /**
+     * Intersects the wrapped plane with the ray.
+     *
+     * @param ray the ray to trace
+     * @return a hit result on the surface of the plane
+     */
     @Override
     public HitResult resolve(final Ray ray) {
         Vec3 origin = new Vec3(plane.getOrigin().getX(), plane.getOrigin().getY(), plane.getOrigin().getZ());

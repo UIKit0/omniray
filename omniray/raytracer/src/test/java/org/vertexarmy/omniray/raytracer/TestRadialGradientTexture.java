@@ -38,10 +38,10 @@ public class TestRadialGradientTexture {
 
         outputFrame.setTitle("TextureSampler Test");
         outputFrame.setSize(width, height);
-        outputFrame.setVisible(true);
-        try {
-            Thread.sleep(100000);
-        } catch (InterruptedException e) {
-        }
+//        outputFrame.setVisible(true);
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//        }
     }
 }

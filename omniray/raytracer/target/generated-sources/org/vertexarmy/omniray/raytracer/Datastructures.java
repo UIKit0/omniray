@@ -651,6 +651,743 @@ public final class Datastructures {
         // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.raytracer.Vec3)
     }
 
+    public interface RectOrBuilder
+            extends com.google.protobuf.MessageOrBuilder {
+
+        // required int32 x = 1;
+
+        /**
+         * <code>required int32 x = 1;</code>
+         */
+        boolean hasX();
+
+        /**
+         * <code>required int32 x = 1;</code>
+         */
+        int getX();
+
+        // required int32 y = 2;
+
+        /**
+         * <code>required int32 y = 2;</code>
+         */
+        boolean hasY();
+
+        /**
+         * <code>required int32 y = 2;</code>
+         */
+        int getY();
+
+        // required int32 width = 3;
+
+        /**
+         * <code>required int32 width = 3;</code>
+         */
+        boolean hasWidth();
+
+        /**
+         * <code>required int32 width = 3;</code>
+         */
+        int getWidth();
+
+        // required int32 height = 4;
+
+        /**
+         * <code>required int32 height = 4;</code>
+         */
+        boolean hasHeight();
+
+        /**
+         * <code>required int32 height = 4;</code>
+         */
+        int getHeight();
+    }
+
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.raytracer.Rect}
+     */
+    public static final class Rect extends
+            com.google.protobuf.GeneratedMessage
+            implements RectOrBuilder {
+        // Use Rect.newBuilder() to construct.
+        private Rect(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+            super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+
+        private Rect(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private static final Rect defaultInstance;
+
+        public static Rect getDefaultInstance() {
+            return defaultInstance;
+        }
+
+        public Rect getDefaultInstanceForType() {
+            return defaultInstance;
+        }
+
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
+
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
+        }
+
+        private Rect(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            x_ = input.readInt32();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            y_ = input.readInt32();
+                            break;
+                        }
+                        case 24: {
+                            bitField0_ |= 0x00000004;
+                            width_ = input.readInt32();
+                            break;
+                        }
+                        case 32: {
+                            bitField0_ |= 0x00000008;
+                            height_ = input.readInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+            return org.vertexarmy.omniray.raytracer.Datastructures.internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return org.vertexarmy.omniray.raytracer.Datastructures.internal_static_org_vertexarmy_omniray_raytracer_Rect_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            org.vertexarmy.omniray.raytracer.Datastructures.Rect.class, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder.class);
+        }
+
+        public static com.google.protobuf.Parser<Rect> PARSER =
+                new com.google.protobuf.AbstractParser<Rect>() {
+                    public Rect parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Rect(input, extensionRegistry);
+                    }
+                };
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Rect> getParserForType() {
+            return PARSER;
+        }
+
+        private int bitField0_;
+        // required int32 x = 1;
+        public static final int X_FIELD_NUMBER = 1;
+        private int x_;
+
+        /**
+         * <code>required int32 x = 1;</code>
+         */
+        public boolean hasX() {
+            return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+
+        /**
+         * <code>required int32 x = 1;</code>
+         */
+        public int getX() {
+            return x_;
+        }
+
+        // required int32 y = 2;
+        public static final int Y_FIELD_NUMBER = 2;
+        private int y_;
+
+        /**
+         * <code>required int32 y = 2;</code>
+         */
+        public boolean hasY() {
+            return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+
+        /**
+         * <code>required int32 y = 2;</code>
+         */
+        public int getY() {
+            return y_;
+        }
+
+        // required int32 width = 3;
+        public static final int WIDTH_FIELD_NUMBER = 3;
+        private int width_;
+
+        /**
+         * <code>required int32 width = 3;</code>
+         */
+        public boolean hasWidth() {
+            return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+
+        /**
+         * <code>required int32 width = 3;</code>
+         */
+        public int getWidth() {
+            return width_;
+        }
+
+        // required int32 height = 4;
+        public static final int HEIGHT_FIELD_NUMBER = 4;
+        private int height_;
+
+        /**
+         * <code>required int32 height = 4;</code>
+         */
+        public boolean hasHeight() {
+            return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+
+        /**
+         * <code>required int32 height = 4;</code>
+         */
+        public int getHeight() {
+            return height_;
+        }
+
+        private void initFields() {
+            x_ = 0;
+            y_ = 0;
+            width_ = 0;
+            height_ = 0;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        public final boolean isInitialized() {
+            byte isInitialized = memoizedIsInitialized;
+            if (isInitialized != -1) return isInitialized == 1;
+
+            if (!hasX()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasY()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasWidth()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!hasHeight()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            memoizedIsInitialized = 1;
+            return true;
+        }
+
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+                throws java.io.IOException {
+            getSerializedSize();
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                output.writeInt32(1, x_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                output.writeInt32(2, y_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                output.writeInt32(3, width_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                output.writeInt32(4, height_);
+            }
+            getUnknownFields().writeTo(output);
+        }
+
+        private int memoizedSerializedSize = -1;
+
+        public int getSerializedSize() {
+            int size = memoizedSerializedSize;
+            if (size != -1) return size;
+
+            size = 0;
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(1, x_);
+            }
+            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(2, y_);
+            }
+            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(3, width_);
+            }
+            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeInt32Size(4, height_);
+            }
+            size += getUnknownFields().getSerializedSize();
+            memoizedSerializedSize = size;
+            return size;
+        }
+
+        private static final long serialVersionUID = 0L;
+
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
+                throws java.io.ObjectStreamException {
+            return super.writeReplace();
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(byte[] data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                byte[] data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input, extensionRegistry);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseDelimitedFrom(java.io.InputStream input)
+                throws java.io.IOException {
+            return PARSER.parseDelimitedFrom(input);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                com.google.protobuf.CodedInputStream input)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input);
+        }
+
+        public static org.vertexarmy.omniray.raytracer.Datastructures.Rect parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+            return PARSER.parseFrom(input, extensionRegistry);
+        }
+
+        public static Builder newBuilder() {
+            return Builder.create();
+        }
+
+        public Builder newBuilderForType() {
+            return newBuilder();
+        }
+
+        public static Builder newBuilder(org.vertexarmy.omniray.raytracer.Datastructures.Rect prototype) {
+            return newBuilder().mergeFrom(prototype);
+        }
+
+        public Builder toBuilder() {
+            return newBuilder(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            Builder builder = new Builder(parent);
+            return builder;
+        }
+
+        /**
+         * Protobuf type {@code org.vertexarmy.omniray.raytracer.Rect}
+         */
+        public static final class Builder extends
+                com.google.protobuf.GeneratedMessage.Builder<Builder>
+                implements org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder {
+            public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+                return org.vertexarmy.omniray.raytracer.Datastructures.internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor;
+            }
+
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+                return org.vertexarmy.omniray.raytracer.Datastructures.internal_static_org_vertexarmy_omniray_raytracer_Rect_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                org.vertexarmy.omniray.raytracer.Datastructures.Rect.class, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder.class);
+            }
+
+            // Construct using org.vertexarmy.omniray.raytracer.Datastructures.Rect.newBuilder()
+            private Builder() {
+                maybeForceBuilderInitialization();
+            }
+
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+                super(parent);
+                maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+                }
+            }
+
+            private static Builder create() {
+                return new Builder();
+            }
+
+            public Builder clear() {
+                super.clear();
+                x_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                y_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                width_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000004);
+                height_ = 0;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                return this;
+            }
+
+            public Builder clone() {
+                return create().mergeFrom(buildPartial());
+            }
+
+            public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+                return org.vertexarmy.omniray.raytracer.Datastructures.internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor;
+            }
+
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect getDefaultInstanceForType() {
+                return org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+            }
+
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect build() {
+                org.vertexarmy.omniray.raytracer.Datastructures.Rect result = buildPartial();
+                if (!result.isInitialized()) {
+                    throw newUninitializedMessageException(result);
+                }
+                return result;
+            }
+
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect buildPartial() {
+                org.vertexarmy.omniray.raytracer.Datastructures.Rect result = new org.vertexarmy.omniray.raytracer.Datastructures.Rect(this);
+                int from_bitField0_ = bitField0_;
+                int to_bitField0_ = 0;
+                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+                    to_bitField0_ |= 0x00000001;
+                }
+                result.x_ = x_;
+                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+                    to_bitField0_ |= 0x00000002;
+                }
+                result.y_ = y_;
+                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+                    to_bitField0_ |= 0x00000004;
+                }
+                result.width_ = width_;
+                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+                    to_bitField0_ |= 0x00000008;
+                }
+                result.height_ = height_;
+                result.bitField0_ = to_bitField0_;
+                onBuilt();
+                return result;
+            }
+
+            public Builder mergeFrom(com.google.protobuf.Message other) {
+                if (other instanceof org.vertexarmy.omniray.raytracer.Datastructures.Rect) {
+                    return mergeFrom((org.vertexarmy.omniray.raytracer.Datastructures.Rect) other);
+                } else {
+                    super.mergeFrom(other);
+                    return this;
+                }
+            }
+
+            public Builder mergeFrom(org.vertexarmy.omniray.raytracer.Datastructures.Rect other) {
+                if (other == org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance()) return this;
+                if (other.hasX()) {
+                    setX(other.getX());
+                }
+                if (other.hasY()) {
+                    setY(other.getY());
+                }
+                if (other.hasWidth()) {
+                    setWidth(other.getWidth());
+                }
+                if (other.hasHeight()) {
+                    setHeight(other.getHeight());
+                }
+                this.mergeUnknownFields(other.getUnknownFields());
+                return this;
+            }
+
+            public final boolean isInitialized() {
+                if (!hasX()) {
+
+                    return false;
+                }
+                if (!hasY()) {
+
+                    return false;
+                }
+                if (!hasWidth()) {
+
+                    return false;
+                }
+                if (!hasHeight()) {
+
+                    return false;
+                }
+                return true;
+            }
+
+            public Builder mergeFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws java.io.IOException {
+                org.vertexarmy.omniray.raytracer.Datastructures.Rect parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (org.vertexarmy.omniray.raytracer.Datastructures.Rect) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
+                    }
+                }
+                return this;
+            }
+
+            private int bitField0_;
+
+            // required int32 x = 1;
+            private int x_;
+
+            /**
+             * <code>required int32 x = 1;</code>
+             */
+            public boolean hasX() {
+                return ((bitField0_ & 0x00000001) == 0x00000001);
+            }
+
+            /**
+             * <code>required int32 x = 1;</code>
+             */
+            public int getX() {
+                return x_;
+            }
+
+            /**
+             * <code>required int32 x = 1;</code>
+             */
+            public Builder setX(int value) {
+                bitField0_ |= 0x00000001;
+                x_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>required int32 x = 1;</code>
+             */
+            public Builder clearX() {
+                bitField0_ = (bitField0_ & ~0x00000001);
+                x_ = 0;
+                onChanged();
+                return this;
+            }
+
+            // required int32 y = 2;
+            private int y_;
+
+            /**
+             * <code>required int32 y = 2;</code>
+             */
+            public boolean hasY() {
+                return ((bitField0_ & 0x00000002) == 0x00000002);
+            }
+
+            /**
+             * <code>required int32 y = 2;</code>
+             */
+            public int getY() {
+                return y_;
+            }
+
+            /**
+             * <code>required int32 y = 2;</code>
+             */
+            public Builder setY(int value) {
+                bitField0_ |= 0x00000002;
+                y_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>required int32 y = 2;</code>
+             */
+            public Builder clearY() {
+                bitField0_ = (bitField0_ & ~0x00000002);
+                y_ = 0;
+                onChanged();
+                return this;
+            }
+
+            // required int32 width = 3;
+            private int width_;
+
+            /**
+             * <code>required int32 width = 3;</code>
+             */
+            public boolean hasWidth() {
+                return ((bitField0_ & 0x00000004) == 0x00000004);
+            }
+
+            /**
+             * <code>required int32 width = 3;</code>
+             */
+            public int getWidth() {
+                return width_;
+            }
+
+            /**
+             * <code>required int32 width = 3;</code>
+             */
+            public Builder setWidth(int value) {
+                bitField0_ |= 0x00000004;
+                width_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>required int32 width = 3;</code>
+             */
+            public Builder clearWidth() {
+                bitField0_ = (bitField0_ & ~0x00000004);
+                width_ = 0;
+                onChanged();
+                return this;
+            }
+
+            // required int32 height = 4;
+            private int height_;
+
+            /**
+             * <code>required int32 height = 4;</code>
+             */
+            public boolean hasHeight() {
+                return ((bitField0_ & 0x00000008) == 0x00000008);
+            }
+
+            /**
+             * <code>required int32 height = 4;</code>
+             */
+            public int getHeight() {
+                return height_;
+            }
+
+            /**
+             * <code>required int32 height = 4;</code>
+             */
+            public Builder setHeight(int value) {
+                bitField0_ |= 0x00000008;
+                height_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>required int32 height = 4;</code>
+             */
+            public Builder clearHeight() {
+                bitField0_ = (bitField0_ & ~0x00000008);
+                height_ = 0;
+                onChanged();
+                return this;
+            }
+
+            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.raytracer.Rect)
+        }
+
+        static {
+            defaultInstance = new Rect(true);
+            defaultInstance.initFields();
+        }
+
+        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.raytracer.Rect)
+    }
+
     public interface GeometricObjectOrBuilder
             extends com.google.protobuf.MessageOrBuilder {
 
@@ -3658,53 +4395,22 @@ public final class Datastructures {
     public interface ViewPlaneOrBuilder
             extends com.google.protobuf.MessageOrBuilder {
 
-        // required int32 x = 1;
+        // required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;
 
         /**
-         * <code>required int32 x = 1;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        boolean hasX();
+        boolean hasViewport();
 
         /**
-         * <code>required int32 x = 1;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        int getX();
-
-        // required int32 y = 2;
+        org.vertexarmy.omniray.raytracer.Datastructures.Rect getViewport();
 
         /**
-         * <code>required int32 y = 2;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        boolean hasY();
-
-        /**
-         * <code>required int32 y = 2;</code>
-         */
-        int getY();
-
-        // required int32 width = 3;
-
-        /**
-         * <code>required int32 width = 3;</code>
-         */
-        boolean hasWidth();
-
-        /**
-         * <code>required int32 width = 3;</code>
-         */
-        int getWidth();
-
-        // required int32 height = 4;
-
-        /**
-         * <code>required int32 height = 4;</code>
-         */
-        boolean hasHeight();
-
-        /**
-         * <code>required int32 height = 4;</code>
-         */
-        int getHeight();
+        org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getViewportOrBuilder();
     }
 
     /**
@@ -3764,24 +4470,17 @@ public final class Datastructures {
                             }
                             break;
                         }
-                        case 8: {
+                        case 10: {
+                            org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                                subBuilder = viewport_.toBuilder();
+                            }
+                            viewport_ = input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.Rect.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(viewport_);
+                                viewport_ = subBuilder.buildPartial();
+                            }
                             bitField0_ |= 0x00000001;
-                            x_ = input.readInt32();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            y_ = input.readInt32();
-                            break;
-                        }
-                        case 24: {
-                            bitField0_ |= 0x00000004;
-                            width_ = input.readInt32();
-                            break;
-                        }
-                        case 32: {
-                            bitField0_ |= 0x00000008;
-                            height_ = input.readInt32();
                             break;
                         }
                     }
@@ -3825,83 +4524,33 @@ public final class Datastructures {
         }
 
         private int bitField0_;
-        // required int32 x = 1;
-        public static final int X_FIELD_NUMBER = 1;
-        private int x_;
+        // required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;
+        public static final int VIEWPORT_FIELD_NUMBER = 1;
+        private org.vertexarmy.omniray.raytracer.Datastructures.Rect viewport_;
 
         /**
-         * <code>required int32 x = 1;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        public boolean hasX() {
+        public boolean hasViewport() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
         /**
-         * <code>required int32 x = 1;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        public int getX() {
-            return x_;
-        }
-
-        // required int32 y = 2;
-        public static final int Y_FIELD_NUMBER = 2;
-        private int y_;
-
-        /**
-         * <code>required int32 y = 2;</code>
-         */
-        public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
+        public org.vertexarmy.omniray.raytracer.Datastructures.Rect getViewport() {
+            return viewport_;
         }
 
         /**
-         * <code>required int32 y = 2;</code>
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
          */
-        public int getY() {
-            return y_;
-        }
-
-        // required int32 width = 3;
-        public static final int WIDTH_FIELD_NUMBER = 3;
-        private int width_;
-
-        /**
-         * <code>required int32 width = 3;</code>
-         */
-        public boolean hasWidth() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required int32 width = 3;</code>
-         */
-        public int getWidth() {
-            return width_;
-        }
-
-        // required int32 height = 4;
-        public static final int HEIGHT_FIELD_NUMBER = 4;
-        private int height_;
-
-        /**
-         * <code>required int32 height = 4;</code>
-         */
-        public boolean hasHeight() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-
-        /**
-         * <code>required int32 height = 4;</code>
-         */
-        public int getHeight() {
-            return height_;
+        public org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getViewportOrBuilder() {
+            return viewport_;
         }
 
         private void initFields() {
-            x_ = 0;
-            y_ = 0;
-            width_ = 0;
-            height_ = 0;
+            viewport_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
         }
 
         private byte memoizedIsInitialized = -1;
@@ -3910,19 +4559,11 @@ public final class Datastructures {
             byte isInitialized = memoizedIsInitialized;
             if (isInitialized != -1) return isInitialized == 1;
 
-            if (!hasX()) {
+            if (!hasViewport()) {
                 memoizedIsInitialized = 0;
                 return false;
             }
-            if (!hasY()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasWidth()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasHeight()) {
+            if (!getViewport().isInitialized()) {
                 memoizedIsInitialized = 0;
                 return false;
             }
@@ -3934,16 +4575,7 @@ public final class Datastructures {
                 throws java.io.IOException {
             getSerializedSize();
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeInt32(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeInt32(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeInt32(3, width_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeInt32(4, height_);
+                output.writeMessage(1, viewport_);
             }
             getUnknownFields().writeTo(output);
         }
@@ -3957,19 +4589,7 @@ public final class Datastructures {
             size = 0;
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(3, width_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeInt32Size(4, height_);
+                        .computeMessageSize(1, viewport_);
             }
             size += getUnknownFields().getSerializedSize();
             memoizedSerializedSize = size;
@@ -4100,6 +4720,7 @@ public final class Datastructures {
 
             private void maybeForceBuilderInitialization() {
                 if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+                    getViewportFieldBuilder();
                 }
             }
 
@@ -4109,14 +4730,12 @@ public final class Datastructures {
 
             public Builder clear() {
                 super.clear();
-                x_ = 0;
+                if (viewportBuilder_ == null) {
+                    viewport_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+                } else {
+                    viewportBuilder_.clear();
+                }
                 bitField0_ = (bitField0_ & ~0x00000001);
-                y_ = 0;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                width_ = 0;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                height_ = 0;
-                bitField0_ = (bitField0_ & ~0x00000008);
                 return this;
             }
 
@@ -4148,19 +4767,11 @@ public final class Datastructures {
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
                     to_bitField0_ |= 0x00000001;
                 }
-                result.x_ = x_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
+                if (viewportBuilder_ == null) {
+                    result.viewport_ = viewport_;
+                } else {
+                    result.viewport_ = viewportBuilder_.build();
                 }
-                result.y_ = y_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.width_ = width_;
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                result.height_ = height_;
                 result.bitField0_ = to_bitField0_;
                 onBuilt();
                 return result;
@@ -4178,36 +4789,19 @@ public final class Datastructures {
             public Builder mergeFrom(org.vertexarmy.omniray.raytracer.Datastructures.ViewPlane other) {
                 if (other == org.vertexarmy.omniray.raytracer.Datastructures.ViewPlane.getDefaultInstance())
                     return this;
-                if (other.hasX()) {
-                    setX(other.getX());
-                }
-                if (other.hasY()) {
-                    setY(other.getY());
-                }
-                if (other.hasWidth()) {
-                    setWidth(other.getWidth());
-                }
-                if (other.hasHeight()) {
-                    setHeight(other.getHeight());
+                if (other.hasViewport()) {
+                    mergeViewport(other.getViewport());
                 }
                 this.mergeUnknownFields(other.getUnknownFields());
                 return this;
             }
 
             public final boolean isInitialized() {
-                if (!hasX()) {
+                if (!hasViewport()) {
 
                     return false;
                 }
-                if (!hasY()) {
-
-                    return false;
-                }
-                if (!hasWidth()) {
-
-                    return false;
-                }
-                if (!hasHeight()) {
+                if (!getViewport().isInitialized()) {
 
                     return false;
                 }
@@ -4234,152 +4828,130 @@ public final class Datastructures {
 
             private int bitField0_;
 
-            // required int32 x = 1;
-            private int x_;
+            // required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;
+            private org.vertexarmy.omniray.raytracer.Datastructures.Rect viewport_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+            private com.google.protobuf.SingleFieldBuilder<
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder> viewportBuilder_;
 
             /**
-             * <code>required int32 x = 1;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public boolean hasX() {
+            public boolean hasViewport() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
             /**
-             * <code>required int32 x = 1;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public int getX() {
-                return x_;
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect getViewport() {
+                if (viewportBuilder_ == null) {
+                    return viewport_;
+                } else {
+                    return viewportBuilder_.getMessage();
+                }
             }
 
             /**
-             * <code>required int32 x = 1;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public Builder setX(int value) {
+            public Builder setViewport(org.vertexarmy.omniray.raytracer.Datastructures.Rect value) {
+                if (viewportBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    viewport_ = value;
+                    onChanged();
+                } else {
+                    viewportBuilder_.setMessage(value);
+                }
                 bitField0_ |= 0x00000001;
-                x_ = value;
-                onChanged();
                 return this;
             }
 
             /**
-             * <code>required int32 x = 1;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public Builder clearX() {
+            public Builder setViewport(
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder builderForValue) {
+                if (viewportBuilder_ == null) {
+                    viewport_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    viewportBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000001;
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
+             */
+            public Builder mergeViewport(org.vertexarmy.omniray.raytracer.Datastructures.Rect value) {
+                if (viewportBuilder_ == null) {
+                    if (((bitField0_ & 0x00000001) == 0x00000001) &&
+                            viewport_ != org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance()) {
+                        viewport_ =
+                                org.vertexarmy.omniray.raytracer.Datastructures.Rect.newBuilder(viewport_).mergeFrom(value).buildPartial();
+                    } else {
+                        viewport_ = value;
+                    }
+                    onChanged();
+                } else {
+                    viewportBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000001;
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
+             */
+            public Builder clearViewport() {
+                if (viewportBuilder_ == null) {
+                    viewport_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+                    onChanged();
+                } else {
+                    viewportBuilder_.clear();
+                }
                 bitField0_ = (bitField0_ & ~0x00000001);
-                x_ = 0;
-                onChanged();
-                return this;
-            }
-
-            // required int32 y = 2;
-            private int y_;
-
-            /**
-             * <code>required int32 y = 2;</code>
-             */
-            public boolean hasY() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required int32 y = 2;</code>
-             */
-            public int getY() {
-                return y_;
-            }
-
-            /**
-             * <code>required int32 y = 2;</code>
-             */
-            public Builder setY(int value) {
-                bitField0_ |= 0x00000002;
-                y_ = value;
-                onChanged();
                 return this;
             }
 
             /**
-             * <code>required int32 y = 2;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public Builder clearY() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                y_ = 0;
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder getViewportBuilder() {
+                bitField0_ |= 0x00000001;
                 onChanged();
-                return this;
-            }
-
-            // required int32 width = 3;
-            private int width_;
-
-            /**
-             * <code>required int32 width = 3;</code>
-             */
-            public boolean hasWidth() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
+                return getViewportFieldBuilder().getBuilder();
             }
 
             /**
-             * <code>required int32 width = 3;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public int getWidth() {
-                return width_;
+            public org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getViewportOrBuilder() {
+                if (viewportBuilder_ != null) {
+                    return viewportBuilder_.getMessageOrBuilder();
+                } else {
+                    return viewport_;
+                }
             }
 
             /**
-             * <code>required int32 width = 3;</code>
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect viewport = 1;</code>
              */
-            public Builder setWidth(int value) {
-                bitField0_ |= 0x00000004;
-                width_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required int32 width = 3;</code>
-             */
-            public Builder clearWidth() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                width_ = 0;
-                onChanged();
-                return this;
-            }
-
-            // required int32 height = 4;
-            private int height_;
-
-            /**
-             * <code>required int32 height = 4;</code>
-             */
-            public boolean hasHeight() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <code>required int32 height = 4;</code>
-             */
-            public int getHeight() {
-                return height_;
-            }
-
-            /**
-             * <code>required int32 height = 4;</code>
-             */
-            public Builder setHeight(int value) {
-                bitField0_ |= 0x00000008;
-                height_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required int32 height = 4;</code>
-             */
-            public Builder clearHeight() {
-                bitField0_ = (bitField0_ & ~0x00000008);
-                height_ = 0;
-                onChanged();
-                return this;
+            private com.google.protobuf.SingleFieldBuilder<
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder>
+            getViewportFieldBuilder() {
+                if (viewportBuilder_ == null) {
+                    viewportBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                            org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder>(
+                            viewport_,
+                            getParentForChildren(),
+                            isClean());
+                    viewport_ = null;
+                }
+                return viewportBuilder_;
             }
 
             // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.raytracer.ViewPlane)
@@ -5679,6 +6251,23 @@ public final class Datastructures {
          * <code>required .org.vertexarmy.omniray.raytracer.World world = 4;</code>
          */
         org.vertexarmy.omniray.raytracer.Datastructures.WorldOrBuilder getWorldOrBuilder();
+
+        // required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        boolean hasRenderSection();
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        org.vertexarmy.omniray.raytracer.Datastructures.Rect getRenderSection();
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getRenderSectionOrBuilder();
     }
 
     /**
@@ -5780,6 +6369,19 @@ public final class Datastructures {
                                 world_ = subBuilder.buildPartial();
                             }
                             bitField0_ |= 0x00000008;
+                            break;
+                        }
+                        case 42: {
+                            org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                                subBuilder = renderSection_.toBuilder();
+                            }
+                            renderSection_ = input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.Rect.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(renderSection_);
+                                renderSection_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000010;
                             break;
                         }
                     }
@@ -5944,11 +6546,37 @@ public final class Datastructures {
             return world_;
         }
 
+        // required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;
+        public static final int RENDER_SECTION_FIELD_NUMBER = 5;
+        private org.vertexarmy.omniray.raytracer.Datastructures.Rect renderSection_;
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        public boolean hasRenderSection() {
+            return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.Rect getRenderSection() {
+            return renderSection_;
+        }
+
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getRenderSectionOrBuilder() {
+            return renderSection_;
+        }
+
         private void initFields() {
             id_ = "";
             viewPlane_ = org.vertexarmy.omniray.raytracer.Datastructures.ViewPlane.getDefaultInstance();
             settings_ = org.vertexarmy.omniray.raytracer.Datastructures.Settings.getDefaultInstance();
             world_ = org.vertexarmy.omniray.raytracer.Datastructures.World.getDefaultInstance();
+            renderSection_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
         }
 
         private byte memoizedIsInitialized = -1;
@@ -5973,6 +6601,10 @@ public final class Datastructures {
                 memoizedIsInitialized = 0;
                 return false;
             }
+            if (!hasRenderSection()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
             if (!getViewPlane().isInitialized()) {
                 memoizedIsInitialized = 0;
                 return false;
@@ -5982,6 +6614,10 @@ public final class Datastructures {
                 return false;
             }
             if (!getWorld().isInitialized()) {
+                memoizedIsInitialized = 0;
+                return false;
+            }
+            if (!getRenderSection().isInitialized()) {
                 memoizedIsInitialized = 0;
                 return false;
             }
@@ -6003,6 +6639,9 @@ public final class Datastructures {
             }
             if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 output.writeMessage(4, world_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                output.writeMessage(5, renderSection_);
             }
             getUnknownFields().writeTo(output);
         }
@@ -6029,6 +6668,10 @@ public final class Datastructures {
             if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 size += com.google.protobuf.CodedOutputStream
                         .computeMessageSize(4, world_);
+            }
+            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                size += com.google.protobuf.CodedOutputStream
+                        .computeMessageSize(5, renderSection_);
             }
             size += getUnknownFields().getSerializedSize();
             memoizedSerializedSize = size;
@@ -6162,6 +6805,7 @@ public final class Datastructures {
                     getViewPlaneFieldBuilder();
                     getSettingsFieldBuilder();
                     getWorldFieldBuilder();
+                    getRenderSectionFieldBuilder();
                 }
             }
 
@@ -6191,6 +6835,12 @@ public final class Datastructures {
                     worldBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000008);
+                if (renderSectionBuilder_ == null) {
+                    renderSection_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+                } else {
+                    renderSectionBuilder_.clear();
+                }
+                bitField0_ = (bitField0_ & ~0x00000010);
                 return this;
             }
 
@@ -6247,6 +6897,14 @@ public final class Datastructures {
                 } else {
                     result.world_ = worldBuilder_.build();
                 }
+                if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+                    to_bitField0_ |= 0x00000010;
+                }
+                if (renderSectionBuilder_ == null) {
+                    result.renderSection_ = renderSection_;
+                } else {
+                    result.renderSection_ = renderSectionBuilder_.build();
+                }
                 result.bitField0_ = to_bitField0_;
                 onBuilt();
                 return result;
@@ -6277,6 +6935,9 @@ public final class Datastructures {
                 if (other.hasWorld()) {
                     mergeWorld(other.getWorld());
                 }
+                if (other.hasRenderSection()) {
+                    mergeRenderSection(other.getRenderSection());
+                }
                 this.mergeUnknownFields(other.getUnknownFields());
                 return this;
             }
@@ -6298,6 +6959,10 @@ public final class Datastructures {
 
                     return false;
                 }
+                if (!hasRenderSection()) {
+
+                    return false;
+                }
                 if (!getViewPlane().isInitialized()) {
 
                     return false;
@@ -6307,6 +6972,10 @@ public final class Datastructures {
                     return false;
                 }
                 if (!getWorld().isInitialized()) {
+
+                    return false;
+                }
+                if (!getRenderSection().isInitialized()) {
 
                     return false;
                 }
@@ -6791,6 +7460,132 @@ public final class Datastructures {
                 return worldBuilder_;
             }
 
+            // required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;
+            private org.vertexarmy.omniray.raytracer.Datastructures.Rect renderSection_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+            private com.google.protobuf.SingleFieldBuilder<
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder> renderSectionBuilder_;
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public boolean hasRenderSection() {
+                return ((bitField0_ & 0x00000010) == 0x00000010);
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect getRenderSection() {
+                if (renderSectionBuilder_ == null) {
+                    return renderSection_;
+                } else {
+                    return renderSectionBuilder_.getMessage();
+                }
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public Builder setRenderSection(org.vertexarmy.omniray.raytracer.Datastructures.Rect value) {
+                if (renderSectionBuilder_ == null) {
+                    if (value == null) {
+                        throw new NullPointerException();
+                    }
+                    renderSection_ = value;
+                    onChanged();
+                } else {
+                    renderSectionBuilder_.setMessage(value);
+                }
+                bitField0_ |= 0x00000010;
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public Builder setRenderSection(
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder builderForValue) {
+                if (renderSectionBuilder_ == null) {
+                    renderSection_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    renderSectionBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000010;
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public Builder mergeRenderSection(org.vertexarmy.omniray.raytracer.Datastructures.Rect value) {
+                if (renderSectionBuilder_ == null) {
+                    if (((bitField0_ & 0x00000010) == 0x00000010) &&
+                            renderSection_ != org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance()) {
+                        renderSection_ =
+                                org.vertexarmy.omniray.raytracer.Datastructures.Rect.newBuilder(renderSection_).mergeFrom(value).buildPartial();
+                    } else {
+                        renderSection_ = value;
+                    }
+                    onChanged();
+                } else {
+                    renderSectionBuilder_.mergeFrom(value);
+                }
+                bitField0_ |= 0x00000010;
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public Builder clearRenderSection() {
+                if (renderSectionBuilder_ == null) {
+                    renderSection_ = org.vertexarmy.omniray.raytracer.Datastructures.Rect.getDefaultInstance();
+                    onChanged();
+                } else {
+                    renderSectionBuilder_.clear();
+                }
+                bitField0_ = (bitField0_ & ~0x00000010);
+                return this;
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder getRenderSectionBuilder() {
+                bitField0_ |= 0x00000010;
+                onChanged();
+                return getRenderSectionFieldBuilder().getBuilder();
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            public org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder getRenderSectionOrBuilder() {
+                if (renderSectionBuilder_ != null) {
+                    return renderSectionBuilder_.getMessageOrBuilder();
+                } else {
+                    return renderSection_;
+                }
+            }
+
+            /**
+             * <code>required .org.vertexarmy.omniray.raytracer.Rect render_section = 5;</code>
+             */
+            private com.google.protobuf.SingleFieldBuilder<
+                    org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder>
+            getRenderSectionFieldBuilder() {
+                if (renderSectionBuilder_ == null) {
+                    renderSectionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                            org.vertexarmy.omniray.raytracer.Datastructures.Rect, org.vertexarmy.omniray.raytracer.Datastructures.Rect.Builder, org.vertexarmy.omniray.raytracer.Datastructures.RectOrBuilder>(
+                            renderSection_,
+                            getParentForChildren(),
+                            isClean());
+                    renderSection_ = null;
+                }
+                return renderSectionBuilder_;
+            }
+
             // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.raytracer.Task)
         }
 
@@ -6807,6 +7602,11 @@ public final class Datastructures {
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_org_vertexarmy_omniray_raytracer_Vec3_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.Descriptor
+            internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor;
+    private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internal_static_org_vertexarmy_omniray_raytracer_Rect_fieldAccessorTable;
     private static com.google.protobuf.Descriptors.Descriptor
             internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_descriptor;
     private static
@@ -6860,31 +7660,35 @@ public final class Datastructures {
         java.lang.String[] descriptorData = {
                 "\n\024datastructures.proto\022 org.vertexarmy.o" +
                         "mniray.raytracer\"\'\n\004Vec3\022\t\n\001x\030\001 \002(\002\022\t\n\001y" +
-                        "\030\002 \002(\002\022\t\n\001z\030\003 \002(\002\"\356\002\n\017GeometricObject\022H\n" +
-                        "\006sphere\030\001 \001(\01328.org.vertexarmy.omniray.r" +
-                        "aytracer.GeometricObject.Sphere\022F\n\005plane" +
-                        "\030\002 \001(\01327.org.vertexarmy.omniray.raytrace" +
-                        "r.GeometricObject.Plane\032P\n\006Sphere\0226\n\006cen" +
-                        "ter\030\001 \002(\0132&.org.vertexarmy.omniray.raytr" +
-                        "acer.Vec3\022\016\n\006radius\030\002 \002(\002\032w\n\005Plane\0226\n\006or" +
-                        "igin\030\001 \002(\0132&.org.vertexarmy.omniray.rayt",
-                "racer.Vec3\0226\n\006normal\030\002 \002(\0132&.org.vertexa" +
-                        "rmy.omniray.raytracer.Vec3\"T\n\005World\022K\n\020g" +
-                        "eometric_object\030\001 \003(\01321.org.vertexarmy.o" +
-                        "mniray.raytracer.GeometricObject\"@\n\tView" +
-                        "Plane\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005width\030\003 \002" +
-                        "(\005\022\016\n\006height\030\004 \002(\005\"\267\001\n\007Sampler\022W\n\022sampli" +
-                        "ng_technique\030\001 \002(\0162;.org.vertexarmy.omni" +
-                        "ray.raytracer.Sampler.SamplingTechnique\022" +
-                        "\024\n\014sample_count\030\002 \001(\005\"=\n\021SamplingTechniq" +
-                        "ue\022\010\n\004NONE\020\001\022\n\n\006RANDOM\020\002\022\022\n\016MULTI_JITTER",
-                "ED\020\003\"F\n\010Settings\022:\n\007sampler\030\001 \002(\0132).org." +
-                        "vertexarmy.omniray.raytracer.Sampler\"\310\001\n" +
-                        "\004Task\022\n\n\002id\030\001 \002(\t\022>\n\tviewPlane\030\002 \002(\0132+.o" +
-                        "rg.vertexarmy.omniray.raytracer.ViewPlan" +
-                        "e\022<\n\010settings\030\003 \002(\0132*.org.vertexarmy.omn" +
-                        "iray.raytracer.Settings\0226\n\005world\030\004 \002(\0132\'" +
-                        ".org.vertexarmy.omniray.raytracer.World"
+                        "\030\002 \002(\002\022\t\n\001z\030\003 \002(\002\";\n\004Rect\022\t\n\001x\030\001 \002(\005\022\t\n\001" +
+                        "y\030\002 \002(\005\022\r\n\005width\030\003 \002(\005\022\016\n\006height\030\004 \002(\005\"\356" +
+                        "\002\n\017GeometricObject\022H\n\006sphere\030\001 \001(\01328.org" +
+                        ".vertexarmy.omniray.raytracer.GeometricO" +
+                        "bject.Sphere\022F\n\005plane\030\002 \001(\01327.org.vertex" +
+                        "army.omniray.raytracer.GeometricObject.P" +
+                        "lane\032P\n\006Sphere\0226\n\006center\030\001 \002(\0132&.org.ver" +
+                        "texarmy.omniray.raytracer.Vec3\022\016\n\006radius",
+                "\030\002 \002(\002\032w\n\005Plane\0226\n\006origin\030\001 \002(\0132&.org.ve" +
+                        "rtexarmy.omniray.raytracer.Vec3\0226\n\006norma" +
+                        "l\030\002 \002(\0132&.org.vertexarmy.omniray.raytrac" +
+                        "er.Vec3\"T\n\005World\022K\n\020geometric_object\030\001 \003" +
+                        "(\01321.org.vertexarmy.omniray.raytracer.Ge" +
+                        "ometricObject\"E\n\tViewPlane\0228\n\010viewport\030\001" +
+                        " \002(\0132&.org.vertexarmy.omniray.raytracer." +
+                        "Rect\"\267\001\n\007Sampler\022W\n\022sampling_technique\030\001" +
+                        " \002(\0162;.org.vertexarmy.omniray.raytracer." +
+                        "Sampler.SamplingTechnique\022\024\n\014sample_coun",
+                "t\030\002 \001(\005\"=\n\021SamplingTechnique\022\010\n\004NONE\020\001\022\n" +
+                        "\n\006RANDOM\020\002\022\022\n\016MULTI_JITTERED\020\003\"F\n\010Settin" +
+                        "gs\022:\n\007sampler\030\001 \002(\0132).org.vertexarmy.omn" +
+                        "iray.raytracer.Sampler\"\210\002\n\004Task\022\n\n\002id\030\001 " +
+                        "\002(\t\022>\n\tviewPlane\030\002 \002(\0132+.org.vertexarmy." +
+                        "omniray.raytracer.ViewPlane\022<\n\010settings\030" +
+                        "\003 \002(\0132*.org.vertexarmy.omniray.raytracer" +
+                        ".Settings\0226\n\005world\030\004 \002(\0132\'.org.vertexarm" +
+                        "y.omniray.raytracer.World\022>\n\016render_sect" +
+                        "ion\030\005 \002(\0132&.org.vertexarmy.omniray.raytr",
+                "acer.Rect"
         };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
                 new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -6897,8 +7701,14 @@ public final class Datastructures {
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_Vec3_descriptor,
                                 new java.lang.String[]{"X", "Y", "Z",});
-                        internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_descriptor =
+                        internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor =
                                 getDescriptor().getMessageTypes().get(1);
+                        internal_static_org_vertexarmy_omniray_raytracer_Rect_fieldAccessorTable = new
+                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                                internal_static_org_vertexarmy_omniray_raytracer_Rect_descriptor,
+                                new java.lang.String[]{"X", "Y", "Width", "Height",});
+                        internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_descriptor =
+                                getDescriptor().getMessageTypes().get(2);
                         internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_descriptor,
@@ -6916,35 +7726,35 @@ public final class Datastructures {
                                 internal_static_org_vertexarmy_omniray_raytracer_GeometricObject_Plane_descriptor,
                                 new java.lang.String[]{"Origin", "Normal",});
                         internal_static_org_vertexarmy_omniray_raytracer_World_descriptor =
-                                getDescriptor().getMessageTypes().get(2);
+                                getDescriptor().getMessageTypes().get(3);
                         internal_static_org_vertexarmy_omniray_raytracer_World_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_World_descriptor,
                                 new java.lang.String[]{"GeometricObject",});
                         internal_static_org_vertexarmy_omniray_raytracer_ViewPlane_descriptor =
-                                getDescriptor().getMessageTypes().get(3);
+                                getDescriptor().getMessageTypes().get(4);
                         internal_static_org_vertexarmy_omniray_raytracer_ViewPlane_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_ViewPlane_descriptor,
-                                new java.lang.String[]{"X", "Y", "Width", "Height",});
+                                new java.lang.String[]{"Viewport",});
                         internal_static_org_vertexarmy_omniray_raytracer_Sampler_descriptor =
-                                getDescriptor().getMessageTypes().get(4);
+                                getDescriptor().getMessageTypes().get(5);
                         internal_static_org_vertexarmy_omniray_raytracer_Sampler_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_Sampler_descriptor,
                                 new java.lang.String[]{"SamplingTechnique", "SampleCount",});
                         internal_static_org_vertexarmy_omniray_raytracer_Settings_descriptor =
-                                getDescriptor().getMessageTypes().get(5);
+                                getDescriptor().getMessageTypes().get(6);
                         internal_static_org_vertexarmy_omniray_raytracer_Settings_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_Settings_descriptor,
                                 new java.lang.String[]{"Sampler",});
                         internal_static_org_vertexarmy_omniray_raytracer_Task_descriptor =
-                                getDescriptor().getMessageTypes().get(6);
+                                getDescriptor().getMessageTypes().get(7);
                         internal_static_org_vertexarmy_omniray_raytracer_Task_fieldAccessorTable = new
                                 com.google.protobuf.GeneratedMessage.FieldAccessorTable(
                                 internal_static_org_vertexarmy_omniray_raytracer_Task_descriptor,
-                                new java.lang.String[]{"Id", "ViewPlane", "Settings", "World",});
+                                new java.lang.String[]{"Id", "ViewPlane", "Settings", "World", "RenderSection",});
                         return null;
                     }
                 };

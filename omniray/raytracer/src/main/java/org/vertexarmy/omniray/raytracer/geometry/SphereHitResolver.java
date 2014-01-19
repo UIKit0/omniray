@@ -13,10 +13,20 @@ import org.vertexarmy.omniray.raytracer.material.ColorToolkit;
  * Date: 10/27/13
  * Time: 1:19 PM
  */
+
+/**
+ * A hit resolver that can intersect rays and spheres.
+ */
 public class SphereHitResolver implements HitResolver {
     @Setter
     private Datastructures.GeometricObject.Sphere sphere;
 
+    /**
+     * Intersects the ray with the wrapped sphere
+     *
+     * @param ray the ray to trace
+     * @return a hit result on the surface of the sphere
+     */
     @Override
     public HitResult resolve(Ray ray) {
         final Vec3 origin = new Vec3(sphere.getCenter().getX(), sphere.getCenter().getY(), sphere.getCenter().getZ());

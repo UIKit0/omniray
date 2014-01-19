@@ -12,14 +12,27 @@ import org.vertexarmy.omniray.raytracer.sampling.Sampler;
  * User: Alex
  * Date: 1/17/14
  */
+
+/**
+ * The tracer class generates an image by tracing rays through a world.
+ */
 public class Tracer {
 
     private final HitResolverFactory hitResolverFactory;
 
+    /**
+     * Constructs a default tracer.
+     */
     public Tracer() {
         hitResolverFactory = new HitResolverFactory();
     }
 
+    /**
+     * Builds an image by tracing this task and using the ImageBuilder to generate the result
+     *
+     * @param task    a ray tracing task
+     * @param builder an image builder that will be used to construct the image
+     */
     public void render(Datastructures.Task task, ImageBuilder builder) {
 
         Datastructures.ViewPlane viewPlane = task.getViewPlane();
@@ -30,10 +43,10 @@ public class Tracer {
 
         Sampler antialiasSampler = new RandomSampler(16);
 
-
+        Datastructures.Rect renderRect = task.getRenderSection();
         Ray ray = new Ray(new Vec3(0, 0, 0), new Vec3(0, 0, 1));
-        for (int r = viewPlane.getX(); r < viewPlane.getWidth(); ++r) {
-            for (int c = viewPlane.getY(); c < viewPlane.getHeight(); ++c) {
+        for (int r = renderRect.getX(); r < renderRect.getWidth(); ++r) {
+            for (int c = renderRect.getY(); c < renderRect.getHeight(); ++c) {
 
                 int redAccumulator = 0;
                 int greenAccumulator = 0;
@@ -52,8 +65,8 @@ public class Tracer {
                     // trace the ray
                     HitResult hitResult = traceRay(task.getWorld(), ray);
 
-                    float u = (float) (r - viewPlane.getX()) / (viewPlane.getWidth() - viewPlane.getX());
-                    float v = (float) (c - viewPlane.getY()) / (viewPlane.getHeight() - viewPlane.getY());
+                    float u = (float) (r - renderRect.getX()) / (renderRect.getWidth() - renderRect.getX());
+                    float v = (float) (c - renderRect.getY()) / (renderRect.getHeight() - renderRect.getY());
 
                     // calculate the color
                     int sampleColor = hitResult == HitResult.NO_HIT ?
@@ -72,13 +85,20 @@ public class Tracer {
                 );
 
                 // render the result
-                builder.setColor(r - viewPlane.getX(), c - viewPlane.getY(), color);
+                builder.setColor(r - renderRect.getX(), c - renderRect.getY(), color);
             }
         }
 
         builder.end();
     }
 
+    /**
+     * Traces a ray through the world by intersecting the ray with all the objects in the world
+     *
+     * @param world the world
+     * @param ray   the ray
+     * @return the hit result
+     */
     private HitResult traceRay(Datastructures.World world, Ray ray) {
         HitResult closestHitResult = HitResult.NO_HIT;
         for (Datastructures.GeometricObject object : world.getGeometricObjectList()) {
