@@ -52,9 +52,13 @@ message Settings {
 }
 
 message Task {
-    required string id = 1;
     required ViewPlane viewPlane = 2;
     required Settings settings = 3;
     required World world = 4;
     required Rect render_section = 5;
+}
+
+message ColorBuffer {
+    required Rect size = 1;
+    repeated int32 value = 2;
 }

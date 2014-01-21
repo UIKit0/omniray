@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import org.vertexarmy.omniray.jglm.Vec3;
 import org.vertexarmy.omniray.raytracer.geometry.GeometryToolkit;
 
-import java.util.UUID;
-
 /**
  * User: Alex
  * Date: 1/19/14
@@ -41,7 +39,6 @@ public class TestTracer {
 
     private static Datastructures.Task createTask(Datastructures.ViewPlane viewPlane, Datastructures.Settings settings, Datastructures.World world) {
         return Datastructures.Task.newBuilder()
-                .setId(UUID.randomUUID().toString())
                 .setViewPlane(viewPlane)
                 .setRenderSection(viewPlane.getViewport())
                 .setSettings(settings)
