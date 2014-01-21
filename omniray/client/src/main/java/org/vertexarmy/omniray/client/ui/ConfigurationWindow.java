@@ -152,6 +152,10 @@ public class ConfigurationWindow extends JFrame {
         }
     }
 
+    public void setRenderButtonEnabled(boolean enabled) {
+        renderButton.setEnabled(enabled);
+    }
+
     public interface Listener {
         void onRenderRequested();
 

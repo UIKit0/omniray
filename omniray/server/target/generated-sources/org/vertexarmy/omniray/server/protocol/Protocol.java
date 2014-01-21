@@ -4,12683 +4,6039 @@
 package org.vertexarmy.omniray.server.protocol;
 
 public final class Protocol {
-    private Protocol() {
+  private Protocol() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+  }
+  public interface RequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    boolean hasClientRequestPostTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask getClientRequestPostTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder getClientRequestPostTaskOrBuilder();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    boolean hasClientRequestTaskResult();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult getClientRequestTaskResult();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder getClientRequestTaskResultOrBuilder();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    boolean hasWorkerTaskFinished();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished getWorkerTaskFinished();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder getWorkerTaskFinishedOrBuilder();
+  }
+  /**
+   * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request}
+   */
+  public static final class Request extends
+      com.google.protobuf.GeneratedMessage
+      implements RequestOrBuilder {
+    // Use Request.newBuilder() to construct.
+    private Request(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Request(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Request defaultInstance;
+    public static Request getDefaultInstance() {
+      return defaultInstance;
     }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
+    public Request getDefaultInstanceForType() {
+      return defaultInstance;
     }
 
-    public interface RequestOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-         */
-        boolean hasType();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        boolean hasConnect();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect getConnect();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder getConnectOrBuilder();
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.Type value = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = clientRequestPostTask_.toBuilder();
+              }
+              clientRequestPostTask_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientRequestPostTask_);
+                clientRequestPostTask_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = clientRequestTaskResult_.toBuilder();
+              }
+              clientRequestTaskResult_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientRequestTaskResult_);
+                clientRequestTaskResult_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = workerTaskFinished_.toBuilder();
+              }
+              workerTaskFinished_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workerTaskFinished_);
+                workerTaskFinished_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
     }
 
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Request> PARSER =
+        new com.google.protobuf.AbstractParser<Request>() {
+      public Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Request(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Request> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code org.vertexarmy.omniray.server.protocol.Request.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>REQUEST_CONNECTION = 1;</code>
+       *
+       * <pre>
+       * used to test the responsiveness of the server
+       * </pre>
+       */
+      REQUEST_CONNECTION(0, 1),
+      /**
+       * <code>CLIENT_REQUEST_POST_TASK = 2;</code>
+       *
+       * <pre>
+       * used by the client to post a task
+       * </pre>
+       */
+      CLIENT_REQUEST_POST_TASK(1, 2),
+      /**
+       * <code>CLIENT_REQUEST_TASK_RESULT = 3;</code>
+       *
+       * <pre>
+       * used by the client to request the results for a task
+       * </pre>
+       */
+      CLIENT_REQUEST_TASK_RESULT(2, 3),
+      /**
+       * <code>WORKER_REQUEST_NEW_TASK = 4;</code>
+       *
+       * <pre>
+       * used by the worker to request a new task
+       * </pre>
+       */
+      WORKER_REQUEST_NEW_TASK(3, 4),
+      /**
+       * <code>WORKER_TASK_FINISHED = 5;</code>
+       *
+       * <pre>
+       * used by the worker to return the result of a task
+       * </pre>
+       */
+      WORKER_TASK_FINISHED(4, 5),
+      ;
+
+      /**
+       * <code>REQUEST_CONNECTION = 1;</code>
+       *
+       * <pre>
+       * used to test the responsiveness of the server
+       * </pre>
+       */
+      public static final int REQUEST_CONNECTION_VALUE = 1;
+      /**
+       * <code>CLIENT_REQUEST_POST_TASK = 2;</code>
+       *
+       * <pre>
+       * used by the client to post a task
+       * </pre>
+       */
+      public static final int CLIENT_REQUEST_POST_TASK_VALUE = 2;
+      /**
+       * <code>CLIENT_REQUEST_TASK_RESULT = 3;</code>
+       *
+       * <pre>
+       * used by the client to request the results for a task
+       * </pre>
+       */
+      public static final int CLIENT_REQUEST_TASK_RESULT_VALUE = 3;
+      /**
+       * <code>WORKER_REQUEST_NEW_TASK = 4;</code>
+       *
+       * <pre>
+       * used by the worker to request a new task
+       * </pre>
+       */
+      public static final int WORKER_REQUEST_NEW_TASK_VALUE = 4;
+      /**
+       * <code>WORKER_TASK_FINISHED = 5;</code>
+       *
+       * <pre>
+       * used by the worker to return the result of a task
+       * </pre>
+       */
+      public static final int WORKER_TASK_FINISHED_VALUE = 5;
+
+
+      public final int getNumber() { return value; }
+
+      public static Type valueOf(int value) {
+        switch (value) {
+          case 1: return REQUEST_CONNECTION;
+          case 2: return CLIENT_REQUEST_POST_TASK;
+          case 3: return CLIENT_REQUEST_TASK_RESULT;
+          case 4: return WORKER_REQUEST_NEW_TASK;
+          case 5: return WORKER_TASK_FINISHED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.Request.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private Type(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:org.vertexarmy.omniray.server.protocol.Request.Type)
+    }
+
+    public interface ClientRequestPostTaskOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
+
+      // required .org.vertexarmy.omniray.raytracer.Task task = 1;
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      boolean hasTask();
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.Task getTask();
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder();
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask}
+     */
+    public static final class ClientRequestPostTask extends
+        com.google.protobuf.GeneratedMessage
+        implements ClientRequestPostTaskOrBuilder {
+      // Use ClientRequestPostTask.newBuilder() to construct.
+      private ClientRequestPostTask(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private ClientRequestPostTask(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final ClientRequestPostTask defaultInstance;
+      public static ClientRequestPostTask getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public ClientRequestPostTask getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ClientRequestPostTask(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                  subBuilder = task_.toBuilder();
+                }
+                task_ = input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.Task.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(task_);
+                  task_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000001;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<ClientRequestPostTask> PARSER =
+          new com.google.protobuf.AbstractParser<ClientRequestPostTask>() {
+        public ClientRequestPostTask parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientRequestPostTask(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ClientRequestPostTask> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // required .org.vertexarmy.omniray.raytracer.Task task = 1;
+      public static final int TASK_FIELD_NUMBER = 1;
+      private org.vertexarmy.omniray.raytracer.Datastructures.Task task_;
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      public boolean hasTask() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.Task getTask() {
+        return task_;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder() {
+        return task_;
+      }
+
+      private void initFields() {
+        task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (!hasTask()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!getTask().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeMessage(1, task_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, task_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder.class);
+        }
+
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getTaskFieldBuilder();
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          if (taskBuilder_ == null) {
+            task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+          } else {
+            taskBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance();
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask result = new org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          if (taskBuilder_ == null) {
+            result.task_ = task_;
+          } else {
+            result.task_ = taskBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance()) return this;
+          if (other.hasTask()) {
+            mergeTask(other.getTask());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (!hasTask()) {
+            
+            return false;
+          }
+          if (!getTask().isInitialized()) {
+            
+            return false;
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // required .org.vertexarmy.omniray.raytracer.Task task = 1;
+        private org.vertexarmy.omniray.raytracer.Datastructures.Task task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder> taskBuilder_;
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public boolean hasTask() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.Task getTask() {
+          if (taskBuilder_ == null) {
+            return task_;
+          } else {
+            return taskBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public Builder setTask(org.vertexarmy.omniray.raytracer.Datastructures.Task value) {
+          if (taskBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            task_ = value;
+            onChanged();
+          } else {
+            taskBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public Builder setTask(
+            org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder builderForValue) {
+          if (taskBuilder_ == null) {
+            task_ = builderForValue.build();
+            onChanged();
+          } else {
+            taskBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public Builder mergeTask(org.vertexarmy.omniray.raytracer.Datastructures.Task value) {
+          if (taskBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) == 0x00000001) &&
+                task_ != org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance()) {
+              task_ =
+                org.vertexarmy.omniray.raytracer.Datastructures.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+            } else {
+              task_ = value;
+            }
+            onChanged();
+          } else {
+            taskBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000001;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public Builder clearTask() {
+          if (taskBuilder_ == null) {
+            task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+            onChanged();
+          } else {
+            taskBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder getTaskBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getTaskFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder() {
+          if (taskBuilder_ != null) {
+            return taskBuilder_.getMessageOrBuilder();
+          } else {
+            return task_;
+          }
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.Task task = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder> 
+            getTaskFieldBuilder() {
+          if (taskBuilder_ == null) {
+            taskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder>(
+                    task_,
+                    getParentForChildren(),
+                    isClean());
+            task_ = null;
+          }
+          return taskBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask)
+      }
+
+      static {
+        defaultInstance = new ClientRequestPostTask(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask)
+    }
+
+    public interface ClientRequestTaskResultOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
+
+      // required string task_id = 1;
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      boolean hasTaskId();
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      java.lang.String getTaskId();
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getTaskIdBytes();
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult}
+     */
+    public static final class ClientRequestTaskResult extends
+        com.google.protobuf.GeneratedMessage
+        implements ClientRequestTaskResultOrBuilder {
+      // Use ClientRequestTaskResult.newBuilder() to construct.
+      private ClientRequestTaskResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private ClientRequestTaskResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final ClientRequestTaskResult defaultInstance;
+      public static ClientRequestTaskResult getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public ClientRequestTaskResult getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ClientRequestTaskResult(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                taskId_ = input.readBytes();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<ClientRequestTaskResult> PARSER =
+          new com.google.protobuf.AbstractParser<ClientRequestTaskResult>() {
+        public ClientRequestTaskResult parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientRequestTaskResult(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ClientRequestTaskResult> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // required string task_id = 1;
+      public static final int TASK_ID_FIELD_NUMBER = 1;
+      private java.lang.Object taskId_;
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public boolean hasTaskId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public java.lang.String getTaskId() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskIdBytes() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private void initFields() {
+        taskId_ = "";
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (!hasTaskId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeBytes(1, getTaskIdBytes());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getTaskIdBytes());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder.class);
+        }
+
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          taskId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance();
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult result = new org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.taskId_ = taskId_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance()) return this;
+          if (other.hasTaskId()) {
+            bitField0_ |= 0x00000001;
+            taskId_ = other.taskId_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (!hasTaskId()) {
+            
+            return false;
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // required string task_id = 1;
+        private java.lang.Object taskId_ = "";
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public boolean hasTaskId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public java.lang.String getTaskId() {
+          java.lang.Object ref = taskId_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
+            taskId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getTaskIdBytes() {
+          java.lang.Object ref = taskId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            taskId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder setTaskId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder clearTaskId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          taskId_ = getDefaultInstance().getTaskId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder setTaskIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult)
+      }
+
+      static {
+        defaultInstance = new ClientRequestTaskResult(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult)
+    }
+
+    public interface WorkerTaskFinishedOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
+
+      // required string task_id = 1;
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      boolean hasTaskId();
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      java.lang.String getTaskId();
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getTaskIdBytes();
+
+      // required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      boolean hasTaskResult();
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getTaskResult();
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getTaskResultOrBuilder();
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished}
+     */
+    public static final class WorkerTaskFinished extends
+        com.google.protobuf.GeneratedMessage
+        implements WorkerTaskFinishedOrBuilder {
+      // Use WorkerTaskFinished.newBuilder() to construct.
+      private WorkerTaskFinished(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private WorkerTaskFinished(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final WorkerTaskFinished defaultInstance;
+      public static WorkerTaskFinished getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public WorkerTaskFinished getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private WorkerTaskFinished(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                taskId_ = input.readBytes();
+                break;
+              }
+              case 18: {
+                org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                  subBuilder = taskResult_.toBuilder();
+                }
+                taskResult_ = input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(taskResult_);
+                  taskResult_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000002;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<WorkerTaskFinished> PARSER =
+          new com.google.protobuf.AbstractParser<WorkerTaskFinished>() {
+        public WorkerTaskFinished parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkerTaskFinished(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<WorkerTaskFinished> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // required string task_id = 1;
+      public static final int TASK_ID_FIELD_NUMBER = 1;
+      private java.lang.Object taskId_;
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public boolean hasTaskId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public java.lang.String getTaskId() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string task_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskIdBytes() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      // required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;
+      public static final int TASK_RESULT_FIELD_NUMBER = 2;
+      private org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer taskResult_;
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      public boolean hasTaskResult() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getTaskResult() {
+        return taskResult_;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getTaskResultOrBuilder() {
+        return taskResult_;
+      }
+
+      private void initFields() {
+        taskId_ = "";
+        taskResult_ = org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (!hasTaskId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasTaskResult()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!getTaskResult().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeBytes(1, getTaskIdBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeMessage(2, taskResult_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getTaskIdBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, taskResult_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder.class);
+        }
+
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getTaskResultFieldBuilder();
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          taskId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          if (taskResultBuilder_ == null) {
+            taskResult_ = org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance();
+          } else {
+            taskResultBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance();
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished result = new org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.taskId_ = taskId_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          if (taskResultBuilder_ == null) {
+            result.taskResult_ = taskResult_;
+          } else {
+            result.taskResult_ = taskResultBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance()) return this;
+          if (other.hasTaskId()) {
+            bitField0_ |= 0x00000001;
+            taskId_ = other.taskId_;
+            onChanged();
+          }
+          if (other.hasTaskResult()) {
+            mergeTaskResult(other.getTaskResult());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (!hasTaskId()) {
+            
+            return false;
+          }
+          if (!hasTaskResult()) {
+            
+            return false;
+          }
+          if (!getTaskResult().isInitialized()) {
+            
+            return false;
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // required string task_id = 1;
+        private java.lang.Object taskId_ = "";
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public boolean hasTaskId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public java.lang.String getTaskId() {
+          java.lang.Object ref = taskId_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
+            taskId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getTaskIdBytes() {
+          java.lang.Object ref = taskId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            taskId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder setTaskId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder clearTaskId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          taskId_ = getDefaultInstance().getTaskId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string task_id = 1;</code>
+         */
+        public Builder setTaskIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
+
+        // required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;
+        private org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer taskResult_ = org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> taskResultBuilder_;
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public boolean hasTaskResult() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getTaskResult() {
+          if (taskResultBuilder_ == null) {
+            return taskResult_;
+          } else {
+            return taskResultBuilder_.getMessage();
+          }
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public Builder setTaskResult(org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer value) {
+          if (taskResultBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            taskResult_ = value;
+            onChanged();
+          } else {
+            taskResultBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public Builder setTaskResult(
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder builderForValue) {
+          if (taskResultBuilder_ == null) {
+            taskResult_ = builderForValue.build();
+            onChanged();
+          } else {
+            taskResultBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public Builder mergeTaskResult(org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer value) {
+          if (taskResultBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) == 0x00000002) &&
+                taskResult_ != org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance()) {
+              taskResult_ =
+                org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.newBuilder(taskResult_).mergeFrom(value).buildPartial();
+            } else {
+              taskResult_ = value;
+            }
+            onChanged();
+          } else {
+            taskResultBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public Builder clearTaskResult() {
+          if (taskResultBuilder_ == null) {
+            taskResult_ = org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance();
+            onChanged();
+          } else {
+            taskResultBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder getTaskResultBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getTaskResultFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getTaskResultOrBuilder() {
+          if (taskResultBuilder_ != null) {
+            return taskResultBuilder_.getMessageOrBuilder();
+          } else {
+            return taskResult_;
+          }
+        }
+        /**
+         * <code>required .org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> 
+            getTaskResultFieldBuilder() {
+          if (taskResultBuilder_ == null) {
+            taskResultBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder>(
+                    taskResult_,
+                    getParentForChildren(),
+                    isClean());
+            taskResult_ = null;
+          }
+          return taskResultBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished)
+      }
+
+      static {
+        defaultInstance = new WorkerTaskFinished(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished)
+    }
+
+    private int bitField0_;
+    // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Request.Type type_;
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType() {
+      return type_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;
+    public static final int CLIENT_REQUEST_POST_TASK_FIELD_NUMBER = 2;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask clientRequestPostTask_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    public boolean hasClientRequestPostTask() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask getClientRequestPostTask() {
+      return clientRequestPostTask_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder getClientRequestPostTaskOrBuilder() {
+      return clientRequestPostTask_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;
+    public static final int CLIENT_REQUEST_TASK_RESULT_FIELD_NUMBER = 3;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult clientRequestTaskResult_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    public boolean hasClientRequestTaskResult() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult getClientRequestTaskResult() {
+      return clientRequestTaskResult_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder getClientRequestTaskResultOrBuilder() {
+      return clientRequestTaskResult_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;
+    public static final int WORKER_TASK_FINISHED_FIELD_NUMBER = 4;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished workerTaskFinished_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    public boolean hasWorkerTaskFinished() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished getWorkerTaskFinished() {
+      return workerTaskFinished_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder getWorkerTaskFinishedOrBuilder() {
+      return workerTaskFinished_;
+    }
+
+    private void initFields() {
+      type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.REQUEST_CONNECTION;
+      clientRequestPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance();
+      clientRequestTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance();
+      workerTaskFinished_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasClientRequestPostTask()) {
+        if (!getClientRequestPostTask().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasClientRequestTaskResult()) {
+        if (!getClientRequestTaskResult().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasWorkerTaskFinished()) {
+        if (!getWorkerTaskFinished().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, clientRequestPostTask_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, clientRequestTaskResult_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, workerTaskFinished_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, clientRequestPostTask_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, clientRequestTaskResult_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, workerTaskFinished_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request}
      */
-    public static final class Request extends
-            com.google.protobuf.GeneratedMessage
-            implements RequestOrBuilder {
-        // Use Request.newBuilder() to construct.
-        private Request(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.vertexarmy.omniray.server.protocol.Protocol.RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Request.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Builder.class);
+      }
+
+      // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getClientRequestPostTaskFieldBuilder();
+          getClientRequestTaskResultFieldBuilder();
+          getWorkerTaskFinishedFieldBuilder();
         }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
 
-        private Request(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      public Builder clear() {
+        super.clear();
+        type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.REQUEST_CONNECTION;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (clientRequestPostTaskBuilder_ == null) {
+          clientRequestPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance();
+        } else {
+          clientRequestPostTaskBuilder_.clear();
         }
-
-        private static final Request defaultInstance;
-
-        public static Request getDefaultInstance() {
-            return defaultInstance;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (clientRequestTaskResultBuilder_ == null) {
+          clientRequestTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance();
+        } else {
+          clientRequestTaskResultBuilder_.clear();
         }
-
-        public Request getDefaultInstanceForType() {
-            return defaultInstance;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (workerTaskFinishedBuilder_ == null) {
+          workerTaskFinished_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance();
+        } else {
+          workerTaskFinishedBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
 
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
+      }
+
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request getDefaultInstanceForType() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.Request.getDefaultInstance();
+      }
+
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request build() {
+        org.vertexarmy.omniray.server.protocol.Protocol.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request buildPartial() {
+        org.vertexarmy.omniray.server.protocol.Protocol.Request result = new org.vertexarmy.omniray.server.protocol.Protocol.Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (clientRequestPostTaskBuilder_ == null) {
+          result.clientRequestPostTask_ = clientRequestPostTask_;
+        } else {
+          result.clientRequestPostTask_ = clientRequestPostTaskBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (clientRequestTaskResultBuilder_ == null) {
+          result.clientRequestTaskResult_ = clientRequestTaskResult_;
+        } else {
+          result.clientRequestTaskResult_ = clientRequestTaskResultBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (workerTaskFinishedBuilder_ == null) {
+          result.workerTaskFinished_ = workerTaskFinished_;
+        } else {
+          result.workerTaskFinished_ = workerTaskFinishedBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request) {
+          return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request other) {
+        if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        if (other.hasClientRequestPostTask()) {
+          mergeClientRequestPostTask(other.getClientRequestPostTask());
+        }
+        if (other.hasClientRequestTaskResult()) {
+          mergeClientRequestTaskResult(other.getClientRequestTaskResult());
+        }
+        if (other.hasWorkerTaskFinished()) {
+          mergeWorkerTaskFinished(other.getWorkerTaskFinished());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
+        }
+        if (hasClientRequestPostTask()) {
+          if (!getClientRequestPostTask().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasClientRequestTaskResult()) {
+          if (!getClientRequestTaskResult().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasWorkerTaskFinished()) {
+          if (!getWorkerTaskFinished().isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.vertexarmy.omniray.server.protocol.Protocol.Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Request.Type type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.REQUEST_CONNECTION;
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType() {
+        return type_;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+       */
+      public Builder setType(org.vertexarmy.omniray.server.protocol.Protocol.Request.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.REQUEST_CONNECTION;
+        onChanged();
+        return this;
+      }
+
+      // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask clientRequestPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder> clientRequestPostTaskBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public boolean hasClientRequestPostTask() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask getClientRequestPostTask() {
+        if (clientRequestPostTaskBuilder_ == null) {
+          return clientRequestPostTask_;
+        } else {
+          return clientRequestPostTaskBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public Builder setClientRequestPostTask(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask value) {
+        if (clientRequestPostTaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientRequestPostTask_ = value;
+          onChanged();
+        } else {
+          clientRequestPostTaskBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public Builder setClientRequestPostTask(
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder builderForValue) {
+        if (clientRequestPostTaskBuilder_ == null) {
+          clientRequestPostTask_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientRequestPostTaskBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public Builder mergeClientRequestPostTask(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask value) {
+        if (clientRequestPostTaskBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              clientRequestPostTask_ != org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance()) {
+            clientRequestPostTask_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.newBuilder(clientRequestPostTask_).mergeFrom(value).buildPartial();
+          } else {
+            clientRequestPostTask_ = value;
+          }
+          onChanged();
+        } else {
+          clientRequestPostTaskBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public Builder clearClientRequestPostTask() {
+        if (clientRequestPostTaskBuilder_ == null) {
+          clientRequestPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.getDefaultInstance();
+          onChanged();
+        } else {
+          clientRequestPostTaskBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder getClientRequestPostTaskBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getClientRequestPostTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder getClientRequestPostTaskOrBuilder() {
+        if (clientRequestPostTaskBuilder_ != null) {
+          return clientRequestPostTaskBuilder_.getMessageOrBuilder();
+        } else {
+          return clientRequestPostTask_;
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestPostTask client_request_post_task = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder> 
+          getClientRequestPostTaskFieldBuilder() {
+        if (clientRequestPostTaskBuilder_ == null) {
+          clientRequestPostTaskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestPostTaskOrBuilder>(
+                  clientRequestPostTask_,
+                  getParentForChildren(),
+                  isClean());
+          clientRequestPostTask_ = null;
+        }
+        return clientRequestPostTaskBuilder_;
+      }
+
+      // optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult clientRequestTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder> clientRequestTaskResultBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public boolean hasClientRequestTaskResult() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult getClientRequestTaskResult() {
+        if (clientRequestTaskResultBuilder_ == null) {
+          return clientRequestTaskResult_;
+        } else {
+          return clientRequestTaskResultBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public Builder setClientRequestTaskResult(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult value) {
+        if (clientRequestTaskResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientRequestTaskResult_ = value;
+          onChanged();
+        } else {
+          clientRequestTaskResultBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public Builder setClientRequestTaskResult(
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder builderForValue) {
+        if (clientRequestTaskResultBuilder_ == null) {
+          clientRequestTaskResult_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientRequestTaskResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public Builder mergeClientRequestTaskResult(org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult value) {
+        if (clientRequestTaskResultBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              clientRequestTaskResult_ != org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance()) {
+            clientRequestTaskResult_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.newBuilder(clientRequestTaskResult_).mergeFrom(value).buildPartial();
+          } else {
+            clientRequestTaskResult_ = value;
+          }
+          onChanged();
+        } else {
+          clientRequestTaskResultBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public Builder clearClientRequestTaskResult() {
+        if (clientRequestTaskResultBuilder_ == null) {
+          clientRequestTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.getDefaultInstance();
+          onChanged();
+        } else {
+          clientRequestTaskResultBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder getClientRequestTaskResultBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getClientRequestTaskResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder getClientRequestTaskResultOrBuilder() {
+        if (clientRequestTaskResultBuilder_ != null) {
+          return clientRequestTaskResultBuilder_.getMessageOrBuilder();
+        } else {
+          return clientRequestTaskResult_;
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.ClientRequestTaskResult client_request_task_result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder> 
+          getClientRequestTaskResultFieldBuilder() {
+        if (clientRequestTaskResultBuilder_ == null) {
+          clientRequestTaskResultBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ClientRequestTaskResultOrBuilder>(
+                  clientRequestTaskResult_,
+                  getParentForChildren(),
+                  isClean());
+          clientRequestTaskResult_ = null;
+        }
+        return clientRequestTaskResultBuilder_;
+      }
+
+      // optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished workerTaskFinished_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder> workerTaskFinishedBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public boolean hasWorkerTaskFinished() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished getWorkerTaskFinished() {
+        if (workerTaskFinishedBuilder_ == null) {
+          return workerTaskFinished_;
+        } else {
+          return workerTaskFinishedBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public Builder setWorkerTaskFinished(org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished value) {
+        if (workerTaskFinishedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          workerTaskFinished_ = value;
+          onChanged();
+        } else {
+          workerTaskFinishedBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public Builder setWorkerTaskFinished(
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder builderForValue) {
+        if (workerTaskFinishedBuilder_ == null) {
+          workerTaskFinished_ = builderForValue.build();
+          onChanged();
+        } else {
+          workerTaskFinishedBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public Builder mergeWorkerTaskFinished(org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished value) {
+        if (workerTaskFinishedBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              workerTaskFinished_ != org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance()) {
+            workerTaskFinished_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.newBuilder(workerTaskFinished_).mergeFrom(value).buildPartial();
+          } else {
+            workerTaskFinished_ = value;
+          }
+          onChanged();
+        } else {
+          workerTaskFinishedBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public Builder clearWorkerTaskFinished() {
+        if (workerTaskFinishedBuilder_ == null) {
+          workerTaskFinished_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.getDefaultInstance();
+          onChanged();
+        } else {
+          workerTaskFinishedBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder getWorkerTaskFinishedBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getWorkerTaskFinishedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder getWorkerTaskFinishedOrBuilder() {
+        if (workerTaskFinishedBuilder_ != null) {
+          return workerTaskFinishedBuilder_.getMessageOrBuilder();
+        } else {
+          return workerTaskFinished_;
+        }
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Request.WorkerTaskFinished worker_task_finished = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder> 
+          getWorkerTaskFinishedFieldBuilder() {
+        if (workerTaskFinishedBuilder_ == null) {
+          workerTaskFinishedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinished.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.WorkerTaskFinishedOrBuilder>(
+                  workerTaskFinished_,
+                  getParentForChildren(),
+                  isClean());
+          workerTaskFinished_ = null;
+        }
+        return workerTaskFinishedBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request)
+    }
+
+    static {
+      defaultInstance = new Request(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request)
+  }
+
+  public interface ReplyOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    boolean hasClientReplyPostTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask getClientReplyPostTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder getClientReplyPostTaskOrBuilder();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    boolean hasClientReplyTaskResult();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult getClientReplyTaskResult();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder getClientReplyTaskResultOrBuilder();
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    boolean hasWorkerReplyNewTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask getWorkerReplyNewTask();
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder getWorkerReplyNewTaskOrBuilder();
+  }
+  /**
+   * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply}
+   */
+  public static final class Reply extends
+      com.google.protobuf.GeneratedMessage
+      implements ReplyOrBuilder {
+    // Use Reply.newBuilder() to construct.
+    private Reply(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Reply(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Reply defaultInstance;
+    public static Reply getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Reply getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
         getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Request(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            org.vertexarmy.omniray.server.protocol.Protocol.Request.Type value = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                type_ = value;
-                            }
-                            break;
-                        }
-                        case 18: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                                subBuilder = connect_.toBuilder();
-                            }
-                            connect_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(connect_);
-                                connect_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000002;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
+      return this.unknownFields;
+    }
+    private Reply(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
+            case 8: {
+              int rawValue = input.readEnum();
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type value = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                type_ = value;
+              }
+              break;
+            }
+            case 18: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = clientReplyPostTask_.toBuilder();
+              }
+              clientReplyPostTask_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientReplyPostTask_);
+                clientReplyPostTask_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 26: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = clientReplyTaskResult_.toBuilder();
+              }
+              clientReplyTaskResult_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientReplyTaskResult_);
+                clientReplyTaskResult_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = workerReplyNewTask_.toBuilder();
+              }
+              workerReplyNewTask_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workerReplyNewTask_);
+                workerReplyNewTask_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000008;
+              break;
+            }
+          }
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
+      return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Reply> PARSER =
+        new com.google.protobuf.AbstractParser<Reply>() {
+      public Reply parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Reply(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Reply> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code org.vertexarmy.omniray.server.protocol.Reply.Type}
+     */
+    public enum Type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>REPLY_CONNECTION = 1;</code>
+       *
+       * <pre>
+       * response indicating the server is alive
+       * </pre>
+       */
+      REPLY_CONNECTION(0, 1),
+      /**
+       * <code>CLIENT_REPLY_POST_TASK = 3;</code>
+       *
+       * <pre>
+       * response to a client's request to post a new task
+       * </pre>
+       */
+      CLIENT_REPLY_POST_TASK(1, 3),
+      /**
+       * <code>CLIENT_REPLY_TASK_RESULT = 4;</code>
+       *
+       * <pre>
+       * response to a client's request for task results
+       * </pre>
+       */
+      CLIENT_REPLY_TASK_RESULT(2, 4),
+      /**
+       * <code>WORKER_REPLY_NEW_TASK = 2;</code>
+       *
+       * <pre>
+       * response for a new task request from a worker
+       * </pre>
+       */
+      WORKER_REPLY_NEW_TASK(3, 2),
+      /**
+       * <code>WORKER_REPLY_TASK_FINISHED = 5;</code>
+       *
+       * <pre>
+       * response acknowledging the results of a task from a worker
+       * </pre>
+       */
+      WORKER_REPLY_TASK_FINISHED(4, 5),
+      ;
+
+      /**
+       * <code>REPLY_CONNECTION = 1;</code>
+       *
+       * <pre>
+       * response indicating the server is alive
+       * </pre>
+       */
+      public static final int REPLY_CONNECTION_VALUE = 1;
+      /**
+       * <code>CLIENT_REPLY_POST_TASK = 3;</code>
+       *
+       * <pre>
+       * response to a client's request to post a new task
+       * </pre>
+       */
+      public static final int CLIENT_REPLY_POST_TASK_VALUE = 3;
+      /**
+       * <code>CLIENT_REPLY_TASK_RESULT = 4;</code>
+       *
+       * <pre>
+       * response to a client's request for task results
+       * </pre>
+       */
+      public static final int CLIENT_REPLY_TASK_RESULT_VALUE = 4;
+      /**
+       * <code>WORKER_REPLY_NEW_TASK = 2;</code>
+       *
+       * <pre>
+       * response for a new task request from a worker
+       * </pre>
+       */
+      public static final int WORKER_REPLY_NEW_TASK_VALUE = 2;
+      /**
+       * <code>WORKER_REPLY_TASK_FINISHED = 5;</code>
+       *
+       * <pre>
+       * response acknowledging the results of a task from a worker
+       * </pre>
+       */
+      public static final int WORKER_REPLY_TASK_FINISHED_VALUE = 5;
+
+
+      public final int getNumber() { return value; }
+
+      public static Type valueOf(int value) {
+        switch (value) {
+          case 1: return REPLY_CONNECTION;
+          case 3: return CLIENT_REPLY_POST_TASK;
+          case 4: return CLIENT_REPLY_TASK_RESULT;
+          case 2: return WORKER_REPLY_NEW_TASK;
+          case 5: return WORKER_REPLY_TASK_FINISHED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<Type>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+              public Type findValueByNumber(int number) {
+                return Type.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private Type(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:org.vertexarmy.omniray.server.protocol.Reply.Type)
+    }
+
+    public interface ClientReplyPostTaskOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
+
+      // required string id = 1;
+      /**
+       * <code>required string id = 1;</code>
+       */
+      boolean hasId();
+      /**
+       * <code>required string id = 1;</code>
+       */
+      java.lang.String getId();
+      /**
+       * <code>required string id = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getIdBytes();
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask}
+     */
+    public static final class ClientReplyPostTask extends
+        com.google.protobuf.GeneratedMessage
+        implements ClientReplyPostTaskOrBuilder {
+      // Use ClientReplyPostTask.newBuilder() to construct.
+      private ClientReplyPostTask(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private ClientReplyPostTask(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final ClientReplyPostTask defaultInstance;
+      public static ClientReplyPostTask getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public ClientReplyPostTask getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ClientReplyPostTask(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                id_ = input.readBytes();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<ClientReplyPostTask> PARSER =
+          new com.google.protobuf.AbstractParser<ClientReplyPostTask>() {
+        public ClientReplyPostTask parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientReplyPostTask(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ClientReplyPostTask> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // required string id = 1;
+      public static final int ID_FIELD_NUMBER = 1;
+      private java.lang.Object id_;
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            id_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>required string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private void initFields() {
+        id_ = "";
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (!hasId()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeBytes(1, getIdBytes());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getIdBytes());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Request.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Request> PARSER =
-                new com.google.protobuf.AbstractParser<Request>() {
-                    public Request parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Request(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Request> getParserForType() {
-            return PARSER;
-        }
-
-        /**
-         * Protobuf enum {@code org.vertexarmy.omniray.server.protocol.Request.Type}
-         */
-        public enum Type
-                implements com.google.protobuf.ProtocolMessageEnum {
-            /**
-             * <code>CONNECT = 1;</code>
-             * <p/>
-             * <pre>
-             * meta and misc
-             * </pre>
-             */
-            CONNECT(0, 1),
-            /**
-             * <code>PEER_LIST = 2;</code>
-             */
-            PEER_LIST(1, 2),
-            /**
-             * <code>PING = 3;</code>
-             */
-            PING(2, 3),
-            /**
-             * <code>NEW_TASK = 4;</code>
-             * <p/>
-             * <pre>
-             * worker
-             * </pre>
-             */
-            NEW_TASK(3, 4),
-            /**
-             * <code>PROGRESS_REPORT = 5;</code>
-             */
-            PROGRESS_REPORT(4, 5),
-            /**
-             * <code>TASK_RESULT = 6;</code>
-             */
-            TASK_RESULT(5, 6),;
-
-            /**
-             * <code>CONNECT = 1;</code>
-             * <p/>
-             * <pre>
-             * meta and misc
-             * </pre>
-             */
-            public static final int CONNECT_VALUE = 1;
-            /**
-             * <code>PEER_LIST = 2;</code>
-             */
-            public static final int PEER_LIST_VALUE = 2;
-            /**
-             * <code>PING = 3;</code>
-             */
-            public static final int PING_VALUE = 3;
-            /**
-             * <code>NEW_TASK = 4;</code>
-             * <p/>
-             * <pre>
-             * worker
-             * </pre>
-             */
-            public static final int NEW_TASK_VALUE = 4;
-            /**
-             * <code>PROGRESS_REPORT = 5;</code>
-             */
-            public static final int PROGRESS_REPORT_VALUE = 5;
-            /**
-             * <code>TASK_RESULT = 6;</code>
-             */
-            public static final int TASK_RESULT_VALUE = 6;
-
-
-            public final int getNumber() {
-                return value;
-            }
-
-            public static Type valueOf(int value) {
-                switch (value) {
-                    case 1:
-                        return CONNECT;
-                    case 2:
-                        return PEER_LIST;
-                    case 3:
-                        return PING;
-                    case 4:
-                        return NEW_TASK;
-                    case 5:
-                        return PROGRESS_REPORT;
-                    case 6:
-                        return TASK_RESULT;
-                    default:
-                        return null;
-                }
-            }
-
-            public static com.google.protobuf.Internal.EnumLiteMap<Type>
-            internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            private static com.google.protobuf.Internal.EnumLiteMap<Type>
-                    internalValueMap =
-                    new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-                        public Type findValueByNumber(int number) {
-                            return Type.valueOf(number);
-                        }
-                    };
-
-            public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-                return getDescriptor().getValues().get(index);
-            }
-
-            public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Request.getDescriptor().getEnumTypes().get(0);
-            }
-
-            private static final Type[] VALUES = values();
-
-            public static Type valueOf(
-                    com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new java.lang.IllegalArgumentException(
-                            "EnumValueDescriptor is not for this type.");
-                }
-                return VALUES[desc.getIndex()];
-            }
-
-            private final int index;
-            private final int value;
-
-            private Type(int index, int value) {
-                this.index = index;
-                this.value = value;
-            }
-
-            // @@protoc_insertion_point(enum_scope:org.vertexarmy.omniray.server.protocol.Request.Type)
-        }
-
-        public interface ConnectOrBuilder
-                extends com.google.protobuf.MessageOrBuilder {
-
-            // required string id = 1;
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            boolean hasId();
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            java.lang.String getId();
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            com.google.protobuf.ByteString
-            getIdBytes();
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.Connect}
-         */
-        public static final class Connect extends
-                com.google.protobuf.GeneratedMessage
-                implements ConnectOrBuilder {
-            // Use Connect.newBuilder() to construct.
-            private Connect(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-                super(builder);
-                this.unknownFields = builder.getUnknownFields();
-            }
-
-            private Connect(boolean noInit) {
-                this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-            }
-
-            private static final Connect defaultInstance;
-
-            public static Connect getDefaultInstance() {
-                return defaultInstance;
-            }
-
-            public Connect getDefaultInstanceForType() {
-                return defaultInstance;
-            }
-
-            private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-            @java.lang.Override
-            public final com.google.protobuf.UnknownFieldSet
-            getUnknownFields() {
-                return this.unknownFields;
-            }
-
-            private Connect(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                initFields();
-                int mutable_bitField0_ = 0;
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder();
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            default: {
-                                if (!parseUnknownField(input, unknownFields,
-                                        extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                            case 10: {
-                                bitField0_ |= 0x00000001;
-                                id_ = input.readBytes();
-                                break;
-                            }
-                        }
-                    }
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(
-                            e.getMessage()).setUnfinishedMessage(this);
-                } finally {
-                    this.unknownFields = unknownFields.build();
-                    makeExtensionsImmutable();
-                }
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder.class);
-            }
-
-            public static com.google.protobuf.Parser<Connect> PARSER =
-                    new com.google.protobuf.AbstractParser<Connect>() {
-                        public Connect parsePartialFrom(
-                                com.google.protobuf.CodedInputStream input,
-                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                                throws com.google.protobuf.InvalidProtocolBufferException {
-                            return new Connect(input, extensionRegistry);
-                        }
-                    };
-
-            @java.lang.Override
-            public com.google.protobuf.Parser<Connect> getParserForType() {
-                return PARSER;
-            }
-
-            private int bitField0_;
-            // required string id = 1;
-            public static final int ID_FIELD_NUMBER = 1;
-            private java.lang.Object id_;
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            public boolean hasId() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            public java.lang.String getId() {
-                java.lang.Object ref = id_;
-                if (ref instanceof java.lang.String) {
-                    return (java.lang.String) ref;
-                } else {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        id_ = s;
-                    }
-                    return s;
-                }
-            }
-
-            /**
-             * <code>required string id = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getIdBytes() {
-                java.lang.Object ref = id_;
-                if (ref instanceof java.lang.String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    id_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            private void initFields() {
-                id_ = "";
-            }
-
-            private byte memoizedIsInitialized = -1;
-
-            public final boolean isInitialized() {
-                byte isInitialized = memoizedIsInitialized;
-                if (isInitialized != -1) return isInitialized == 1;
-
-                if (!hasId()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-                memoizedIsInitialized = 1;
-                return true;
-            }
-
-            public void writeTo(com.google.protobuf.CodedOutputStream output)
-                    throws java.io.IOException {
-                getSerializedSize();
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    output.writeBytes(1, getIdBytes());
-                }
-                getUnknownFields().writeTo(output);
-            }
-
-            private int memoizedSerializedSize = -1;
-
-            public int getSerializedSize() {
-                int size = memoizedSerializedSize;
-                if (size != -1) return size;
-
-                size = 0;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    size += com.google.protobuf.CodedOutputStream
-                            .computeBytesSize(1, getIdBytes());
-                }
-                size += getUnknownFields().getSerializedSize();
-                memoizedSerializedSize = size;
-                return size;
-            }
-
-            private static final long serialVersionUID = 0L;
-
-            @java.lang.Override
-            protected java.lang.Object writeReplace()
-                    throws java.io.ObjectStreamException {
-                return super.writeReplace();
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    com.google.protobuf.ByteString data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    com.google.protobuf.ByteString data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(byte[] data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    byte[] data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseDelimitedFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseDelimitedFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    com.google.protobuf.CodedInputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parseFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static Builder newBuilder() {
-                return Builder.create();
-            }
-
-            public Builder newBuilderForType() {
-                return newBuilder();
-            }
-
-            public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect prototype) {
-                return newBuilder().mergeFrom(prototype);
-            }
-
-            public Builder toBuilder() {
-                return newBuilder(this);
-            }
-
-            @java.lang.Override
-            protected Builder newBuilderForType(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                Builder builder = new Builder(parent);
-                return builder;
-            }
-
-            /**
-             * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request.Connect}
-             */
-            public static final class Builder extends
-                    com.google.protobuf.GeneratedMessage.Builder<Builder>
-                    implements org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder {
-                public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor;
-                }
-
-                protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_fieldAccessorTable
-                            .ensureFieldAccessorsInitialized(
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder.class);
-                }
-
-                // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.newBuilder()
-                private Builder() {
-                    maybeForceBuilderInitialization();
-                }
-
-                private Builder(
-                        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                    super(parent);
-                    maybeForceBuilderInitialization();
-                }
-
-                private void maybeForceBuilderInitialization() {
-                    if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    }
-                }
-
-                private static Builder create() {
-                    return new Builder();
-                }
-
-                public Builder clear() {
-                    super.clear();
-                    id_ = "";
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                public Builder clone() {
-                    return create().mergeFrom(buildPartial());
-                }
-
-                public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect getDefaultInstanceForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance();
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect build() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect result = buildPartial();
-                    if (!result.isInitialized()) {
-                        throw newUninitializedMessageException(result);
-                    }
-                    return result;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect buildPartial() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect result = new org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect(this);
-                    int from_bitField0_ = bitField0_;
-                    int to_bitField0_ = 0;
-                    if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                        to_bitField0_ |= 0x00000001;
-                    }
-                    result.id_ = id_;
-                    result.bitField0_ = to_bitField0_;
-                    onBuilt();
-                    return result;
-                }
-
-                public Builder mergeFrom(com.google.protobuf.Message other) {
-                    if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect) {
-                        return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect) other);
-                    } else {
-                        super.mergeFrom(other);
-                        return this;
-                    }
-                }
-
-                public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect other) {
-                    if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance())
-                        return this;
-                    if (other.hasId()) {
-                        bitField0_ |= 0x00000001;
-                        id_ = other.id_;
-                        onChanged();
-                    }
-                    this.mergeUnknownFields(other.getUnknownFields());
-                    return this;
-                }
-
-                public final boolean isInitialized() {
-                    if (!hasId()) {
-
-                        return false;
-                    }
-                    return true;
-                }
-
-                public Builder mergeFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect parsedMessage = null;
-                    try {
-                        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                        parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect) e.getUnfinishedMessage();
-                        throw e;
-                    } finally {
-                        if (parsedMessage != null) {
-                            mergeFrom(parsedMessage);
-                        }
-                    }
-                    return this;
-                }
-
-                private int bitField0_;
-
-                // required string id = 1;
-                private java.lang.Object id_ = "";
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public boolean hasId() {
-                    return ((bitField0_ & 0x00000001) == 0x00000001);
-                }
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public java.lang.String getId() {
-                    java.lang.Object ref = id_;
-                    if (!(ref instanceof java.lang.String)) {
-                        java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                                .toStringUtf8();
-                        id_ = s;
-                        return s;
-                    } else {
-                        return (java.lang.String) ref;
-                    }
-                }
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public com.google.protobuf.ByteString
-                getIdBytes() {
-                    java.lang.Object ref = id_;
-                    if (ref instanceof String) {
-                        com.google.protobuf.ByteString b =
-                                com.google.protobuf.ByteString.copyFromUtf8(
-                                        (java.lang.String) ref);
-                        id_ = b;
-                        return b;
-                    } else {
-                        return (com.google.protobuf.ByteString) ref;
-                    }
-                }
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public Builder setId(
-                        java.lang.String value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    bitField0_ |= 0x00000001;
-                    id_ = value;
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public Builder clearId() {
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    id_ = getDefaultInstance().getId();
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>required string id = 1;</code>
-                 */
-                public Builder setIdBytes(
-                        com.google.protobuf.ByteString value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    bitField0_ |= 0x00000001;
-                    id_ = value;
-                    onChanged();
-                    return this;
-                }
-
-                // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request.Connect)
-            }
-
-            static {
-                defaultInstance = new Connect(true);
-                defaultInstance.initFields();
-            }
-
-            // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request.Connect)
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder.class);
         }
 
-        private int bitField0_;
-        // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
-        public static final int TYPE_FIELD_NUMBER = 1;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Request.Type type_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-         */
-        public boolean hasType() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
         }
 
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType() {
-            return type_;
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
         }
 
-        // optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;
-        public static final int CONNECT_FIELD_NUMBER = 2;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect connect_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        public boolean hasConnect() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
+        public Builder clear() {
+          super.clear();
+          id_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
         }
 
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect getConnect() {
-            return connect_;
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
         }
 
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder getConnectOrBuilder() {
-            return connect_;
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor;
         }
 
-        private void initFields() {
-            type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.CONNECT;
-            connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance();
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance();
         }
 
-        private byte memoizedIsInitialized = -1;
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.id_ = id_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance()) return this;
+          if (other.hasId()) {
+            bitField0_ |= 0x00000001;
+            id_ = other.id_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
 
         public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+          if (!hasId()) {
+            
+            return false;
+          }
+          return true;
+        }
 
-            if (!hasType()) {
-                memoizedIsInitialized = 0;
-                return false;
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
             }
-            if (hasConnect()) {
-                if (!getConnect().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            memoizedIsInitialized = 1;
-            return true;
+          }
+          return this;
         }
+        private int bitField0_;
 
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeEnum(1, type_.getNumber());
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeMessage(2, connect_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeEnumSize(1, type_.getNumber());
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, connect_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Request parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Request prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
+        // required string id = 1;
+        private java.lang.Object id_ = "";
         /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Request}
+         * <code>required string id = 1;</code>
          */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.RequestOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
+        public boolean hasId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>required string id = 1;</code>
+         */
+        public java.lang.String getId() {
+          java.lang.Object ref = id_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
+            id_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>required string id = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getIdBytes() {
+          java.lang.Object ref = id_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            id_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string id = 1;</code>
+         */
+        public Builder setId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          id_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string id = 1;</code>
+         */
+        public Builder clearId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          id_ = getDefaultInstance().getId();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required string id = 1;</code>
+         */
+        public Builder setIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          id_ = value;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask)
+      }
+
+      static {
+        defaultInstance = new ClientReplyPostTask(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask)
+    }
+
+    public interface ClientReplyTaskResultOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
+
+      // repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> 
+          getResultBufferList();
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getResultBuffer(int index);
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      int getResultBufferCount();
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      java.util.List<? extends org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> 
+          getResultBufferOrBuilderList();
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getResultBufferOrBuilder(
+          int index);
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult}
+     */
+    public static final class ClientReplyTaskResult extends
+        com.google.protobuf.GeneratedMessage
+        implements ClientReplyTaskResultOrBuilder {
+      // Use ClientReplyTaskResult.newBuilder() to construct.
+      private ClientReplyTaskResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private ClientReplyTaskResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final ClientReplyTaskResult defaultInstance;
+      public static ClientReplyTaskResult getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public ClientReplyTaskResult getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ClientReplyTaskResult(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  resultBuffer_ = new java.util.ArrayList<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                resultBuffer_.add(input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.PARSER, extensionRegistry));
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            resultBuffer_ = java.util.Collections.unmodifiableList(resultBuffer_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<ClientReplyTaskResult> PARSER =
+          new com.google.protobuf.AbstractParser<ClientReplyTaskResult>() {
+        public ClientReplyTaskResult parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClientReplyTaskResult(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ClientReplyTaskResult> getParserForType() {
+        return PARSER;
+      }
+
+      // repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;
+      public static final int RESULT_BUFFER_FIELD_NUMBER = 1;
+      private java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> resultBuffer_;
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      public java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> getResultBufferList() {
+        return resultBuffer_;
+      }
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      public java.util.List<? extends org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> 
+          getResultBufferOrBuilderList() {
+        return resultBuffer_;
+      }
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      public int getResultBufferCount() {
+        return resultBuffer_.size();
+      }
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getResultBuffer(int index) {
+        return resultBuffer_.get(index);
+      }
+      /**
+       * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getResultBufferOrBuilder(
+          int index) {
+        return resultBuffer_.get(index);
+      }
+
+      private void initFields() {
+        resultBuffer_ = java.util.Collections.emptyList();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        for (int i = 0; i < getResultBufferCount(); i++) {
+          if (!getResultBuffer(i).isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        for (int i = 0; i < resultBuffer_.size(); i++) {
+          output.writeMessage(1, resultBuffer_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < resultBuffer_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, resultBuffer_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
-            }
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor;
+        }
 
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Request.class, org.vertexarmy.omniray.server.protocol.Protocol.Request.Builder.class);
-            }
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder.class);
+        }
 
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Request.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
 
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getResultBufferFieldBuilder();
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
 
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getConnectFieldBuilder();
-                }
-            }
+        public Builder clear() {
+          super.clear();
+          if (resultBufferBuilder_ == null) {
+            resultBuffer_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            resultBufferBuilder_.clear();
+          }
+          return this;
+        }
 
-            private static Builder create() {
-                return new Builder();
-            }
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
 
-            public Builder clear() {
-                super.clear();
-                type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.CONNECT;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                if (connectBuilder_ == null) {
-                    connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance();
-                } else {
-                    connectBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
+        public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance();
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult(this);
+          int from_bitField0_ = bitField0_;
+          if (resultBufferBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              resultBuffer_ = java.util.Collections.unmodifiableList(resultBuffer_);
+              bitField0_ = (bitField0_ & ~0x00000001);
             }
+            result.resultBuffer_ = resultBuffer_;
+          } else {
+            result.resultBuffer_ = resultBufferBuilder_.build();
+          }
+          onBuilt();
+          return result;
+        }
 
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Request.getDefaultInstance();
-            }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
 
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Request result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Request result = new org.vertexarmy.omniray.server.protocol.Protocol.Request(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.type_ = type_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                if (connectBuilder_ == null) {
-                    result.connect_ = connect_;
-                } else {
-                    result.connect_ = connectBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Request) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Request) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Request other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Request.getDefaultInstance()) return this;
-                if (other.hasType()) {
-                    setType(other.getType());
-                }
-                if (other.hasConnect()) {
-                    mergeConnect(other.getConnect());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasType()) {
-
-                    return false;
-                }
-                if (hasConnect()) {
-                    if (!getConnect().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Request parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Request) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Request.Type type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.CONNECT;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-             */
-            public boolean hasType() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request.Type getType() {
-                return type_;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-             */
-            public Builder setType(org.vertexarmy.omniray.server.protocol.Protocol.Request.Type value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                type_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Request.Type type = 1;</code>
-             */
-            public Builder clearType() {
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance()) return this;
+          if (resultBufferBuilder_ == null) {
+            if (!other.resultBuffer_.isEmpty()) {
+              if (resultBuffer_.isEmpty()) {
+                resultBuffer_ = other.resultBuffer_;
                 bitField0_ = (bitField0_ & ~0x00000001);
-                type_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Type.CONNECT;
-                onChanged();
-                return this;
+              } else {
+                ensureResultBufferIsMutable();
+                resultBuffer_.addAll(other.resultBuffer_);
+              }
+              onChanged();
             }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder> connectBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public boolean hasConnect() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
+          } else {
+            if (!other.resultBuffer_.isEmpty()) {
+              if (resultBufferBuilder_.isEmpty()) {
+                resultBufferBuilder_.dispose();
+                resultBufferBuilder_ = null;
+                resultBuffer_ = other.resultBuffer_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                resultBufferBuilder_ = 
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                     getResultBufferFieldBuilder() : null;
+              } else {
+                resultBufferBuilder_.addAllMessages(other.resultBuffer_);
+              }
             }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect getConnect() {
-                if (connectBuilder_ == null) {
-                    return connect_;
-                } else {
-                    return connectBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public Builder setConnect(org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect value) {
-                if (connectBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    connect_ = value;
-                    onChanged();
-                } else {
-                    connectBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public Builder setConnect(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder builderForValue) {
-                if (connectBuilder_ == null) {
-                    connect_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    connectBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public Builder mergeConnect(org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect value) {
-                if (connectBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            connect_ != org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance()) {
-                        connect_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.newBuilder(connect_).mergeFrom(value).buildPartial();
-                    } else {
-                        connect_ = value;
-                    }
-                    onChanged();
-                } else {
-                    connectBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public Builder clearConnect() {
-                if (connectBuilder_ == null) {
-                    connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.getDefaultInstance();
-                    onChanged();
-                } else {
-                    connectBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder getConnectBuilder() {
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return getConnectFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder getConnectOrBuilder() {
-                if (connectBuilder_ != null) {
-                    return connectBuilder_.getMessageOrBuilder();
-                } else {
-                    return connect_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Request.Connect connect = 2;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder>
-            getConnectFieldBuilder() {
-                if (connectBuilder_ == null) {
-                    connectBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Request.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Request.ConnectOrBuilder>(
-                            connect_,
-                            getParentForChildren(),
-                            isClean());
-                    connect_ = null;
-                }
-                return connectBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Request)
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
         }
 
-        static {
-            defaultInstance = new Request(true);
-            defaultInstance.initFields();
+        public final boolean isInitialized() {
+          for (int i = 0; i < getResultBufferCount(); i++) {
+            if (!getResultBuffer(i).isInitialized()) {
+              
+              return false;
+            }
+          }
+          return true;
         }
 
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Request)
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;
+        private java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> resultBuffer_ =
+          java.util.Collections.emptyList();
+        private void ensureResultBufferIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            resultBuffer_ = new java.util.ArrayList<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer>(resultBuffer_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> resultBufferBuilder_;
+
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> getResultBufferList() {
+          if (resultBufferBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(resultBuffer_);
+          } else {
+            return resultBufferBuilder_.getMessageList();
+          }
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public int getResultBufferCount() {
+          if (resultBufferBuilder_ == null) {
+            return resultBuffer_.size();
+          } else {
+            return resultBufferBuilder_.getCount();
+          }
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer getResultBuffer(int index) {
+          if (resultBufferBuilder_ == null) {
+            return resultBuffer_.get(index);
+          } else {
+            return resultBufferBuilder_.getMessage(index);
+          }
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder setResultBuffer(
+            int index, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer value) {
+          if (resultBufferBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureResultBufferIsMutable();
+            resultBuffer_.set(index, value);
+            onChanged();
+          } else {
+            resultBufferBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder setResultBuffer(
+            int index, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder builderForValue) {
+          if (resultBufferBuilder_ == null) {
+            ensureResultBufferIsMutable();
+            resultBuffer_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            resultBufferBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder addResultBuffer(org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer value) {
+          if (resultBufferBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureResultBufferIsMutable();
+            resultBuffer_.add(value);
+            onChanged();
+          } else {
+            resultBufferBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder addResultBuffer(
+            int index, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer value) {
+          if (resultBufferBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureResultBufferIsMutable();
+            resultBuffer_.add(index, value);
+            onChanged();
+          } else {
+            resultBufferBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder addResultBuffer(
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder builderForValue) {
+          if (resultBufferBuilder_ == null) {
+            ensureResultBufferIsMutable();
+            resultBuffer_.add(builderForValue.build());
+            onChanged();
+          } else {
+            resultBufferBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder addResultBuffer(
+            int index, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder builderForValue) {
+          if (resultBufferBuilder_ == null) {
+            ensureResultBufferIsMutable();
+            resultBuffer_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            resultBufferBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder addAllResultBuffer(
+            java.lang.Iterable<? extends org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer> values) {
+          if (resultBufferBuilder_ == null) {
+            ensureResultBufferIsMutable();
+            super.addAll(values, resultBuffer_);
+            onChanged();
+          } else {
+            resultBufferBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder clearResultBuffer() {
+          if (resultBufferBuilder_ == null) {
+            resultBuffer_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            resultBufferBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public Builder removeResultBuffer(int index) {
+          if (resultBufferBuilder_ == null) {
+            ensureResultBufferIsMutable();
+            resultBuffer_.remove(index);
+            onChanged();
+          } else {
+            resultBufferBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder getResultBufferBuilder(
+            int index) {
+          return getResultBufferFieldBuilder().getBuilder(index);
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder getResultBufferOrBuilder(
+            int index) {
+          if (resultBufferBuilder_ == null) {
+            return resultBuffer_.get(index);  } else {
+            return resultBufferBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public java.util.List<? extends org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> 
+             getResultBufferOrBuilderList() {
+          if (resultBufferBuilder_ != null) {
+            return resultBufferBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(resultBuffer_);
+          }
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder addResultBufferBuilder() {
+          return getResultBufferFieldBuilder().addBuilder(
+              org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder addResultBufferBuilder(
+            int index) {
+          return getResultBufferFieldBuilder().addBuilder(
+              index, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.getDefaultInstance());
+        }
+        /**
+         * <code>repeated .org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;</code>
+         */
+        public java.util.List<org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder> 
+             getResultBufferBuilderList() {
+          return getResultBufferFieldBuilder().getBuilderList();
+        }
+        private com.google.protobuf.RepeatedFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder> 
+            getResultBufferFieldBuilder() {
+          if (resultBufferBuilder_ == null) {
+            resultBufferBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+                org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer, org.vertexarmy.omniray.raytracer.Datastructures.ColorBuffer.Builder, org.vertexarmy.omniray.raytracer.Datastructures.ColorBufferOrBuilder>(
+                    resultBuffer_,
+                    ((bitField0_ & 0x00000001) == 0x00000001),
+                    getParentForChildren(),
+                    isClean());
+            resultBuffer_ = null;
+          }
+          return resultBufferBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult)
+      }
+
+      static {
+        defaultInstance = new ClientReplyTaskResult(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult)
     }
 
-    public interface ReplyOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface WorkerReplyNewTaskOrBuilder
+        extends com.google.protobuf.MessageOrBuilder {
 
-        // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
+      // optional string task_id = 1;
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      boolean hasTaskId();
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      java.lang.String getTaskId();
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getTaskIdBytes();
 
+      // optional .org.vertexarmy.omniray.raytracer.Task task = 2;
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      boolean hasTask();
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.Task getTask();
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder();
+    }
+    /**
+     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask}
+     */
+    public static final class WorkerReplyNewTask extends
+        com.google.protobuf.GeneratedMessage
+        implements WorkerReplyNewTaskOrBuilder {
+      // Use WorkerReplyNewTask.newBuilder() to construct.
+      private WorkerReplyNewTask(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private WorkerReplyNewTask(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final WorkerReplyNewTask defaultInstance;
+      public static WorkerReplyNewTask getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public WorkerReplyNewTask getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private WorkerReplyNewTask(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                taskId_ = input.readBytes();
+                break;
+              }
+              case 18: {
+                org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                  subBuilder = task_.toBuilder();
+                }
+                task_ = input.readMessage(org.vertexarmy.omniray.raytracer.Datastructures.Task.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(task_);
+                  task_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000002;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<WorkerReplyNewTask> PARSER =
+          new com.google.protobuf.AbstractParser<WorkerReplyNewTask>() {
+        public WorkerReplyNewTask parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkerReplyNewTask(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<WorkerReplyNewTask> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      // optional string task_id = 1;
+      public static final int TASK_ID_FIELD_NUMBER = 1;
+      private java.lang.Object taskId_;
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      public boolean hasTaskId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      public java.lang.String getTaskId() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            taskId_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string task_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaskIdBytes() {
+        java.lang.Object ref = taskId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taskId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      // optional .org.vertexarmy.omniray.raytracer.Task task = 2;
+      public static final int TASK_FIELD_NUMBER = 2;
+      private org.vertexarmy.omniray.raytracer.Datastructures.Task task_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      public boolean hasTask() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.Task getTask() {
+        return task_;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+       */
+      public org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder() {
+        return task_;
+      }
+
+      private void initFields() {
+        taskId_ = "";
+        task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized != -1) return isInitialized == 1;
+
+        if (hasTask()) {
+          if (!getTask().isInitialized()) {
+            memoizedIsInitialized = 0;
+            return false;
+          }
+        }
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeBytes(1, getTaskIdBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeMessage(2, task_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getTaskIdBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, task_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder>
+         implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder.class);
+        }
+
+        // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getTaskFieldBuilder();
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          taskId_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          if (taskBuilder_ == null) {
+            task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+          } else {
+            taskBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask getDefaultInstanceForType() {
+          return org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance();
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask build() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask buildPartial() {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.taskId_ = taskId_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          if (taskBuilder_ == null) {
+            result.task_ = task_;
+          } else {
+            result.task_ = taskBuilder_.build();
+          }
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask) {
+            return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask other) {
+          if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance()) return this;
+          if (other.hasTaskId()) {
+            bitField0_ |= 0x00000001;
+            taskId_ = other.taskId_;
+            onChanged();
+          }
+          if (other.hasTask()) {
+            mergeTask(other.getTask());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          if (hasTask()) {
+            if (!getTask().isInitialized()) {
+              
+              return false;
+            }
+          }
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        // optional string task_id = 1;
+        private java.lang.Object taskId_ = "";
         /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        boolean hasType();
-
+        public boolean hasTaskId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
         /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;
-
+        public java.lang.String getTaskId() {
+          java.lang.Object ref = taskId_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
+            taskId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        boolean hasConnect();
-
+        public com.google.protobuf.ByteString
+            getTaskIdBytes() {
+          java.lang.Object ref = taskId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            taskId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect getConnect();
-
+        public Builder setTaskId(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder getConnectOrBuilder();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;
-
+        public Builder clearTaskId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          taskId_ = getDefaultInstance().getTaskId();
+          onChanged();
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
+         * <code>optional string task_id = 1;</code>
          */
-        boolean hasPeerList();
+        public Builder setTaskIdBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          taskId_ = value;
+          onChanged();
+          return this;
+        }
 
+        // optional .org.vertexarmy.omniray.raytracer.Task task = 2;
+        private org.vertexarmy.omniray.raytracer.Datastructures.Task task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder> taskBuilder_;
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList getPeerList();
-
+        public boolean hasTask() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder getPeerListOrBuilder();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;
-
+        public org.vertexarmy.omniray.raytracer.Datastructures.Task getTask() {
+          if (taskBuilder_ == null) {
+            return task_;
+          } else {
+            return taskBuilder_.getMessage();
+          }
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        boolean hasNewTask();
-
+        public Builder setTask(org.vertexarmy.omniray.raytracer.Datastructures.Task value) {
+          if (taskBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            task_ = value;
+            onChanged();
+          } else {
+            taskBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask getNewTask();
-
+        public Builder setTask(
+            org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder builderForValue) {
+          if (taskBuilder_ == null) {
+            task_ = builderForValue.build();
+            onChanged();
+          } else {
+            taskBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder getNewTaskOrBuilder();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;
-
+        public Builder mergeTask(org.vertexarmy.omniray.raytracer.Datastructures.Task value) {
+          if (taskBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) == 0x00000002) &&
+                task_ != org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance()) {
+              task_ =
+                org.vertexarmy.omniray.raytracer.Datastructures.Task.newBuilder(task_).mergeFrom(value).buildPartial();
+            } else {
+              task_ = value;
+            }
+            onChanged();
+          } else {
+            taskBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        boolean hasError();
-
+        public Builder clearTask() {
+          if (taskBuilder_ == null) {
+            task_ = org.vertexarmy.omniray.raytracer.Datastructures.Task.getDefaultInstance();
+            onChanged();
+          } else {
+            taskBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error getError();
-
+        public org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder getTaskBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getTaskFieldBuilder().getBuilder();
+        }
         /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
          */
-        org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder getErrorOrBuilder();
+        public org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder getTaskOrBuilder() {
+          if (taskBuilder_ != null) {
+            return taskBuilder_.getMessageOrBuilder();
+          } else {
+            return task_;
+          }
+        }
+        /**
+         * <code>optional .org.vertexarmy.omniray.raytracer.Task task = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder> 
+            getTaskFieldBuilder() {
+          if (taskBuilder_ == null) {
+            taskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                org.vertexarmy.omniray.raytracer.Datastructures.Task, org.vertexarmy.omniray.raytracer.Datastructures.Task.Builder, org.vertexarmy.omniray.raytracer.Datastructures.TaskOrBuilder>(
+                    task_,
+                    getParentForChildren(),
+                    isClean());
+            task_ = null;
+          }
+          return taskBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask)
+      }
+
+      static {
+        defaultInstance = new WorkerReplyNewTask(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask)
     }
 
+    private int bitField0_;
+    // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type type_;
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType() {
+      return type_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;
+    public static final int CLIENT_REPLY_POST_TASK_FIELD_NUMBER = 2;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask clientReplyPostTask_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    public boolean hasClientReplyPostTask() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask getClientReplyPostTask() {
+      return clientReplyPostTask_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder getClientReplyPostTaskOrBuilder() {
+      return clientReplyPostTask_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;
+    public static final int CLIENT_REPLY_TASK_RESULT_FIELD_NUMBER = 3;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult clientReplyTaskResult_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    public boolean hasClientReplyTaskResult() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult getClientReplyTaskResult() {
+      return clientReplyTaskResult_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder getClientReplyTaskResultOrBuilder() {
+      return clientReplyTaskResult_;
+    }
+
+    // optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;
+    public static final int WORKER_REPLY_NEW_TASK_FIELD_NUMBER = 4;
+    private org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask workerReplyNewTask_;
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    public boolean hasWorkerReplyNewTask() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask getWorkerReplyNewTask() {
+      return workerReplyNewTask_;
+    }
+    /**
+     * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+     */
+    public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder getWorkerReplyNewTaskOrBuilder() {
+      return workerReplyNewTask_;
+    }
+
+    private void initFields() {
+      type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.REPLY_CONNECTION;
+      clientReplyPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance();
+      clientReplyTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance();
+      workerReplyNewTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (hasClientReplyPostTask()) {
+        if (!getClientReplyPostTask().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasClientReplyTaskResult()) {
+        if (!getClientReplyTaskResult().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasWorkerReplyNewTask()) {
+        if (!getWorkerReplyNewTask().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, clientReplyPostTask_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, clientReplyTaskResult_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, workerReplyNewTask_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, type_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, clientReplyPostTask_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, clientReplyTaskResult_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, workerReplyNewTask_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
     /**
      * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply}
      */
-    public static final class Reply extends
-            com.google.protobuf.GeneratedMessage
-            implements ReplyOrBuilder {
-        // Use Reply.newBuilder() to construct.
-        private Reply(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.vertexarmy.omniray.server.protocol.Protocol.ReplyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.vertexarmy.omniray.server.protocol.Protocol.Reply.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Builder.class);
+      }
+
+      // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getClientReplyPostTaskFieldBuilder();
+          getClientReplyTaskResultFieldBuilder();
+          getWorkerReplyNewTaskFieldBuilder();
         }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
 
-        private Reply(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      public Builder clear() {
+        super.clear();
+        type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.REPLY_CONNECTION;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (clientReplyPostTaskBuilder_ == null) {
+          clientReplyPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance();
+        } else {
+          clientReplyPostTaskBuilder_.clear();
         }
-
-        private static final Reply defaultInstance;
-
-        public static Reply getDefaultInstance() {
-            return defaultInstance;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (clientReplyTaskResultBuilder_ == null) {
+          clientReplyTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance();
+        } else {
+          clientReplyTaskResultBuilder_.clear();
         }
-
-        public Reply getDefaultInstanceForType() {
-            return defaultInstance;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (workerReplyNewTaskBuilder_ == null) {
+          workerReplyNewTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance();
+        } else {
+          workerReplyNewTaskBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
 
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
 
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
+      }
+
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply getDefaultInstanceForType() {
+        return org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDefaultInstance();
+      }
+
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply build() {
+        org.vertexarmy.omniray.server.protocol.Protocol.Reply result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
         }
+        return result;
+      }
 
-        private Reply(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type value = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                type_ = value;
-                            }
-                            break;
-                        }
-                        case 18: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                                subBuilder = connect_.toBuilder();
-                            }
-                            connect_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(connect_);
-                                connect_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000002;
-                            break;
-                        }
-                        case 26: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                                subBuilder = peerList_.toBuilder();
-                            }
-                            peerList_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(peerList_);
-                                peerList_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000004;
-                            break;
-                        }
-                        case 34: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                                subBuilder = newTask_.toBuilder();
-                            }
-                            newTask_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(newTask_);
-                                newTask_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000008;
-                            break;
-                        }
-                        case 42: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                                subBuilder = error_.toBuilder();
-                            }
-                            error_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(error_);
-                                error_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000010;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply buildPartial() {
+        org.vertexarmy.omniray.server.protocol.Protocol.Reply result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Builder.class);
+        if (clientReplyPostTaskBuilder_ == null) {
+          result.clientReplyPostTask_ = clientReplyPostTask_;
+        } else {
+          result.clientReplyPostTask_ = clientReplyPostTaskBuilder_.build();
         }
-
-        public static com.google.protobuf.Parser<Reply> PARSER =
-                new com.google.protobuf.AbstractParser<Reply>() {
-                    public Reply parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Reply(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Reply> getParserForType() {
-            return PARSER;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
-
-        /**
-         * Protobuf enum {@code org.vertexarmy.omniray.server.protocol.Reply.Type}
-         */
-        public enum Type
-                implements com.google.protobuf.ProtocolMessageEnum {
-            /**
-             * <code>CONNECT = 1;</code>
-             * <p/>
-             * <pre>
-             * meta and misc
-             * </pre>
-             */
-            CONNECT(0, 1),
-            /**
-             * <code>PEER_LIST = 2;</code>
-             */
-            PEER_LIST(1, 2),
-            /**
-             * <code>PONG = 3;</code>
-             */
-            PONG(2, 3),
-            /**
-             * <code>ERROR = 4;</code>
-             */
-            ERROR(3, 4),
-            /**
-             * <code>NEW_TASK = 5;</code>
-             * <p/>
-             * <pre>
-             * worker
-             * </pre>
-             */
-            NEW_TASK(4, 5),
-            /**
-             * <code>PROGRESS_REPORT = 6;</code>
-             */
-            PROGRESS_REPORT(5, 6),
-            /**
-             * <code>TASK_RESULT = 7;</code>
-             */
-            TASK_RESULT(6, 7),;
-
-            /**
-             * <code>CONNECT = 1;</code>
-             * <p/>
-             * <pre>
-             * meta and misc
-             * </pre>
-             */
-            public static final int CONNECT_VALUE = 1;
-            /**
-             * <code>PEER_LIST = 2;</code>
-             */
-            public static final int PEER_LIST_VALUE = 2;
-            /**
-             * <code>PONG = 3;</code>
-             */
-            public static final int PONG_VALUE = 3;
-            /**
-             * <code>ERROR = 4;</code>
-             */
-            public static final int ERROR_VALUE = 4;
-            /**
-             * <code>NEW_TASK = 5;</code>
-             * <p/>
-             * <pre>
-             * worker
-             * </pre>
-             */
-            public static final int NEW_TASK_VALUE = 5;
-            /**
-             * <code>PROGRESS_REPORT = 6;</code>
-             */
-            public static final int PROGRESS_REPORT_VALUE = 6;
-            /**
-             * <code>TASK_RESULT = 7;</code>
-             */
-            public static final int TASK_RESULT_VALUE = 7;
-
-
-            public final int getNumber() {
-                return value;
-            }
-
-            public static Type valueOf(int value) {
-                switch (value) {
-                    case 1:
-                        return CONNECT;
-                    case 2:
-                        return PEER_LIST;
-                    case 3:
-                        return PONG;
-                    case 4:
-                        return ERROR;
-                    case 5:
-                        return NEW_TASK;
-                    case 6:
-                        return PROGRESS_REPORT;
-                    case 7:
-                        return TASK_RESULT;
-                    default:
-                        return null;
-                }
-            }
-
-            public static com.google.protobuf.Internal.EnumLiteMap<Type>
-            internalGetValueMap() {
-                return internalValueMap;
-            }
-
-            private static com.google.protobuf.Internal.EnumLiteMap<Type>
-                    internalValueMap =
-                    new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-                        public Type findValueByNumber(int number) {
-                            return Type.valueOf(number);
-                        }
-                    };
-
-            public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-                return getDescriptor().getValues().get(index);
-            }
-
-            public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-                return getDescriptor();
-            }
-
-            public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDescriptor().getEnumTypes().get(0);
-            }
-
-            private static final Type[] VALUES = values();
-
-            public static Type valueOf(
-                    com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-                if (desc.getType() != getDescriptor()) {
-                    throw new java.lang.IllegalArgumentException(
-                            "EnumValueDescriptor is not for this type.");
-                }
-                return VALUES[desc.getIndex()];
-            }
-
-            private final int index;
-            private final int value;
-
-            private Type(int index, int value) {
-                this.index = index;
-                this.value = value;
-            }
-
-            // @@protoc_insertion_point(enum_scope:org.vertexarmy.omniray.server.protocol.Reply.Type)
+        if (clientReplyTaskResultBuilder_ == null) {
+          result.clientReplyTaskResult_ = clientReplyTaskResult_;
+        } else {
+          result.clientReplyTaskResult_ = clientReplyTaskResultBuilder_.build();
         }
-
-        public interface ConnectOrBuilder
-                extends com.google.protobuf.MessageOrBuilder {
-
-            // required bool accepted = 1;
-
-            /**
-             * <code>required bool accepted = 1;</code>
-             */
-            boolean hasAccepted();
-
-            /**
-             * <code>required bool accepted = 1;</code>
-             */
-            boolean getAccepted();
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
         }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.Connect}
-         */
-        public static final class Connect extends
-                com.google.protobuf.GeneratedMessage
-                implements ConnectOrBuilder {
-            // Use Connect.newBuilder() to construct.
-            private Connect(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-                super(builder);
-                this.unknownFields = builder.getUnknownFields();
-            }
-
-            private Connect(boolean noInit) {
-                this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-            }
-
-            private static final Connect defaultInstance;
-
-            public static Connect getDefaultInstance() {
-                return defaultInstance;
-            }
-
-            public Connect getDefaultInstanceForType() {
-                return defaultInstance;
-            }
-
-            private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-            @java.lang.Override
-            public final com.google.protobuf.UnknownFieldSet
-            getUnknownFields() {
-                return this.unknownFields;
-            }
-
-            private Connect(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                initFields();
-                int mutable_bitField0_ = 0;
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder();
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            default: {
-                                if (!parseUnknownField(input, unknownFields,
-                                        extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                            case 8: {
-                                bitField0_ |= 0x00000001;
-                                accepted_ = input.readBool();
-                                break;
-                            }
-                        }
-                    }
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(
-                            e.getMessage()).setUnfinishedMessage(this);
-                } finally {
-                    this.unknownFields = unknownFields.build();
-                    makeExtensionsImmutable();
-                }
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder.class);
-            }
-
-            public static com.google.protobuf.Parser<Connect> PARSER =
-                    new com.google.protobuf.AbstractParser<Connect>() {
-                        public Connect parsePartialFrom(
-                                com.google.protobuf.CodedInputStream input,
-                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                                throws com.google.protobuf.InvalidProtocolBufferException {
-                            return new Connect(input, extensionRegistry);
-                        }
-                    };
-
-            @java.lang.Override
-            public com.google.protobuf.Parser<Connect> getParserForType() {
-                return PARSER;
-            }
-
-            private int bitField0_;
-            // required bool accepted = 1;
-            public static final int ACCEPTED_FIELD_NUMBER = 1;
-            private boolean accepted_;
-
-            /**
-             * <code>required bool accepted = 1;</code>
-             */
-            public boolean hasAccepted() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required bool accepted = 1;</code>
-             */
-            public boolean getAccepted() {
-                return accepted_;
-            }
-
-            private void initFields() {
-                accepted_ = false;
-            }
-
-            private byte memoizedIsInitialized = -1;
-
-            public final boolean isInitialized() {
-                byte isInitialized = memoizedIsInitialized;
-                if (isInitialized != -1) return isInitialized == 1;
-
-                if (!hasAccepted()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-                memoizedIsInitialized = 1;
-                return true;
-            }
-
-            public void writeTo(com.google.protobuf.CodedOutputStream output)
-                    throws java.io.IOException {
-                getSerializedSize();
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    output.writeBool(1, accepted_);
-                }
-                getUnknownFields().writeTo(output);
-            }
-
-            private int memoizedSerializedSize = -1;
-
-            public int getSerializedSize() {
-                int size = memoizedSerializedSize;
-                if (size != -1) return size;
-
-                size = 0;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    size += com.google.protobuf.CodedOutputStream
-                            .computeBoolSize(1, accepted_);
-                }
-                size += getUnknownFields().getSerializedSize();
-                memoizedSerializedSize = size;
-                return size;
-            }
-
-            private static final long serialVersionUID = 0L;
-
-            @java.lang.Override
-            protected java.lang.Object writeReplace()
-                    throws java.io.ObjectStreamException {
-                return super.writeReplace();
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    com.google.protobuf.ByteString data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    com.google.protobuf.ByteString data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(byte[] data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    byte[] data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseDelimitedFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseDelimitedFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    com.google.protobuf.CodedInputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parseFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static Builder newBuilder() {
-                return Builder.create();
-            }
-
-            public Builder newBuilderForType() {
-                return newBuilder();
-            }
-
-            public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect prototype) {
-                return newBuilder().mergeFrom(prototype);
-            }
-
-            public Builder toBuilder() {
-                return newBuilder(this);
-            }
-
-            @java.lang.Override
-            protected Builder newBuilderForType(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                Builder builder = new Builder(parent);
-                return builder;
-            }
-
-            /**
-             * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.Connect}
-             */
-            public static final class Builder extends
-                    com.google.protobuf.GeneratedMessage.Builder<Builder>
-                    implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder {
-                public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor;
-                }
-
-                protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_fieldAccessorTable
-                            .ensureFieldAccessorsInitialized(
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder.class);
-                }
-
-                // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.newBuilder()
-                private Builder() {
-                    maybeForceBuilderInitialization();
-                }
-
-                private Builder(
-                        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                    super(parent);
-                    maybeForceBuilderInitialization();
-                }
-
-                private void maybeForceBuilderInitialization() {
-                    if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    }
-                }
-
-                private static Builder create() {
-                    return new Builder();
-                }
-
-                public Builder clear() {
-                    super.clear();
-                    accepted_ = false;
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                public Builder clone() {
-                    return create().mergeFrom(buildPartial());
-                }
-
-                public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect getDefaultInstanceForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance();
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect build() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect result = buildPartial();
-                    if (!result.isInitialized()) {
-                        throw newUninitializedMessageException(result);
-                    }
-                    return result;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect buildPartial() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect(this);
-                    int from_bitField0_ = bitField0_;
-                    int to_bitField0_ = 0;
-                    if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                        to_bitField0_ |= 0x00000001;
-                    }
-                    result.accepted_ = accepted_;
-                    result.bitField0_ = to_bitField0_;
-                    onBuilt();
-                    return result;
-                }
-
-                public Builder mergeFrom(com.google.protobuf.Message other) {
-                    if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect) {
-                        return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect) other);
-                    } else {
-                        super.mergeFrom(other);
-                        return this;
-                    }
-                }
-
-                public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect other) {
-                    if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance())
-                        return this;
-                    if (other.hasAccepted()) {
-                        setAccepted(other.getAccepted());
-                    }
-                    this.mergeUnknownFields(other.getUnknownFields());
-                    return this;
-                }
-
-                public final boolean isInitialized() {
-                    if (!hasAccepted()) {
-
-                        return false;
-                    }
-                    return true;
-                }
-
-                public Builder mergeFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect parsedMessage = null;
-                    try {
-                        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                        parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect) e.getUnfinishedMessage();
-                        throw e;
-                    } finally {
-                        if (parsedMessage != null) {
-                            mergeFrom(parsedMessage);
-                        }
-                    }
-                    return this;
-                }
-
-                private int bitField0_;
-
-                // required bool accepted = 1;
-                private boolean accepted_;
-
-                /**
-                 * <code>required bool accepted = 1;</code>
-                 */
-                public boolean hasAccepted() {
-                    return ((bitField0_ & 0x00000001) == 0x00000001);
-                }
-
-                /**
-                 * <code>required bool accepted = 1;</code>
-                 */
-                public boolean getAccepted() {
-                    return accepted_;
-                }
-
-                /**
-                 * <code>required bool accepted = 1;</code>
-                 */
-                public Builder setAccepted(boolean value) {
-                    bitField0_ |= 0x00000001;
-                    accepted_ = value;
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>required bool accepted = 1;</code>
-                 */
-                public Builder clearAccepted() {
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    accepted_ = false;
-                    onChanged();
-                    return this;
-                }
-
-                // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.Connect)
-            }
-
-            static {
-                defaultInstance = new Connect(true);
-                defaultInstance.initFields();
-            }
-
-            // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.Connect)
+        if (workerReplyNewTaskBuilder_ == null) {
+          result.workerReplyNewTask_ = workerReplyNewTask_;
+        } else {
+          result.workerReplyNewTask_ = workerReplyNewTaskBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
 
-        public interface PeerListOrBuilder
-                extends com.google.protobuf.MessageOrBuilder {
-
-            // repeated string peers = 1;
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            java.util.List<java.lang.String>
-            getPeersList();
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            int getPeersCount();
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            java.lang.String getPeers(int index);
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            com.google.protobuf.ByteString
-            getPeersBytes(int index);
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply) {
+          return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
         }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.PeerList}
-         */
-        public static final class PeerList extends
-                com.google.protobuf.GeneratedMessage
-                implements PeerListOrBuilder {
-            // Use PeerList.newBuilder() to construct.
-            private PeerList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-                super(builder);
-                this.unknownFields = builder.getUnknownFields();
-            }
-
-            private PeerList(boolean noInit) {
-                this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-            }
-
-            private static final PeerList defaultInstance;
-
-            public static PeerList getDefaultInstance() {
-                return defaultInstance;
-            }
-
-            public PeerList getDefaultInstanceForType() {
-                return defaultInstance;
-            }
-
-            private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-            @java.lang.Override
-            public final com.google.protobuf.UnknownFieldSet
-            getUnknownFields() {
-                return this.unknownFields;
-            }
-
-            private PeerList(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                initFields();
-                int mutable_bitField0_ = 0;
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder();
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            default: {
-                                if (!parseUnknownField(input, unknownFields,
-                                        extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                            case 10: {
-                                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                                    peers_ = new com.google.protobuf.LazyStringArrayList();
-                                    mutable_bitField0_ |= 0x00000001;
-                                }
-                                peers_.add(input.readBytes());
-                                break;
-                            }
-                        }
-                    }
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(
-                            e.getMessage()).setUnfinishedMessage(this);
-                } finally {
-                    if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                        peers_ = new com.google.protobuf.UnmodifiableLazyStringList(peers_);
-                    }
-                    this.unknownFields = unknownFields.build();
-                    makeExtensionsImmutable();
-                }
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder.class);
-            }
-
-            public static com.google.protobuf.Parser<PeerList> PARSER =
-                    new com.google.protobuf.AbstractParser<PeerList>() {
-                        public PeerList parsePartialFrom(
-                                com.google.protobuf.CodedInputStream input,
-                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                                throws com.google.protobuf.InvalidProtocolBufferException {
-                            return new PeerList(input, extensionRegistry);
-                        }
-                    };
-
-            @java.lang.Override
-            public com.google.protobuf.Parser<PeerList> getParserForType() {
-                return PARSER;
-            }
-
-            // repeated string peers = 1;
-            public static final int PEERS_FIELD_NUMBER = 1;
-            private com.google.protobuf.LazyStringList peers_;
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            public java.util.List<java.lang.String>
-            getPeersList() {
-                return peers_;
-            }
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            public int getPeersCount() {
-                return peers_.size();
-            }
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            public java.lang.String getPeers(int index) {
-                return peers_.get(index);
-            }
-
-            /**
-             * <code>repeated string peers = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getPeersBytes(int index) {
-                return peers_.getByteString(index);
-            }
-
-            private void initFields() {
-                peers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            }
-
-            private byte memoizedIsInitialized = -1;
-
-            public final boolean isInitialized() {
-                byte isInitialized = memoizedIsInitialized;
-                if (isInitialized != -1) return isInitialized == 1;
-
-                memoizedIsInitialized = 1;
-                return true;
-            }
-
-            public void writeTo(com.google.protobuf.CodedOutputStream output)
-                    throws java.io.IOException {
-                getSerializedSize();
-                for (int i = 0; i < peers_.size(); i++) {
-                    output.writeBytes(1, peers_.getByteString(i));
-                }
-                getUnknownFields().writeTo(output);
-            }
-
-            private int memoizedSerializedSize = -1;
-
-            public int getSerializedSize() {
-                int size = memoizedSerializedSize;
-                if (size != -1) return size;
-
-                size = 0;
-                {
-                    int dataSize = 0;
-                    for (int i = 0; i < peers_.size(); i++) {
-                        dataSize += com.google.protobuf.CodedOutputStream
-                                .computeBytesSizeNoTag(peers_.getByteString(i));
-                    }
-                    size += dataSize;
-                    size += 1 * getPeersList().size();
-                }
-                size += getUnknownFields().getSerializedSize();
-                memoizedSerializedSize = size;
-                return size;
-            }
-
-            private static final long serialVersionUID = 0L;
-
-            @java.lang.Override
-            protected java.lang.Object writeReplace()
-                    throws java.io.ObjectStreamException {
-                return super.writeReplace();
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    com.google.protobuf.ByteString data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    com.google.protobuf.ByteString data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(byte[] data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    byte[] data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseDelimitedFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseDelimitedFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    com.google.protobuf.CodedInputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parseFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static Builder newBuilder() {
-                return Builder.create();
-            }
-
-            public Builder newBuilderForType() {
-                return newBuilder();
-            }
-
-            public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList prototype) {
-                return newBuilder().mergeFrom(prototype);
-            }
-
-            public Builder toBuilder() {
-                return newBuilder(this);
-            }
-
-            @java.lang.Override
-            protected Builder newBuilderForType(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                Builder builder = new Builder(parent);
-                return builder;
-            }
-
-            /**
-             * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.PeerList}
-             */
-            public static final class Builder extends
-                    com.google.protobuf.GeneratedMessage.Builder<Builder>
-                    implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder {
-                public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor;
-                }
-
-                protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_fieldAccessorTable
-                            .ensureFieldAccessorsInitialized(
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder.class);
-                }
-
-                // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.newBuilder()
-                private Builder() {
-                    maybeForceBuilderInitialization();
-                }
-
-                private Builder(
-                        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                    super(parent);
-                    maybeForceBuilderInitialization();
-                }
-
-                private void maybeForceBuilderInitialization() {
-                    if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    }
-                }
-
-                private static Builder create() {
-                    return new Builder();
-                }
-
-                public Builder clear() {
-                    super.clear();
-                    peers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                public Builder clone() {
-                    return create().mergeFrom(buildPartial());
-                }
-
-                public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList getDefaultInstanceForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance();
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList build() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList result = buildPartial();
-                    if (!result.isInitialized()) {
-                        throw newUninitializedMessageException(result);
-                    }
-                    return result;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList buildPartial() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList(this);
-                    int from_bitField0_ = bitField0_;
-                    if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                        peers_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                                peers_);
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    }
-                    result.peers_ = peers_;
-                    onBuilt();
-                    return result;
-                }
-
-                public Builder mergeFrom(com.google.protobuf.Message other) {
-                    if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList) {
-                        return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList) other);
-                    } else {
-                        super.mergeFrom(other);
-                        return this;
-                    }
-                }
-
-                public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList other) {
-                    if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance())
-                        return this;
-                    if (!other.peers_.isEmpty()) {
-                        if (peers_.isEmpty()) {
-                            peers_ = other.peers_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                        } else {
-                            ensurePeersIsMutable();
-                            peers_.addAll(other.peers_);
-                        }
-                        onChanged();
-                    }
-                    this.mergeUnknownFields(other.getUnknownFields());
-                    return this;
-                }
-
-                public final boolean isInitialized() {
-                    return true;
-                }
-
-                public Builder mergeFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList parsedMessage = null;
-                    try {
-                        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                        parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList) e.getUnfinishedMessage();
-                        throw e;
-                    } finally {
-                        if (parsedMessage != null) {
-                            mergeFrom(parsedMessage);
-                        }
-                    }
-                    return this;
-                }
-
-                private int bitField0_;
-
-                // repeated string peers = 1;
-                private com.google.protobuf.LazyStringList peers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-
-                private void ensurePeersIsMutable() {
-                    if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-                        peers_ = new com.google.protobuf.LazyStringArrayList(peers_);
-                        bitField0_ |= 0x00000001;
-                    }
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public java.util.List<java.lang.String>
-                getPeersList() {
-                    return java.util.Collections.unmodifiableList(peers_);
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public int getPeersCount() {
-                    return peers_.size();
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public java.lang.String getPeers(int index) {
-                    return peers_.get(index);
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public com.google.protobuf.ByteString
-                getPeersBytes(int index) {
-                    return peers_.getByteString(index);
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public Builder setPeers(
-                        int index, java.lang.String value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePeersIsMutable();
-                    peers_.set(index, value);
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public Builder addPeers(
-                        java.lang.String value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePeersIsMutable();
-                    peers_.add(value);
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public Builder addAllPeers(
-                        java.lang.Iterable<java.lang.String> values) {
-                    ensurePeersIsMutable();
-                    super.addAll(values, peers_);
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public Builder clearPeers() {
-                    peers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>repeated string peers = 1;</code>
-                 */
-                public Builder addPeersBytes(
-                        com.google.protobuf.ByteString value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensurePeersIsMutable();
-                    peers_.add(value);
-                    onChanged();
-                    return this;
-                }
-
-                // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.PeerList)
-            }
-
-            static {
-                defaultInstance = new PeerList(true);
-                defaultInstance.initFields();
-            }
-
-            // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.PeerList)
+      }
+
+      public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply other) {
+        if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDefaultInstance()) return this;
+        if (other.hasType()) {
+          setType(other.getType());
         }
-
-        public interface NewTaskOrBuilder
-                extends com.google.protobuf.MessageOrBuilder {
-
-            // required .org.vertexarmy.omniray.server.protocol.Task task = 1;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            boolean hasTask();
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            org.vertexarmy.omniray.server.protocol.Protocol.Task getTask();
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder getTaskOrBuilder();
+        if (other.hasClientReplyPostTask()) {
+          mergeClientReplyPostTask(other.getClientReplyPostTask());
         }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.NewTask}
-         */
-        public static final class NewTask extends
-                com.google.protobuf.GeneratedMessage
-                implements NewTaskOrBuilder {
-            // Use NewTask.newBuilder() to construct.
-            private NewTask(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-                super(builder);
-                this.unknownFields = builder.getUnknownFields();
-            }
-
-            private NewTask(boolean noInit) {
-                this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-            }
-
-            private static final NewTask defaultInstance;
-
-            public static NewTask getDefaultInstance() {
-                return defaultInstance;
-            }
-
-            public NewTask getDefaultInstanceForType() {
-                return defaultInstance;
-            }
-
-            private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-            @java.lang.Override
-            public final com.google.protobuf.UnknownFieldSet
-            getUnknownFields() {
-                return this.unknownFields;
-            }
-
-            private NewTask(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                initFields();
-                int mutable_bitField0_ = 0;
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder();
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            default: {
-                                if (!parseUnknownField(input, unknownFields,
-                                        extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                            case 10: {
-                                org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder subBuilder = null;
-                                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                                    subBuilder = task_.toBuilder();
-                                }
-                                task_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Task.PARSER, extensionRegistry);
-                                if (subBuilder != null) {
-                                    subBuilder.mergeFrom(task_);
-                                    task_ = subBuilder.buildPartial();
-                                }
-                                bitField0_ |= 0x00000001;
-                                break;
-                            }
-                        }
-                    }
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(
-                            e.getMessage()).setUnfinishedMessage(this);
-                } finally {
-                    this.unknownFields = unknownFields.build();
-                    makeExtensionsImmutable();
-                }
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder.class);
-            }
-
-            public static com.google.protobuf.Parser<NewTask> PARSER =
-                    new com.google.protobuf.AbstractParser<NewTask>() {
-                        public NewTask parsePartialFrom(
-                                com.google.protobuf.CodedInputStream input,
-                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                                throws com.google.protobuf.InvalidProtocolBufferException {
-                            return new NewTask(input, extensionRegistry);
-                        }
-                    };
-
-            @java.lang.Override
-            public com.google.protobuf.Parser<NewTask> getParserForType() {
-                return PARSER;
-            }
-
-            private int bitField0_;
-            // required .org.vertexarmy.omniray.server.protocol.Task task = 1;
-            public static final int TASK_FIELD_NUMBER = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Task task_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            public boolean hasTask() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Task getTask() {
-                return task_;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder getTaskOrBuilder() {
-                return task_;
-            }
-
-            private void initFields() {
-                task_ = org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance();
-            }
-
-            private byte memoizedIsInitialized = -1;
-
-            public final boolean isInitialized() {
-                byte isInitialized = memoizedIsInitialized;
-                if (isInitialized != -1) return isInitialized == 1;
-
-                if (!hasTask()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-                if (!getTask().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-                memoizedIsInitialized = 1;
-                return true;
-            }
-
-            public void writeTo(com.google.protobuf.CodedOutputStream output)
-                    throws java.io.IOException {
-                getSerializedSize();
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    output.writeMessage(1, task_);
-                }
-                getUnknownFields().writeTo(output);
-            }
-
-            private int memoizedSerializedSize = -1;
-
-            public int getSerializedSize() {
-                int size = memoizedSerializedSize;
-                if (size != -1) return size;
-
-                size = 0;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    size += com.google.protobuf.CodedOutputStream
-                            .computeMessageSize(1, task_);
-                }
-                size += getUnknownFields().getSerializedSize();
-                memoizedSerializedSize = size;
-                return size;
-            }
-
-            private static final long serialVersionUID = 0L;
-
-            @java.lang.Override
-            protected java.lang.Object writeReplace()
-                    throws java.io.ObjectStreamException {
-                return super.writeReplace();
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    com.google.protobuf.ByteString data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    com.google.protobuf.ByteString data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(byte[] data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    byte[] data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseDelimitedFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseDelimitedFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    com.google.protobuf.CodedInputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parseFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static Builder newBuilder() {
-                return Builder.create();
-            }
-
-            public Builder newBuilderForType() {
-                return newBuilder();
-            }
-
-            public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask prototype) {
-                return newBuilder().mergeFrom(prototype);
-            }
-
-            public Builder toBuilder() {
-                return newBuilder(this);
-            }
-
-            @java.lang.Override
-            protected Builder newBuilderForType(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                Builder builder = new Builder(parent);
-                return builder;
-            }
-
-            /**
-             * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.NewTask}
-             */
-            public static final class Builder extends
-                    com.google.protobuf.GeneratedMessage.Builder<Builder>
-                    implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder {
-                public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor;
-                }
-
-                protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_fieldAccessorTable
-                            .ensureFieldAccessorsInitialized(
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder.class);
-                }
-
-                // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.newBuilder()
-                private Builder() {
-                    maybeForceBuilderInitialization();
-                }
-
-                private Builder(
-                        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                    super(parent);
-                    maybeForceBuilderInitialization();
-                }
-
-                private void maybeForceBuilderInitialization() {
-                    if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                        getTaskFieldBuilder();
-                    }
-                }
-
-                private static Builder create() {
-                    return new Builder();
-                }
-
-                public Builder clear() {
-                    super.clear();
-                    if (taskBuilder_ == null) {
-                        task_ = org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance();
-                    } else {
-                        taskBuilder_.clear();
-                    }
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                public Builder clone() {
-                    return create().mergeFrom(buildPartial());
-                }
-
-                public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask getDefaultInstanceForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance();
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask build() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask result = buildPartial();
-                    if (!result.isInitialized()) {
-                        throw newUninitializedMessageException(result);
-                    }
-                    return result;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask buildPartial() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask(this);
-                    int from_bitField0_ = bitField0_;
-                    int to_bitField0_ = 0;
-                    if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                        to_bitField0_ |= 0x00000001;
-                    }
-                    if (taskBuilder_ == null) {
-                        result.task_ = task_;
-                    } else {
-                        result.task_ = taskBuilder_.build();
-                    }
-                    result.bitField0_ = to_bitField0_;
-                    onBuilt();
-                    return result;
-                }
-
-                public Builder mergeFrom(com.google.protobuf.Message other) {
-                    if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask) {
-                        return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask) other);
-                    } else {
-                        super.mergeFrom(other);
-                        return this;
-                    }
-                }
-
-                public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask other) {
-                    if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance())
-                        return this;
-                    if (other.hasTask()) {
-                        mergeTask(other.getTask());
-                    }
-                    this.mergeUnknownFields(other.getUnknownFields());
-                    return this;
-                }
-
-                public final boolean isInitialized() {
-                    if (!hasTask()) {
-
-                        return false;
-                    }
-                    if (!getTask().isInitialized()) {
-
-                        return false;
-                    }
-                    return true;
-                }
-
-                public Builder mergeFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask parsedMessage = null;
-                    try {
-                        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                        parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask) e.getUnfinishedMessage();
-                        throw e;
-                    } finally {
-                        if (parsedMessage != null) {
-                            mergeFrom(parsedMessage);
-                        }
-                    }
-                    return this;
-                }
-
-                private int bitField0_;
-
-                // required .org.vertexarmy.omniray.server.protocol.Task task = 1;
-                private org.vertexarmy.omniray.server.protocol.Protocol.Task task_ = org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance();
-                private com.google.protobuf.SingleFieldBuilder<
-                        org.vertexarmy.omniray.server.protocol.Protocol.Task, org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder, org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder> taskBuilder_;
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public boolean hasTask() {
-                    return ((bitField0_ & 0x00000001) == 0x00000001);
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public org.vertexarmy.omniray.server.protocol.Protocol.Task getTask() {
-                    if (taskBuilder_ == null) {
-                        return task_;
-                    } else {
-                        return taskBuilder_.getMessage();
-                    }
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public Builder setTask(org.vertexarmy.omniray.server.protocol.Protocol.Task value) {
-                    if (taskBuilder_ == null) {
-                        if (value == null) {
-                            throw new NullPointerException();
-                        }
-                        task_ = value;
-                        onChanged();
-                    } else {
-                        taskBuilder_.setMessage(value);
-                    }
-                    bitField0_ |= 0x00000001;
-                    return this;
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public Builder setTask(
-                        org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder builderForValue) {
-                    if (taskBuilder_ == null) {
-                        task_ = builderForValue.build();
-                        onChanged();
-                    } else {
-                        taskBuilder_.setMessage(builderForValue.build());
-                    }
-                    bitField0_ |= 0x00000001;
-                    return this;
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public Builder mergeTask(org.vertexarmy.omniray.server.protocol.Protocol.Task value) {
-                    if (taskBuilder_ == null) {
-                        if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                                task_ != org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance()) {
-                            task_ =
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Task.newBuilder(task_).mergeFrom(value).buildPartial();
-                        } else {
-                            task_ = value;
-                        }
-                        onChanged();
-                    } else {
-                        taskBuilder_.mergeFrom(value);
-                    }
-                    bitField0_ |= 0x00000001;
-                    return this;
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public Builder clearTask() {
-                    if (taskBuilder_ == null) {
-                        task_ = org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance();
-                        onChanged();
-                    } else {
-                        taskBuilder_.clear();
-                    }
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder getTaskBuilder() {
-                    bitField0_ |= 0x00000001;
-                    onChanged();
-                    return getTaskFieldBuilder().getBuilder();
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                public org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder getTaskOrBuilder() {
-                    if (taskBuilder_ != null) {
-                        return taskBuilder_.getMessageOrBuilder();
-                    } else {
-                        return task_;
-                    }
-                }
-
-                /**
-                 * <code>required .org.vertexarmy.omniray.server.protocol.Task task = 1;</code>
-                 */
-                private com.google.protobuf.SingleFieldBuilder<
-                        org.vertexarmy.omniray.server.protocol.Protocol.Task, org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder, org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder>
-                getTaskFieldBuilder() {
-                    if (taskBuilder_ == null) {
-                        taskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                                org.vertexarmy.omniray.server.protocol.Protocol.Task, org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder, org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder>(
-                                task_,
-                                getParentForChildren(),
-                                isClean());
-                        task_ = null;
-                    }
-                    return taskBuilder_;
-                }
-
-                // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.NewTask)
-            }
-
-            static {
-                defaultInstance = new NewTask(true);
-                defaultInstance.initFields();
-            }
-
-            // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.NewTask)
+        if (other.hasClientReplyTaskResult()) {
+          mergeClientReplyTaskResult(other.getClientReplyTaskResult());
         }
-
-        public interface ErrorOrBuilder
-                extends com.google.protobuf.MessageOrBuilder {
-
-            // required string message = 1;
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            boolean hasMessage();
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            java.lang.String getMessage();
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            com.google.protobuf.ByteString
-            getMessageBytes();
+        if (other.hasWorkerReplyNewTask()) {
+          mergeWorkerReplyNewTask(other.getWorkerReplyNewTask());
         }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.Error}
-         */
-        public static final class Error extends
-                com.google.protobuf.GeneratedMessage
-                implements ErrorOrBuilder {
-            // Use Error.newBuilder() to construct.
-            private Error(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-                super(builder);
-                this.unknownFields = builder.getUnknownFields();
-            }
-
-            private Error(boolean noInit) {
-                this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-            }
-
-            private static final Error defaultInstance;
-
-            public static Error getDefaultInstance() {
-                return defaultInstance;
-            }
-
-            public Error getDefaultInstanceForType() {
-                return defaultInstance;
-            }
-
-            private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-            @java.lang.Override
-            public final com.google.protobuf.UnknownFieldSet
-            getUnknownFields() {
-                return this.unknownFields;
-            }
-
-            private Error(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                initFields();
-                int mutable_bitField0_ = 0;
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder();
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            default: {
-                                if (!parseUnknownField(input, unknownFields,
-                                        extensionRegistry, tag)) {
-                                    done = true;
-                                }
-                                break;
-                            }
-                            case 10: {
-                                bitField0_ |= 0x00000001;
-                                message_ = input.readBytes();
-                                break;
-                            }
-                        }
-                    }
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(
-                            e.getMessage()).setUnfinishedMessage(this);
-                } finally {
-                    this.unknownFields = unknownFields.build();
-                    makeExtensionsImmutable();
-                }
-            }
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder.class);
-            }
-
-            public static com.google.protobuf.Parser<Error> PARSER =
-                    new com.google.protobuf.AbstractParser<Error>() {
-                        public Error parsePartialFrom(
-                                com.google.protobuf.CodedInputStream input,
-                                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                                throws com.google.protobuf.InvalidProtocolBufferException {
-                            return new Error(input, extensionRegistry);
-                        }
-                    };
-
-            @java.lang.Override
-            public com.google.protobuf.Parser<Error> getParserForType() {
-                return PARSER;
-            }
-
-            private int bitField0_;
-            // required string message = 1;
-            public static final int MESSAGE_FIELD_NUMBER = 1;
-            private java.lang.Object message_;
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            public boolean hasMessage() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            public java.lang.String getMessage() {
-                java.lang.Object ref = message_;
-                if (ref instanceof java.lang.String) {
-                    return (java.lang.String) ref;
-                } else {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    if (bs.isValidUtf8()) {
-                        message_ = s;
-                    }
-                    return s;
-                }
-            }
-
-            /**
-             * <code>required string message = 1;</code>
-             */
-            public com.google.protobuf.ByteString
-            getMessageBytes() {
-                java.lang.Object ref = message_;
-                if (ref instanceof java.lang.String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    message_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            private void initFields() {
-                message_ = "";
-            }
-
-            private byte memoizedIsInitialized = -1;
-
-            public final boolean isInitialized() {
-                byte isInitialized = memoizedIsInitialized;
-                if (isInitialized != -1) return isInitialized == 1;
-
-                if (!hasMessage()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-                memoizedIsInitialized = 1;
-                return true;
-            }
-
-            public void writeTo(com.google.protobuf.CodedOutputStream output)
-                    throws java.io.IOException {
-                getSerializedSize();
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    output.writeBytes(1, getMessageBytes());
-                }
-                getUnknownFields().writeTo(output);
-            }
-
-            private int memoizedSerializedSize = -1;
-
-            public int getSerializedSize() {
-                int size = memoizedSerializedSize;
-                if (size != -1) return size;
-
-                size = 0;
-                if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                    size += com.google.protobuf.CodedOutputStream
-                            .computeBytesSize(1, getMessageBytes());
-                }
-                size += getUnknownFields().getSerializedSize();
-                memoizedSerializedSize = size;
-                return size;
-            }
-
-            private static final long serialVersionUID = 0L;
-
-            @java.lang.Override
-            protected java.lang.Object writeReplace()
-                    throws java.io.ObjectStreamException {
-                return super.writeReplace();
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    com.google.protobuf.ByteString data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    com.google.protobuf.ByteString data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(byte[] data)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    byte[] data,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                return PARSER.parseFrom(data, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseDelimitedFrom(java.io.InputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseDelimitedFrom(
-                    java.io.InputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseDelimitedFrom(input, extensionRegistry);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    com.google.protobuf.CodedInputStream input)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input);
-            }
-
-            public static org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parseFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                return PARSER.parseFrom(input, extensionRegistry);
-            }
-
-            public static Builder newBuilder() {
-                return Builder.create();
-            }
-
-            public Builder newBuilderForType() {
-                return newBuilder();
-            }
-
-            public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error prototype) {
-                return newBuilder().mergeFrom(prototype);
-            }
-
-            public Builder toBuilder() {
-                return newBuilder(this);
-            }
-
-            @java.lang.Override
-            protected Builder newBuilderForType(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                Builder builder = new Builder(parent);
-                return builder;
-            }
-
-            /**
-             * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply.Error}
-             */
-            public static final class Builder extends
-                    com.google.protobuf.GeneratedMessage.Builder<Builder>
-                    implements org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder {
-                public static final com.google.protobuf.Descriptors.Descriptor
-                getDescriptor() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor;
-                }
-
-                protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-                internalGetFieldAccessorTable() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_fieldAccessorTable
-                            .ensureFieldAccessorsInitialized(
-                                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder.class);
-                }
-
-                // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.newBuilder()
-                private Builder() {
-                    maybeForceBuilderInitialization();
-                }
-
-                private Builder(
-                        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                    super(parent);
-                    maybeForceBuilderInitialization();
-                }
-
-                private void maybeForceBuilderInitialization() {
-                    if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    }
-                }
-
-                private static Builder create() {
-                    return new Builder();
-                }
-
-                public Builder clear() {
-                    super.clear();
-                    message_ = "";
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    return this;
-                }
-
-                public Builder clone() {
-                    return create().mergeFrom(buildPartial());
-                }
-
-                public com.google.protobuf.Descriptors.Descriptor
-                getDescriptorForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error getDefaultInstanceForType() {
-                    return org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance();
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error build() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error result = buildPartial();
-                    if (!result.isInitialized()) {
-                        throw newUninitializedMessageException(result);
-                    }
-                    return result;
-                }
-
-                public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error buildPartial() {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error(this);
-                    int from_bitField0_ = bitField0_;
-                    int to_bitField0_ = 0;
-                    if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                        to_bitField0_ |= 0x00000001;
-                    }
-                    result.message_ = message_;
-                    result.bitField0_ = to_bitField0_;
-                    onBuilt();
-                    return result;
-                }
-
-                public Builder mergeFrom(com.google.protobuf.Message other) {
-                    if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error) {
-                        return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error) other);
-                    } else {
-                        super.mergeFrom(other);
-                        return this;
-                    }
-                }
-
-                public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error other) {
-                    if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance())
-                        return this;
-                    if (other.hasMessage()) {
-                        bitField0_ |= 0x00000001;
-                        message_ = other.message_;
-                        onChanged();
-                    }
-                    this.mergeUnknownFields(other.getUnknownFields());
-                    return this;
-                }
-
-                public final boolean isInitialized() {
-                    if (!hasMessage()) {
-
-                        return false;
-                    }
-                    return true;
-                }
-
-                public Builder mergeFrom(
-                        com.google.protobuf.CodedInputStream input,
-                        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                        throws java.io.IOException {
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error parsedMessage = null;
-                    try {
-                        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                        parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error) e.getUnfinishedMessage();
-                        throw e;
-                    } finally {
-                        if (parsedMessage != null) {
-                            mergeFrom(parsedMessage);
-                        }
-                    }
-                    return this;
-                }
-
-                private int bitField0_;
-
-                // required string message = 1;
-                private java.lang.Object message_ = "";
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public boolean hasMessage() {
-                    return ((bitField0_ & 0x00000001) == 0x00000001);
-                }
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public java.lang.String getMessage() {
-                    java.lang.Object ref = message_;
-                    if (!(ref instanceof java.lang.String)) {
-                        java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                                .toStringUtf8();
-                        message_ = s;
-                        return s;
-                    } else {
-                        return (java.lang.String) ref;
-                    }
-                }
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public com.google.protobuf.ByteString
-                getMessageBytes() {
-                    java.lang.Object ref = message_;
-                    if (ref instanceof String) {
-                        com.google.protobuf.ByteString b =
-                                com.google.protobuf.ByteString.copyFromUtf8(
-                                        (java.lang.String) ref);
-                        message_ = b;
-                        return b;
-                    } else {
-                        return (com.google.protobuf.ByteString) ref;
-                    }
-                }
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public Builder setMessage(
-                        java.lang.String value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    bitField0_ |= 0x00000001;
-                    message_ = value;
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public Builder clearMessage() {
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    message_ = getDefaultInstance().getMessage();
-                    onChanged();
-                    return this;
-                }
-
-                /**
-                 * <code>required string message = 1;</code>
-                 */
-                public Builder setMessageBytes(
-                        com.google.protobuf.ByteString value) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    bitField0_ |= 0x00000001;
-                    message_ = value;
-                    onChanged();
-                    return this;
-                }
-
-                // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply.Error)
-            }
-
-            static {
-                defaultInstance = new Error(true);
-                defaultInstance.initFields();
-            }
-
-            // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply.Error)
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasType()) {
+          
+          return false;
         }
-
-        private int bitField0_;
-        // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
-        public static final int TYPE_FIELD_NUMBER = 1;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type type_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-         */
-        public boolean hasType() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
+        if (hasClientReplyPostTask()) {
+          if (!getClientReplyPostTask().isInitialized()) {
+            
+            return false;
+          }
         }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType() {
-            return type_;
+        if (hasClientReplyTaskResult()) {
+          if (!getClientReplyTaskResult().isInitialized()) {
+            
+            return false;
+          }
         }
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;
-        public static final int CONNECT_FIELD_NUMBER = 2;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect connect_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-         */
-        public boolean hasConnect() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
+        if (hasWorkerReplyNewTask()) {
+          if (!getWorkerReplyNewTask().isInitialized()) {
+            
+            return false;
+          }
         }
+        return true;
+      }
 
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect getConnect() {
-            return connect_;
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.vertexarmy.omniray.server.protocol.Protocol.Reply parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
         }
+        return this;
+      }
+      private int bitField0_;
 
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder getConnectOrBuilder() {
-            return connect_;
+      // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.REPLY_CONNECTION;
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType() {
+        return type_;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+       */
+      public Builder setType(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
         }
+        bitField0_ |= 0x00000001;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.REPLY_CONNECTION;
+        onChanged();
+        return this;
+      }
 
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;
-        public static final int PEERLIST_FIELD_NUMBER = 3;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList peerList_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-         */
-        public boolean hasPeerList() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
+      // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask clientReplyPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder> clientReplyPostTaskBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public boolean hasClientReplyPostTask() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask getClientReplyPostTask() {
+        if (clientReplyPostTaskBuilder_ == null) {
+          return clientReplyPostTask_;
+        } else {
+          return clientReplyPostTaskBuilder_.getMessage();
         }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList getPeerList() {
-            return peerList_;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public Builder setClientReplyPostTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask value) {
+        if (clientReplyPostTaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientReplyPostTask_ = value;
+          onChanged();
+        } else {
+          clientReplyPostTaskBuilder_.setMessage(value);
         }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder getPeerListOrBuilder() {
-            return peerList_;
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public Builder setClientReplyPostTask(
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder builderForValue) {
+        if (clientReplyPostTaskBuilder_ == null) {
+          clientReplyPostTask_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientReplyPostTaskBuilder_.setMessage(builderForValue.build());
         }
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;
-        public static final int NEWTASK_FIELD_NUMBER = 4;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask newTask_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-         */
-        public boolean hasNewTask() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public Builder mergeClientReplyPostTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask value) {
+        if (clientReplyPostTaskBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              clientReplyPostTask_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance()) {
+            clientReplyPostTask_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.newBuilder(clientReplyPostTask_).mergeFrom(value).buildPartial();
+          } else {
+            clientReplyPostTask_ = value;
+          }
+          onChanged();
+        } else {
+          clientReplyPostTaskBuilder_.mergeFrom(value);
         }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask getNewTask() {
-            return newTask_;
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public Builder clearClientReplyPostTask() {
+        if (clientReplyPostTaskBuilder_ == null) {
+          clientReplyPostTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.getDefaultInstance();
+          onChanged();
+        } else {
+          clientReplyPostTaskBuilder_.clear();
         }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder getNewTaskOrBuilder() {
-            return newTask_;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder getClientReplyPostTaskBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getClientReplyPostTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder getClientReplyPostTaskOrBuilder() {
+        if (clientReplyPostTaskBuilder_ != null) {
+          return clientReplyPostTaskBuilder_.getMessageOrBuilder();
+        } else {
+          return clientReplyPostTask_;
         }
-
-        // optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;
-        public static final int ERROR_FIELD_NUMBER = 5;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error error_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-         */
-        public boolean hasError() {
-            return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyPostTask client_reply_post_task = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder> 
+          getClientReplyPostTaskFieldBuilder() {
+        if (clientReplyPostTaskBuilder_ == null) {
+          clientReplyPostTaskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyPostTaskOrBuilder>(
+                  clientReplyPostTask_,
+                  getParentForChildren(),
+                  isClean());
+          clientReplyPostTask_ = null;
         }
+        return clientReplyPostTaskBuilder_;
+      }
 
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error getError() {
-            return error_;
+      // optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult clientReplyTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder> clientReplyTaskResultBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public boolean hasClientReplyTaskResult() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult getClientReplyTaskResult() {
+        if (clientReplyTaskResultBuilder_ == null) {
+          return clientReplyTaskResult_;
+        } else {
+          return clientReplyTaskResultBuilder_.getMessage();
         }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder getErrorOrBuilder() {
-            return error_;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public Builder setClientReplyTaskResult(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult value) {
+        if (clientReplyTaskResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientReplyTaskResult_ = value;
+          onChanged();
+        } else {
+          clientReplyTaskResultBuilder_.setMessage(value);
         }
-
-        private void initFields() {
-            type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.CONNECT;
-            connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance();
-            peerList_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance();
-            newTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance();
-            error_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance();
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public Builder setClientReplyTaskResult(
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder builderForValue) {
+        if (clientReplyTaskResultBuilder_ == null) {
+          clientReplyTaskResult_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientReplyTaskResultBuilder_.setMessage(builderForValue.build());
         }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasType()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (hasConnect()) {
-                if (!getConnect().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            if (hasNewTask()) {
-                if (!getNewTask().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            if (hasError()) {
-                if (!getError().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            memoizedIsInitialized = 1;
-            return true;
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public Builder mergeClientReplyTaskResult(org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult value) {
+        if (clientReplyTaskResultBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              clientReplyTaskResult_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance()) {
+            clientReplyTaskResult_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.newBuilder(clientReplyTaskResult_).mergeFrom(value).buildPartial();
+          } else {
+            clientReplyTaskResult_ = value;
+          }
+          onChanged();
+        } else {
+          clientReplyTaskResultBuilder_.mergeFrom(value);
         }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeEnum(1, type_.getNumber());
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeMessage(2, connect_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeMessage(3, peerList_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeMessage(4, newTask_);
-            }
-            if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                output.writeMessage(5, error_);
-            }
-            getUnknownFields().writeTo(output);
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public Builder clearClientReplyTaskResult() {
+        if (clientReplyTaskResultBuilder_ == null) {
+          clientReplyTaskResult_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.getDefaultInstance();
+          onChanged();
+        } else {
+          clientReplyTaskResultBuilder_.clear();
         }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeEnumSize(1, type_.getNumber());
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, connect_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, peerList_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(4, newTask_);
-            }
-            if (((bitField0_ & 0x00000010) == 0x00000010)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(5, error_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder getClientReplyTaskResultBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getClientReplyTaskResultFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder getClientReplyTaskResultOrBuilder() {
+        if (clientReplyTaskResultBuilder_ != null) {
+          return clientReplyTaskResultBuilder_.getMessageOrBuilder();
+        } else {
+          return clientReplyTaskResult_;
         }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.ClientReplyTaskResult client_reply_task_result = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder> 
+          getClientReplyTaskResultFieldBuilder() {
+        if (clientReplyTaskResultBuilder_ == null) {
+          clientReplyTaskResultBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResult.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ClientReplyTaskResultOrBuilder>(
+                  clientReplyTaskResult_,
+                  getParentForChildren(),
+                  isClean());
+          clientReplyTaskResult_ = null;
         }
+        return clientReplyTaskResultBuilder_;
+      }
 
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+      // optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;
+      private org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask workerReplyNewTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder> workerReplyNewTaskBuilder_;
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public boolean hasWorkerReplyNewTask() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask getWorkerReplyNewTask() {
+        if (workerReplyNewTaskBuilder_ == null) {
+          return workerReplyNewTask_;
+        } else {
+          return workerReplyNewTaskBuilder_.getMessage();
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public Builder setWorkerReplyNewTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask value) {
+        if (workerReplyNewTaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          workerReplyNewTask_ = value;
+          onChanged();
+        } else {
+          workerReplyNewTaskBuilder_.setMessage(value);
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public Builder setWorkerReplyNewTask(
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder builderForValue) {
+        if (workerReplyNewTaskBuilder_ == null) {
+          workerReplyNewTask_ = builderForValue.build();
+          onChanged();
+        } else {
+          workerReplyNewTaskBuilder_.setMessage(builderForValue.build());
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public Builder mergeWorkerReplyNewTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask value) {
+        if (workerReplyNewTaskBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              workerReplyNewTask_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance()) {
+            workerReplyNewTask_ =
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.newBuilder(workerReplyNewTask_).mergeFrom(value).buildPartial();
+          } else {
+            workerReplyNewTask_ = value;
+          }
+          onChanged();
+        } else {
+          workerReplyNewTaskBuilder_.mergeFrom(value);
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public Builder clearWorkerReplyNewTask() {
+        if (workerReplyNewTaskBuilder_ == null) {
+          workerReplyNewTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.getDefaultInstance();
+          onChanged();
+        } else {
+          workerReplyNewTaskBuilder_.clear();
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder getWorkerReplyNewTaskBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getWorkerReplyNewTaskFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      public org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder getWorkerReplyNewTaskOrBuilder() {
+        if (workerReplyNewTaskBuilder_ != null) {
+          return workerReplyNewTaskBuilder_.getMessageOrBuilder();
+        } else {
+          return workerReplyNewTask_;
         }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
+      }
+      /**
+       * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.WorkerReplyNewTask worker_reply_new_task = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder> 
+          getWorkerReplyNewTaskFieldBuilder() {
+        if (workerReplyNewTaskBuilder_ == null) {
+          workerReplyNewTaskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.WorkerReplyNewTaskOrBuilder>(
+                  workerReplyNewTask_,
+                  getParentForChildren(),
+                  isClean());
+          workerReplyNewTask_ = null;
         }
+        return workerReplyNewTaskBuilder_;
+      }
 
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Reply parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Reply prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Reply}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.ReplyOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.class, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Reply.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getConnectFieldBuilder();
-                    getPeerListFieldBuilder();
-                    getNewTaskFieldBuilder();
-                    getErrorFieldBuilder();
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.CONNECT;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                if (connectBuilder_ == null) {
-                    connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance();
-                } else {
-                    connectBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                if (peerListBuilder_ == null) {
-                    peerList_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance();
-                } else {
-                    peerListBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                if (newTaskBuilder_ == null) {
-                    newTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance();
-                } else {
-                    newTaskBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000008);
-                if (errorBuilder_ == null) {
-                    error_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance();
-                } else {
-                    errorBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000010);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Reply result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Reply result = new org.vertexarmy.omniray.server.protocol.Protocol.Reply(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.type_ = type_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                if (connectBuilder_ == null) {
-                    result.connect_ = connect_;
-                } else {
-                    result.connect_ = connectBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                if (peerListBuilder_ == null) {
-                    result.peerList_ = peerList_;
-                } else {
-                    result.peerList_ = peerListBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                if (newTaskBuilder_ == null) {
-                    result.newTask_ = newTask_;
-                } else {
-                    result.newTask_ = newTaskBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-                    to_bitField0_ |= 0x00000010;
-                }
-                if (errorBuilder_ == null) {
-                    result.error_ = error_;
-                } else {
-                    result.error_ = errorBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Reply) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Reply) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Reply other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Reply.getDefaultInstance()) return this;
-                if (other.hasType()) {
-                    setType(other.getType());
-                }
-                if (other.hasConnect()) {
-                    mergeConnect(other.getConnect());
-                }
-                if (other.hasPeerList()) {
-                    mergePeerList(other.getPeerList());
-                }
-                if (other.hasNewTask()) {
-                    mergeNewTask(other.getNewTask());
-                }
-                if (other.hasError()) {
-                    mergeError(other.getError());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasType()) {
-
-                    return false;
-                }
-                if (hasConnect()) {
-                    if (!getConnect().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                if (hasNewTask()) {
-                    if (!getNewTask().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                if (hasError()) {
-                    if (!getError().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Reply parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Reply) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.CONNECT;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-             */
-            public boolean hasType() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type getType() {
-                return type_;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-             */
-            public Builder setType(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                bitField0_ |= 0x00000001;
-                type_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Reply.Type type = 1;</code>
-             */
-            public Builder clearType() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                type_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Type.CONNECT;
-                onChanged();
-                return this;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder> connectBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public boolean hasConnect() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect getConnect() {
-                if (connectBuilder_ == null) {
-                    return connect_;
-                } else {
-                    return connectBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public Builder setConnect(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect value) {
-                if (connectBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    connect_ = value;
-                    onChanged();
-                } else {
-                    connectBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public Builder setConnect(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder builderForValue) {
-                if (connectBuilder_ == null) {
-                    connect_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    connectBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public Builder mergeConnect(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect value) {
-                if (connectBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            connect_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance()) {
-                        connect_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.newBuilder(connect_).mergeFrom(value).buildPartial();
-                    } else {
-                        connect_ = value;
-                    }
-                    onChanged();
-                } else {
-                    connectBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public Builder clearConnect() {
-                if (connectBuilder_ == null) {
-                    connect_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.getDefaultInstance();
-                    onChanged();
-                } else {
-                    connectBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder getConnectBuilder() {
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return getConnectFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder getConnectOrBuilder() {
-                if (connectBuilder_ != null) {
-                    return connectBuilder_.getMessageOrBuilder();
-                } else {
-                    return connect_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Connect connect = 2;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder>
-            getConnectFieldBuilder() {
-                if (connectBuilder_ == null) {
-                    connectBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Connect.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ConnectOrBuilder>(
-                            connect_,
-                            getParentForChildren(),
-                            isClean());
-                    connect_ = null;
-                }
-                return connectBuilder_;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList peerList_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder> peerListBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public boolean hasPeerList() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList getPeerList() {
-                if (peerListBuilder_ == null) {
-                    return peerList_;
-                } else {
-                    return peerListBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public Builder setPeerList(org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList value) {
-                if (peerListBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    peerList_ = value;
-                    onChanged();
-                } else {
-                    peerListBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public Builder setPeerList(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder builderForValue) {
-                if (peerListBuilder_ == null) {
-                    peerList_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    peerListBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public Builder mergePeerList(org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList value) {
-                if (peerListBuilder_ == null) {
-                    if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            peerList_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance()) {
-                        peerList_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.newBuilder(peerList_).mergeFrom(value).buildPartial();
-                    } else {
-                        peerList_ = value;
-                    }
-                    onChanged();
-                } else {
-                    peerListBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public Builder clearPeerList() {
-                if (peerListBuilder_ == null) {
-                    peerList_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.getDefaultInstance();
-                    onChanged();
-                } else {
-                    peerListBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder getPeerListBuilder() {
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return getPeerListFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder getPeerListOrBuilder() {
-                if (peerListBuilder_ != null) {
-                    return peerListBuilder_.getMessageOrBuilder();
-                } else {
-                    return peerList_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.PeerList peerList = 3;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder>
-            getPeerListFieldBuilder() {
-                if (peerListBuilder_ == null) {
-                    peerListBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerList.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.PeerListOrBuilder>(
-                            peerList_,
-                            getParentForChildren(),
-                            isClean());
-                    peerList_ = null;
-                }
-                return peerListBuilder_;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask newTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder> newTaskBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public boolean hasNewTask() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask getNewTask() {
-                if (newTaskBuilder_ == null) {
-                    return newTask_;
-                } else {
-                    return newTaskBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public Builder setNewTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask value) {
-                if (newTaskBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    newTask_ = value;
-                    onChanged();
-                } else {
-                    newTaskBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public Builder setNewTask(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder builderForValue) {
-                if (newTaskBuilder_ == null) {
-                    newTask_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    newTaskBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public Builder mergeNewTask(org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask value) {
-                if (newTaskBuilder_ == null) {
-                    if (((bitField0_ & 0x00000008) == 0x00000008) &&
-                            newTask_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance()) {
-                        newTask_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.newBuilder(newTask_).mergeFrom(value).buildPartial();
-                    } else {
-                        newTask_ = value;
-                    }
-                    onChanged();
-                } else {
-                    newTaskBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public Builder clearNewTask() {
-                if (newTaskBuilder_ == null) {
-                    newTask_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.getDefaultInstance();
-                    onChanged();
-                } else {
-                    newTaskBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder getNewTaskBuilder() {
-                bitField0_ |= 0x00000008;
-                onChanged();
-                return getNewTaskFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder getNewTaskOrBuilder() {
-                if (newTaskBuilder_ != null) {
-                    return newTaskBuilder_.getMessageOrBuilder();
-                } else {
-                    return newTask_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.NewTask newTask = 4;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder>
-            getNewTaskFieldBuilder() {
-                if (newTaskBuilder_ == null) {
-                    newTaskBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTask.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.NewTaskOrBuilder>(
-                            newTask_,
-                            getParentForChildren(),
-                            isClean());
-                    newTask_ = null;
-                }
-                return newTaskBuilder_;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error error_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder> errorBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public boolean hasError() {
-                return ((bitField0_ & 0x00000010) == 0x00000010);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error getError() {
-                if (errorBuilder_ == null) {
-                    return error_;
-                } else {
-                    return errorBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public Builder setError(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error value) {
-                if (errorBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    error_ = value;
-                    onChanged();
-                } else {
-                    errorBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000010;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public Builder setError(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder builderForValue) {
-                if (errorBuilder_ == null) {
-                    error_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    errorBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000010;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public Builder mergeError(org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error value) {
-                if (errorBuilder_ == null) {
-                    if (((bitField0_ & 0x00000010) == 0x00000010) &&
-                            error_ != org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance()) {
-                        error_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.newBuilder(error_).mergeFrom(value).buildPartial();
-                    } else {
-                        error_ = value;
-                    }
-                    onChanged();
-                } else {
-                    errorBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000010;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public Builder clearError() {
-                if (errorBuilder_ == null) {
-                    error_ = org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.getDefaultInstance();
-                    onChanged();
-                } else {
-                    errorBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000010);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder getErrorBuilder() {
-                bitField0_ |= 0x00000010;
-                onChanged();
-                return getErrorFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder getErrorOrBuilder() {
-                if (errorBuilder_ != null) {
-                    return errorBuilder_.getMessageOrBuilder();
-                } else {
-                    return error_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Reply.Error error = 5;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder>
-            getErrorFieldBuilder() {
-                if (errorBuilder_ == null) {
-                    errorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error, org.vertexarmy.omniray.server.protocol.Protocol.Reply.Error.Builder, org.vertexarmy.omniray.server.protocol.Protocol.Reply.ErrorOrBuilder>(
-                            error_,
-                            getParentForChildren(),
-                            isClean());
-                    error_ = null;
-                }
-                return errorBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply)
-        }
-
-        static {
-            defaultInstance = new Reply(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply)
+      // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Reply)
     }
-
-    public interface VertexOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required float x = 1;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        boolean hasX();
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        float getX();
-
-        // required float y = 2;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        boolean hasY();
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        float getY();
-
-        // required float z = 3;
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        boolean hasZ();
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        float getZ();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Vertex}
-     */
-    public static final class Vertex extends
-            com.google.protobuf.GeneratedMessage
-            implements VertexOrBuilder {
-        // Use Vertex.newBuilder() to construct.
-        private Vertex(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Vertex(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Vertex defaultInstance;
-
-        public static Vertex getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Vertex getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Vertex(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            x_ = input.readFloat();
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            y_ = input.readFloat();
-                            break;
-                        }
-                        case 29: {
-                            bitField0_ |= 0x00000004;
-                            z_ = input.readFloat();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Vertex_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Vertex.class, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Vertex> PARSER =
-                new com.google.protobuf.AbstractParser<Vertex>() {
-                    public Vertex parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Vertex(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Vertex> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required float x = 1;
-        public static final int X_FIELD_NUMBER = 1;
-        private float x_;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public boolean hasX() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public float getX() {
-            return x_;
-        }
-
-        // required float y = 2;
-        public static final int Y_FIELD_NUMBER = 2;
-        private float y_;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public float getY() {
-            return y_;
-        }
-
-        // required float z = 3;
-        public static final int Z_FIELD_NUMBER = 3;
-        private float z_;
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public boolean hasZ() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public float getZ() {
-            return z_;
-        }
-
-        private void initFields() {
-            x_ = 0F;
-            y_ = 0F;
-            z_ = 0F;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasX()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasY()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasZ()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeFloat(3, z_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(3, z_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Vertex parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Vertex prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Vertex}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Vertex_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Vertex.class, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Vertex.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                x_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                y_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                z_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Vertex result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Vertex result = new org.vertexarmy.omniray.server.protocol.Protocol.Vertex(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.x_ = x_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.y_ = y_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.z_ = z_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Vertex) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Vertex) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Vertex other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance()) return this;
-                if (other.hasX()) {
-                    setX(other.getX());
-                }
-                if (other.hasY()) {
-                    setY(other.getY());
-                }
-                if (other.hasZ()) {
-                    setZ(other.getZ());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasX()) {
-
-                    return false;
-                }
-                if (!hasY()) {
-
-                    return false;
-                }
-                if (!hasZ()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Vertex parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Vertex) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required float x = 1;
-            private float x_;
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public boolean hasX() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public float getX() {
-                return x_;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder setX(float value) {
-                bitField0_ |= 0x00000001;
-                x_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder clearX() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                x_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float y = 2;
-            private float y_;
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public boolean hasY() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public float getY() {
-                return y_;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder setY(float value) {
-                bitField0_ |= 0x00000002;
-                y_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder clearY() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                y_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float z = 3;
-            private float z_;
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public boolean hasZ() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public float getZ() {
-                return z_;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder setZ(float value) {
-                bitField0_ |= 0x00000004;
-                z_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder clearZ() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                z_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Vertex)
-        }
-
-        static {
-            defaultInstance = new Vertex(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Vertex)
-    }
-
-    public interface QuaternionOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required float x = 1;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        boolean hasX();
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        float getX();
-
-        // required float y = 2;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        boolean hasY();
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        float getY();
-
-        // required float z = 3;
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        boolean hasZ();
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        float getZ();
-
-        // required float w = 4;
-
-        /**
-         * <code>required float w = 4;</code>
-         */
-        boolean hasW();
-
-        /**
-         * <code>required float w = 4;</code>
-         */
-        float getW();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Quaternion}
-     */
-    public static final class Quaternion extends
-            com.google.protobuf.GeneratedMessage
-            implements QuaternionOrBuilder {
-        // Use Quaternion.newBuilder() to construct.
-        private Quaternion(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Quaternion(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Quaternion defaultInstance;
-
-        public static Quaternion getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Quaternion getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Quaternion(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            x_ = input.readFloat();
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            y_ = input.readFloat();
-                            break;
-                        }
-                        case 29: {
-                            bitField0_ |= 0x00000004;
-                            z_ = input.readFloat();
-                            break;
-                        }
-                        case 37: {
-                            bitField0_ |= 0x00000008;
-                            w_ = input.readFloat();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.class, org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Quaternion> PARSER =
-                new com.google.protobuf.AbstractParser<Quaternion>() {
-                    public Quaternion parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Quaternion(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Quaternion> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required float x = 1;
-        public static final int X_FIELD_NUMBER = 1;
-        private float x_;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public boolean hasX() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public float getX() {
-            return x_;
-        }
-
-        // required float y = 2;
-        public static final int Y_FIELD_NUMBER = 2;
-        private float y_;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public float getY() {
-            return y_;
-        }
-
-        // required float z = 3;
-        public static final int Z_FIELD_NUMBER = 3;
-        private float z_;
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public boolean hasZ() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required float z = 3;</code>
-         */
-        public float getZ() {
-            return z_;
-        }
-
-        // required float w = 4;
-        public static final int W_FIELD_NUMBER = 4;
-        private float w_;
-
-        /**
-         * <code>required float w = 4;</code>
-         */
-        public boolean hasW() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-
-        /**
-         * <code>required float w = 4;</code>
-         */
-        public float getW() {
-            return w_;
-        }
-
-        private void initFields() {
-            x_ = 0F;
-            y_ = 0F;
-            z_ = 0F;
-            w_ = 0F;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasX()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasY()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasZ()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasW()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeFloat(3, z_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeFloat(4, w_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(3, z_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(4, w_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Quaternion prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Quaternion}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.class, org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                x_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                y_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                z_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                w_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Quaternion result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Quaternion result = new org.vertexarmy.omniray.server.protocol.Protocol.Quaternion(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.x_ = x_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.y_ = y_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.z_ = z_;
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                result.w_ = w_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Quaternion) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Quaternion) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Quaternion other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance())
-                    return this;
-                if (other.hasX()) {
-                    setX(other.getX());
-                }
-                if (other.hasY()) {
-                    setY(other.getY());
-                }
-                if (other.hasZ()) {
-                    setZ(other.getZ());
-                }
-                if (other.hasW()) {
-                    setW(other.getW());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasX()) {
-
-                    return false;
-                }
-                if (!hasY()) {
-
-                    return false;
-                }
-                if (!hasZ()) {
-
-                    return false;
-                }
-                if (!hasW()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Quaternion parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Quaternion) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required float x = 1;
-            private float x_;
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public boolean hasX() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public float getX() {
-                return x_;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder setX(float value) {
-                bitField0_ |= 0x00000001;
-                x_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder clearX() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                x_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float y = 2;
-            private float y_;
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public boolean hasY() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public float getY() {
-                return y_;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder setY(float value) {
-                bitField0_ |= 0x00000002;
-                y_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder clearY() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                y_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float z = 3;
-            private float z_;
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public boolean hasZ() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public float getZ() {
-                return z_;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder setZ(float value) {
-                bitField0_ |= 0x00000004;
-                z_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float z = 3;</code>
-             */
-            public Builder clearZ() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                z_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float w = 4;
-            private float w_;
-
-            /**
-             * <code>required float w = 4;</code>
-             */
-            public boolean hasW() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <code>required float w = 4;</code>
-             */
-            public float getW() {
-                return w_;
-            }
-
-            /**
-             * <code>required float w = 4;</code>
-             */
-            public Builder setW(float value) {
-                bitField0_ |= 0x00000008;
-                w_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float w = 4;</code>
-             */
-            public Builder clearW() {
-                bitField0_ = (bitField0_ & ~0x00000008);
-                w_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Quaternion)
-        }
-
-        static {
-            defaultInstance = new Quaternion(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Quaternion)
-    }
-
-    public interface MaterialOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required float color = 1;
-
-        /**
-         * <code>required float color = 1;</code>
-         */
-        boolean hasColor();
-
-        /**
-         * <code>required float color = 1;</code>
-         */
-        float getColor();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Material}
-     */
-    public static final class Material extends
-            com.google.protobuf.GeneratedMessage
-            implements MaterialOrBuilder {
-        // Use Material.newBuilder() to construct.
-        private Material(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Material(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Material defaultInstance;
-
-        public static Material getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Material getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Material(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            color_ = input.readFloat();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Material_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Material.class, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Material> PARSER =
-                new com.google.protobuf.AbstractParser<Material>() {
-                    public Material parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Material(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Material> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required float color = 1;
-        public static final int COLOR_FIELD_NUMBER = 1;
-        private float color_;
-
-        /**
-         * <code>required float color = 1;</code>
-         */
-        public boolean hasColor() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float color = 1;</code>
-         */
-        public float getColor() {
-            return color_;
-        }
-
-        private void initFields() {
-            color_ = 0F;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasColor()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, color_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, color_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Material parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Material prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Material}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Material_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Material.class, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Material.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                color_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Material result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Material result = new org.vertexarmy.omniray.server.protocol.Protocol.Material(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.color_ = color_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Material) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Material) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Material other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance()) return this;
-                if (other.hasColor()) {
-                    setColor(other.getColor());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasColor()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Material parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Material) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required float color = 1;
-            private float color_;
-
-            /**
-             * <code>required float color = 1;</code>
-             */
-            public boolean hasColor() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float color = 1;</code>
-             */
-            public float getColor() {
-                return color_;
-            }
-
-            /**
-             * <code>required float color = 1;</code>
-             */
-            public Builder setColor(float value) {
-                bitField0_ |= 0x00000001;
-                color_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float color = 1;</code>
-             */
-            public Builder clearColor() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                color_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Material)
-        }
-
-        static {
-            defaultInstance = new Material(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Material)
-    }
-
-    public interface SphereOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        boolean hasPosition();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder();
-
-        // required float radius = 2;
-
-        /**
-         * <code>required float radius = 2;</code>
-         */
-        boolean hasRadius();
-
-        /**
-         * <code>required float radius = 2;</code>
-         */
-        float getRadius();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Material material = 3;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        boolean hasMaterial();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Sphere}
-     */
-    public static final class Sphere extends
-            com.google.protobuf.GeneratedMessage
-            implements SphereOrBuilder {
-        // Use Sphere.newBuilder() to construct.
-        private Sphere(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Sphere(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Sphere defaultInstance;
-
-        public static Sphere getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Sphere getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Sphere(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                                subBuilder = position_.toBuilder();
-                            }
-                            position_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Vertex.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(position_);
-                                position_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000001;
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            radius_ = input.readFloat();
-                            break;
-                        }
-                        case 26: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                                subBuilder = material_.toBuilder();
-                            }
-                            material_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Material.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(material_);
-                                material_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000004;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Sphere_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Sphere.class, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Sphere> PARSER =
-                new com.google.protobuf.AbstractParser<Sphere>() {
-                    public Sphere parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Sphere(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Sphere> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-        public static final int POSITION_FIELD_NUMBER = 1;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Vertex position_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public boolean hasPosition() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition() {
-            return position_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder() {
-            return position_;
-        }
-
-        // required float radius = 2;
-        public static final int RADIUS_FIELD_NUMBER = 2;
-        private float radius_;
-
-        /**
-         * <code>required float radius = 2;</code>
-         */
-        public boolean hasRadius() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float radius = 2;</code>
-         */
-        public float getRadius() {
-            return radius_;
-        }
-
-        // optional .org.vertexarmy.omniray.server.protocol.Material material = 3;
-        public static final int MATERIAL_FIELD_NUMBER = 3;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Material material_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        public boolean hasMaterial() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial() {
-            return material_;
-        }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder() {
-            return material_;
-        }
-
-        private void initFields() {
-            position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-            radius_ = 0F;
-            material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasPosition()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasRadius()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getPosition().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (hasMaterial()) {
-                if (!getMaterial().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeMessage(1, position_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, radius_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeMessage(3, material_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, position_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, radius_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, material_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Sphere parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Sphere prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Sphere}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Sphere_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Sphere.class, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Sphere.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getPositionFieldBuilder();
-                    getMaterialFieldBuilder();
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                if (positionBuilder_ == null) {
-                    position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-                } else {
-                    positionBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                radius_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                if (materialBuilder_ == null) {
-                    material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-                } else {
-                    materialBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Sphere.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Sphere result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Sphere result = new org.vertexarmy.omniray.server.protocol.Protocol.Sphere(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                if (positionBuilder_ == null) {
-                    result.position_ = position_;
-                } else {
-                    result.position_ = positionBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.radius_ = radius_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                if (materialBuilder_ == null) {
-                    result.material_ = material_;
-                } else {
-                    result.material_ = materialBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Sphere) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Sphere) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Sphere other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Sphere.getDefaultInstance()) return this;
-                if (other.hasPosition()) {
-                    mergePosition(other.getPosition());
-                }
-                if (other.hasRadius()) {
-                    setRadius(other.getRadius());
-                }
-                if (other.hasMaterial()) {
-                    mergeMaterial(other.getMaterial());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasPosition()) {
-
-                    return false;
-                }
-                if (!hasRadius()) {
-
-                    return false;
-                }
-                if (!getPosition().isInitialized()) {
-
-                    return false;
-                }
-                if (hasMaterial()) {
-                    if (!getMaterial().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Sphere parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Sphere) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Vertex position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder> positionBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public boolean hasPosition() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition() {
-                if (positionBuilder_ == null) {
-                    return position_;
-                } else {
-                    return positionBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder setPosition(org.vertexarmy.omniray.server.protocol.Protocol.Vertex value) {
-                if (positionBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    position_ = value;
-                    onChanged();
-                } else {
-                    positionBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder setPosition(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder builderForValue) {
-                if (positionBuilder_ == null) {
-                    position_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    positionBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder mergePosition(org.vertexarmy.omniray.server.protocol.Protocol.Vertex value) {
-                if (positionBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                            position_ != org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance()) {
-                        position_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Vertex.newBuilder(position_).mergeFrom(value).buildPartial();
-                    } else {
-                        position_ = value;
-                    }
-                    onChanged();
-                } else {
-                    positionBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder clearPosition() {
-                if (positionBuilder_ == null) {
-                    position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-                    onChanged();
-                } else {
-                    positionBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder getPositionBuilder() {
-                bitField0_ |= 0x00000001;
-                onChanged();
-                return getPositionFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder() {
-                if (positionBuilder_ != null) {
-                    return positionBuilder_.getMessageOrBuilder();
-                } else {
-                    return position_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder>
-            getPositionFieldBuilder() {
-                if (positionBuilder_ == null) {
-                    positionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder>(
-                            position_,
-                            getParentForChildren(),
-                            isClean());
-                    position_ = null;
-                }
-                return positionBuilder_;
-            }
-
-            // required float radius = 2;
-            private float radius_;
-
-            /**
-             * <code>required float radius = 2;</code>
-             */
-            public boolean hasRadius() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float radius = 2;</code>
-             */
-            public float getRadius() {
-                return radius_;
-            }
-
-            /**
-             * <code>required float radius = 2;</code>
-             */
-            public Builder setRadius(float value) {
-                bitField0_ |= 0x00000002;
-                radius_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float radius = 2;</code>
-             */
-            public Builder clearRadius() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                radius_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Material material = 3;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Material material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder> materialBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public boolean hasMaterial() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial() {
-                if (materialBuilder_ == null) {
-                    return material_;
-                } else {
-                    return materialBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public Builder setMaterial(org.vertexarmy.omniray.server.protocol.Protocol.Material value) {
-                if (materialBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    material_ = value;
-                    onChanged();
-                } else {
-                    materialBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public Builder setMaterial(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder builderForValue) {
-                if (materialBuilder_ == null) {
-                    material_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    materialBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public Builder mergeMaterial(org.vertexarmy.omniray.server.protocol.Protocol.Material value) {
-                if (materialBuilder_ == null) {
-                    if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            material_ != org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance()) {
-                        material_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Material.newBuilder(material_).mergeFrom(value).buildPartial();
-                    } else {
-                        material_ = value;
-                    }
-                    onChanged();
-                } else {
-                    materialBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public Builder clearMaterial() {
-                if (materialBuilder_ == null) {
-                    material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-                    onChanged();
-                } else {
-                    materialBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder getMaterialBuilder() {
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return getMaterialFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder() {
-                if (materialBuilder_ != null) {
-                    return materialBuilder_.getMessageOrBuilder();
-                } else {
-                    return material_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 3;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder>
-            getMaterialFieldBuilder() {
-                if (materialBuilder_ == null) {
-                    materialBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder>(
-                            material_,
-                            getParentForChildren(),
-                            isClean());
-                    material_ = null;
-                }
-                return materialBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Sphere)
-        }
-
-        static {
-            defaultInstance = new Sphere(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Sphere)
-    }
-
-    public interface CubeOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        boolean hasPosition();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder();
-
-        // required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        boolean hasRotation();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Quaternion getRotation();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder getRotationOrBuilder();
-
-        // required float length = 3;
-
-        /**
-         * <code>required float length = 3;</code>
-         */
-        boolean hasLength();
-
-        /**
-         * <code>required float length = 3;</code>
-         */
-        float getLength();
-
-        // optional .org.vertexarmy.omniray.server.protocol.Material material = 4;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        boolean hasMaterial();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial();
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Cube}
-     */
-    public static final class Cube extends
-            com.google.protobuf.GeneratedMessage
-            implements CubeOrBuilder {
-        // Use Cube.newBuilder() to construct.
-        private Cube(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Cube(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Cube defaultInstance;
-
-        public static Cube getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Cube getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Cube(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                                subBuilder = position_.toBuilder();
-                            }
-                            position_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Vertex.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(position_);
-                                position_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000001;
-                            break;
-                        }
-                        case 18: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                                subBuilder = rotation_.toBuilder();
-                            }
-                            rotation_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(rotation_);
-                                rotation_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000002;
-                            break;
-                        }
-                        case 29: {
-                            bitField0_ |= 0x00000004;
-                            length_ = input.readFloat();
-                            break;
-                        }
-                        case 34: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                                subBuilder = material_.toBuilder();
-                            }
-                            material_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Material.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(material_);
-                                material_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000008;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Cube_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Cube.class, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Cube> PARSER =
-                new com.google.protobuf.AbstractParser<Cube>() {
-                    public Cube parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Cube(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Cube> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-        public static final int POSITION_FIELD_NUMBER = 1;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Vertex position_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public boolean hasPosition() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition() {
-            return position_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder() {
-            return position_;
-        }
-
-        // required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;
-        public static final int ROTATION_FIELD_NUMBER = 2;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Quaternion rotation_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        public boolean hasRotation() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion getRotation() {
-            return rotation_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder getRotationOrBuilder() {
-            return rotation_;
-        }
-
-        // required float length = 3;
-        public static final int LENGTH_FIELD_NUMBER = 3;
-        private float length_;
-
-        /**
-         * <code>required float length = 3;</code>
-         */
-        public boolean hasLength() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required float length = 3;</code>
-         */
-        public float getLength() {
-            return length_;
-        }
-
-        // optional .org.vertexarmy.omniray.server.protocol.Material material = 4;
-        public static final int MATERIAL_FIELD_NUMBER = 4;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Material material_;
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        public boolean hasMaterial() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial() {
-            return material_;
-        }
-
-        /**
-         * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder() {
-            return material_;
-        }
-
-        private void initFields() {
-            position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-            rotation_ = org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance();
-            length_ = 0F;
-            material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasPosition()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasRotation()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasLength()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getPosition().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getRotation().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (hasMaterial()) {
-                if (!getMaterial().isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeMessage(1, position_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeMessage(2, rotation_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeFloat(3, length_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeMessage(4, material_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, position_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, rotation_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(3, length_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(4, material_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Cube parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Cube prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Cube}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Cube_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Cube.class, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Cube.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getPositionFieldBuilder();
-                    getRotationFieldBuilder();
-                    getMaterialFieldBuilder();
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                if (positionBuilder_ == null) {
-                    position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-                } else {
-                    positionBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                if (rotationBuilder_ == null) {
-                    rotation_ = org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance();
-                } else {
-                    rotationBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                length_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                if (materialBuilder_ == null) {
-                    material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-                } else {
-                    materialBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Cube.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Cube result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Cube result = new org.vertexarmy.omniray.server.protocol.Protocol.Cube(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                if (positionBuilder_ == null) {
-                    result.position_ = position_;
-                } else {
-                    result.position_ = positionBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                if (rotationBuilder_ == null) {
-                    result.rotation_ = rotation_;
-                } else {
-                    result.rotation_ = rotationBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.length_ = length_;
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                if (materialBuilder_ == null) {
-                    result.material_ = material_;
-                } else {
-                    result.material_ = materialBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Cube) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Cube) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Cube other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Cube.getDefaultInstance()) return this;
-                if (other.hasPosition()) {
-                    mergePosition(other.getPosition());
-                }
-                if (other.hasRotation()) {
-                    mergeRotation(other.getRotation());
-                }
-                if (other.hasLength()) {
-                    setLength(other.getLength());
-                }
-                if (other.hasMaterial()) {
-                    mergeMaterial(other.getMaterial());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasPosition()) {
-
-                    return false;
-                }
-                if (!hasRotation()) {
-
-                    return false;
-                }
-                if (!hasLength()) {
-
-                    return false;
-                }
-                if (!getPosition().isInitialized()) {
-
-                    return false;
-                }
-                if (!getRotation().isInitialized()) {
-
-                    return false;
-                }
-                if (hasMaterial()) {
-                    if (!getMaterial().isInitialized()) {
-
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Cube parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Cube) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Vertex position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder> positionBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public boolean hasPosition() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex getPosition() {
-                if (positionBuilder_ == null) {
-                    return position_;
-                } else {
-                    return positionBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder setPosition(org.vertexarmy.omniray.server.protocol.Protocol.Vertex value) {
-                if (positionBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    position_ = value;
-                    onChanged();
-                } else {
-                    positionBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder setPosition(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder builderForValue) {
-                if (positionBuilder_ == null) {
-                    position_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    positionBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder mergePosition(org.vertexarmy.omniray.server.protocol.Protocol.Vertex value) {
-                if (positionBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                            position_ != org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance()) {
-                        position_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Vertex.newBuilder(position_).mergeFrom(value).buildPartial();
-                    } else {
-                        position_ = value;
-                    }
-                    onChanged();
-                } else {
-                    positionBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public Builder clearPosition() {
-                if (positionBuilder_ == null) {
-                    position_ = org.vertexarmy.omniray.server.protocol.Protocol.Vertex.getDefaultInstance();
-                    onChanged();
-                } else {
-                    positionBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder getPositionBuilder() {
-                bitField0_ |= 0x00000001;
-                onChanged();
-                return getPositionFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder getPositionOrBuilder() {
-                if (positionBuilder_ != null) {
-                    return positionBuilder_.getMessageOrBuilder();
-                } else {
-                    return position_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Vertex position = 1;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder>
-            getPositionFieldBuilder() {
-                if (positionBuilder_ == null) {
-                    positionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Vertex, org.vertexarmy.omniray.server.protocol.Protocol.Vertex.Builder, org.vertexarmy.omniray.server.protocol.Protocol.VertexOrBuilder>(
-                            position_,
-                            getParentForChildren(),
-                            isClean());
-                    position_ = null;
-                }
-                return positionBuilder_;
-            }
-
-            // required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Quaternion rotation_ = org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Quaternion, org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder, org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder> rotationBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public boolean hasRotation() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion getRotation() {
-                if (rotationBuilder_ == null) {
-                    return rotation_;
-                } else {
-                    return rotationBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public Builder setRotation(org.vertexarmy.omniray.server.protocol.Protocol.Quaternion value) {
-                if (rotationBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    rotation_ = value;
-                    onChanged();
-                } else {
-                    rotationBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public Builder setRotation(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder builderForValue) {
-                if (rotationBuilder_ == null) {
-                    rotation_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    rotationBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public Builder mergeRotation(org.vertexarmy.omniray.server.protocol.Protocol.Quaternion value) {
-                if (rotationBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            rotation_ != org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance()) {
-                        rotation_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.newBuilder(rotation_).mergeFrom(value).buildPartial();
-                    } else {
-                        rotation_ = value;
-                    }
-                    onChanged();
-                } else {
-                    rotationBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public Builder clearRotation() {
-                if (rotationBuilder_ == null) {
-                    rotation_ = org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.getDefaultInstance();
-                    onChanged();
-                } else {
-                    rotationBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder getRotationBuilder() {
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return getRotationFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder getRotationOrBuilder() {
-                if (rotationBuilder_ != null) {
-                    return rotationBuilder_.getMessageOrBuilder();
-                } else {
-                    return rotation_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Quaternion rotation = 2;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Quaternion, org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder, org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder>
-            getRotationFieldBuilder() {
-                if (rotationBuilder_ == null) {
-                    rotationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Quaternion, org.vertexarmy.omniray.server.protocol.Protocol.Quaternion.Builder, org.vertexarmy.omniray.server.protocol.Protocol.QuaternionOrBuilder>(
-                            rotation_,
-                            getParentForChildren(),
-                            isClean());
-                    rotation_ = null;
-                }
-                return rotationBuilder_;
-            }
-
-            // required float length = 3;
-            private float length_;
-
-            /**
-             * <code>required float length = 3;</code>
-             */
-            public boolean hasLength() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required float length = 3;</code>
-             */
-            public float getLength() {
-                return length_;
-            }
-
-            /**
-             * <code>required float length = 3;</code>
-             */
-            public Builder setLength(float value) {
-                bitField0_ |= 0x00000004;
-                length_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float length = 3;</code>
-             */
-            public Builder clearLength() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                length_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // optional .org.vertexarmy.omniray.server.protocol.Material material = 4;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Material material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder> materialBuilder_;
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public boolean hasMaterial() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material getMaterial() {
-                if (materialBuilder_ == null) {
-                    return material_;
-                } else {
-                    return materialBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public Builder setMaterial(org.vertexarmy.omniray.server.protocol.Protocol.Material value) {
-                if (materialBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    material_ = value;
-                    onChanged();
-                } else {
-                    materialBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public Builder setMaterial(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder builderForValue) {
-                if (materialBuilder_ == null) {
-                    material_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    materialBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public Builder mergeMaterial(org.vertexarmy.omniray.server.protocol.Protocol.Material value) {
-                if (materialBuilder_ == null) {
-                    if (((bitField0_ & 0x00000008) == 0x00000008) &&
-                            material_ != org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance()) {
-                        material_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Material.newBuilder(material_).mergeFrom(value).buildPartial();
-                    } else {
-                        material_ = value;
-                    }
-                    onChanged();
-                } else {
-                    materialBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public Builder clearMaterial() {
-                if (materialBuilder_ == null) {
-                    material_ = org.vertexarmy.omniray.server.protocol.Protocol.Material.getDefaultInstance();
-                    onChanged();
-                } else {
-                    materialBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder getMaterialBuilder() {
-                bitField0_ |= 0x00000008;
-                onChanged();
-                return getMaterialFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder getMaterialOrBuilder() {
-                if (materialBuilder_ != null) {
-                    return materialBuilder_.getMessageOrBuilder();
-                } else {
-                    return material_;
-                }
-            }
-
-            /**
-             * <code>optional .org.vertexarmy.omniray.server.protocol.Material material = 4;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder>
-            getMaterialFieldBuilder() {
-                if (materialBuilder_ == null) {
-                    materialBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Material, org.vertexarmy.omniray.server.protocol.Protocol.Material.Builder, org.vertexarmy.omniray.server.protocol.Protocol.MaterialOrBuilder>(
-                            material_,
-                            getParentForChildren(),
-                            isClean());
-                    material_ = null;
-                }
-                return materialBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Cube)
-        }
-
-        static {
-            defaultInstance = new Cube(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Cube)
-    }
-
-    public interface RenderOptionsOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required float width = 1;
-
-        /**
-         * <code>required float width = 1;</code>
-         */
-        boolean hasWidth();
-
-        /**
-         * <code>required float width = 1;</code>
-         */
-        float getWidth();
-
-        // required float height = 2;
-
-        /**
-         * <code>required float height = 2;</code>
-         */
-        boolean hasHeight();
-
-        /**
-         * <code>required float height = 2;</code>
-         */
-        float getHeight();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.RenderOptions}
-     */
-    public static final class RenderOptions extends
-            com.google.protobuf.GeneratedMessage
-            implements RenderOptionsOrBuilder {
-        // Use RenderOptions.newBuilder() to construct.
-        private RenderOptions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private RenderOptions(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final RenderOptions defaultInstance;
-
-        public static RenderOptions getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public RenderOptions getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private RenderOptions(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            width_ = input.readFloat();
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            height_ = input.readFloat();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.class, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<RenderOptions> PARSER =
-                new com.google.protobuf.AbstractParser<RenderOptions>() {
-                    public RenderOptions parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new RenderOptions(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<RenderOptions> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required float width = 1;
-        public static final int WIDTH_FIELD_NUMBER = 1;
-        private float width_;
-
-        /**
-         * <code>required float width = 1;</code>
-         */
-        public boolean hasWidth() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float width = 1;</code>
-         */
-        public float getWidth() {
-            return width_;
-        }
-
-        // required float height = 2;
-        public static final int HEIGHT_FIELD_NUMBER = 2;
-        private float height_;
-
-        /**
-         * <code>required float height = 2;</code>
-         */
-        public boolean hasHeight() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float height = 2;</code>
-         */
-        public float getHeight() {
-            return height_;
-        }
-
-        private void initFields() {
-            width_ = 0F;
-            height_ = 0F;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasWidth()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasHeight()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, width_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, height_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, width_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, height_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.RenderOptions}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.class, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                width_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                height_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions result = new org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.width_ = width_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.height_ = height_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance())
-                    return this;
-                if (other.hasWidth()) {
-                    setWidth(other.getWidth());
-                }
-                if (other.hasHeight()) {
-                    setHeight(other.getHeight());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasWidth()) {
-
-                    return false;
-                }
-                if (!hasHeight()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required float width = 1;
-            private float width_;
-
-            /**
-             * <code>required float width = 1;</code>
-             */
-            public boolean hasWidth() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float width = 1;</code>
-             */
-            public float getWidth() {
-                return width_;
-            }
-
-            /**
-             * <code>required float width = 1;</code>
-             */
-            public Builder setWidth(float value) {
-                bitField0_ |= 0x00000001;
-                width_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float width = 1;</code>
-             */
-            public Builder clearWidth() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                width_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float height = 2;
-            private float height_;
-
-            /**
-             * <code>required float height = 2;</code>
-             */
-            public boolean hasHeight() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float height = 2;</code>
-             */
-            public float getHeight() {
-                return height_;
-            }
-
-            /**
-             * <code>required float height = 2;</code>
-             */
-            public Builder setHeight(float value) {
-                bitField0_ |= 0x00000002;
-                height_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float height = 2;</code>
-             */
-            public Builder clearHeight() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                height_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.RenderOptions)
-        }
-
-        static {
-            defaultInstance = new RenderOptions(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.RenderOptions)
-    }
-
-    public interface SceneOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere>
-        getSpheresList();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Sphere getSpheres(int index);
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        int getSpheresCount();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder>
-        getSpheresOrBuilderList();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder getSpheresOrBuilder(
-                int index);
-
-        // repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube>
-        getCubesList();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Cube getCubes(int index);
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        int getCubesCount();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder>
-        getCubesOrBuilderList();
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder getCubesOrBuilder(
-                int index);
-
-        // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        boolean hasRenderOptions();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Scene}
-     */
-    public static final class Scene extends
-            com.google.protobuf.GeneratedMessage
-            implements SceneOrBuilder {
-        // Use Scene.newBuilder() to construct.
-        private Scene(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Scene(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Scene defaultInstance;
-
-        public static Scene getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Scene getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Scene(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                                spheres_ = new java.util.ArrayList<org.vertexarmy.omniray.server.protocol.Protocol.Sphere>();
-                                mutable_bitField0_ |= 0x00000001;
-                            }
-                            spheres_.add(input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Sphere.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 18: {
-                            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                                cubes_ = new java.util.ArrayList<org.vertexarmy.omniray.server.protocol.Protocol.Cube>();
-                                mutable_bitField0_ |= 0x00000002;
-                            }
-                            cubes_.add(input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Cube.PARSER, extensionRegistry));
-                            break;
-                        }
-                        case 26: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                                subBuilder = renderOptions_.toBuilder();
-                            }
-                            renderOptions_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(renderOptions_);
-                                renderOptions_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000001;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                    spheres_ = java.util.Collections.unmodifiableList(spheres_);
-                }
-                if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                    cubes_ = java.util.Collections.unmodifiableList(cubes_);
-                }
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Scene_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Scene.class, org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Scene> PARSER =
-                new com.google.protobuf.AbstractParser<Scene>() {
-                    public Scene parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Scene(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Scene> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;
-        public static final int SPHERES_FIELD_NUMBER = 1;
-        private java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere> spheres_;
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere> getSpheresList() {
-            return spheres_;
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        public java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder>
-        getSpheresOrBuilderList() {
-            return spheres_;
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        public int getSpheresCount() {
-            return spheres_.size();
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Sphere getSpheres(int index) {
-            return spheres_.get(index);
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder getSpheresOrBuilder(
-                int index) {
-            return spheres_.get(index);
-        }
-
-        // repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;
-        public static final int CUBES_FIELD_NUMBER = 2;
-        private java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube> cubes_;
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube> getCubesList() {
-            return cubes_;
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        public java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder>
-        getCubesOrBuilderList() {
-            return cubes_;
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        public int getCubesCount() {
-            return cubes_.size();
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Cube getCubes(int index) {
-            return cubes_.get(index);
-        }
-
-        /**
-         * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder getCubesOrBuilder(
-                int index) {
-            return cubes_.get(index);
-        }
-
-        // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;
-        public static final int RENDEROPTIONS_FIELD_NUMBER = 3;
-        private org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions renderOptions_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        public boolean hasRenderOptions() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions() {
-            return renderOptions_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder() {
-            return renderOptions_;
-        }
-
-        private void initFields() {
-            spheres_ = java.util.Collections.emptyList();
-            cubes_ = java.util.Collections.emptyList();
-            renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasRenderOptions()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            for (int i = 0; i < getSpheresCount(); i++) {
-                if (!getSpheres(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            for (int i = 0; i < getCubesCount(); i++) {
-                if (!getCubes(i).isInitialized()) {
-                    memoizedIsInitialized = 0;
-                    return false;
-                }
-            }
-            if (!getRenderOptions().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            for (int i = 0; i < spheres_.size(); i++) {
-                output.writeMessage(1, spheres_.get(i));
-            }
-            for (int i = 0; i < cubes_.size(); i++) {
-                output.writeMessage(2, cubes_.get(i));
-            }
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeMessage(3, renderOptions_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            for (int i = 0; i < spheres_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, spheres_.get(i));
-            }
-            for (int i = 0; i < cubes_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, cubes_.get(i));
-            }
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, renderOptions_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Scene parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Scene prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Scene}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Scene_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Scene.class, org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Scene.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getSpheresFieldBuilder();
-                    getCubesFieldBuilder();
-                    getRenderOptionsFieldBuilder();
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                if (spheresBuilder_ == null) {
-                    spheres_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                } else {
-                    spheresBuilder_.clear();
-                }
-                if (cubesBuilder_ == null) {
-                    cubes_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
-                } else {
-                    cubesBuilder_.clear();
-                }
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-                } else {
-                    renderOptionsBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Scene getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Scene build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Scene result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Scene buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Scene result = new org.vertexarmy.omniray.server.protocol.Protocol.Scene(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (spheresBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                        spheres_ = java.util.Collections.unmodifiableList(spheres_);
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    }
-                    result.spheres_ = spheres_;
-                } else {
-                    result.spheres_ = spheresBuilder_.build();
-                }
-                if (cubesBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                        cubes_ = java.util.Collections.unmodifiableList(cubes_);
-                        bitField0_ = (bitField0_ & ~0x00000002);
-                    }
-                    result.cubes_ = cubes_;
-                } else {
-                    result.cubes_ = cubesBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                if (renderOptionsBuilder_ == null) {
-                    result.renderOptions_ = renderOptions_;
-                } else {
-                    result.renderOptions_ = renderOptionsBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Scene) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Scene) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Scene other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance()) return this;
-                if (spheresBuilder_ == null) {
-                    if (!other.spheres_.isEmpty()) {
-                        if (spheres_.isEmpty()) {
-                            spheres_ = other.spheres_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                        } else {
-                            ensureSpheresIsMutable();
-                            spheres_.addAll(other.spheres_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.spheres_.isEmpty()) {
-                        if (spheresBuilder_.isEmpty()) {
-                            spheresBuilder_.dispose();
-                            spheresBuilder_ = null;
-                            spheres_ = other.spheres_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                            spheresBuilder_ =
-                                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                                            getSpheresFieldBuilder() : null;
-                        } else {
-                            spheresBuilder_.addAllMessages(other.spheres_);
-                        }
-                    }
-                }
-                if (cubesBuilder_ == null) {
-                    if (!other.cubes_.isEmpty()) {
-                        if (cubes_.isEmpty()) {
-                            cubes_ = other.cubes_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
-                        } else {
-                            ensureCubesIsMutable();
-                            cubes_.addAll(other.cubes_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.cubes_.isEmpty()) {
-                        if (cubesBuilder_.isEmpty()) {
-                            cubesBuilder_.dispose();
-                            cubesBuilder_ = null;
-                            cubes_ = other.cubes_;
-                            bitField0_ = (bitField0_ & ~0x00000002);
-                            cubesBuilder_ =
-                                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                                            getCubesFieldBuilder() : null;
-                        } else {
-                            cubesBuilder_.addAllMessages(other.cubes_);
-                        }
-                    }
-                }
-                if (other.hasRenderOptions()) {
-                    mergeRenderOptions(other.getRenderOptions());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasRenderOptions()) {
-
-                    return false;
-                }
-                for (int i = 0; i < getSpheresCount(); i++) {
-                    if (!getSpheres(i).isInitialized()) {
-
-                        return false;
-                    }
-                }
-                for (int i = 0; i < getCubesCount(); i++) {
-                    if (!getCubes(i).isInitialized()) {
-
-                        return false;
-                    }
-                }
-                if (!getRenderOptions().isInitialized()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Scene parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Scene) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;
-            private java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere> spheres_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureSpheresIsMutable() {
-                if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-                    spheres_ = new java.util.ArrayList<org.vertexarmy.omniray.server.protocol.Protocol.Sphere>(spheres_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Sphere, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder> spheresBuilder_;
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere> getSpheresList() {
-                if (spheresBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(spheres_);
-                } else {
-                    return spheresBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public int getSpheresCount() {
-                if (spheresBuilder_ == null) {
-                    return spheres_.size();
-                } else {
-                    return spheresBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere getSpheres(int index) {
-                if (spheresBuilder_ == null) {
-                    return spheres_.get(index);
-                } else {
-                    return spheresBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder setSpheres(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Sphere value) {
-                if (spheresBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureSpheresIsMutable();
-                    spheres_.set(index, value);
-                    onChanged();
-                } else {
-                    spheresBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder setSpheres(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder builderForValue) {
-                if (spheresBuilder_ == null) {
-                    ensureSpheresIsMutable();
-                    spheres_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    spheresBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder addSpheres(org.vertexarmy.omniray.server.protocol.Protocol.Sphere value) {
-                if (spheresBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureSpheresIsMutable();
-                    spheres_.add(value);
-                    onChanged();
-                } else {
-                    spheresBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder addSpheres(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Sphere value) {
-                if (spheresBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureSpheresIsMutable();
-                    spheres_.add(index, value);
-                    onChanged();
-                } else {
-                    spheresBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder addSpheres(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder builderForValue) {
-                if (spheresBuilder_ == null) {
-                    ensureSpheresIsMutable();
-                    spheres_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    spheresBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder addSpheres(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder builderForValue) {
-                if (spheresBuilder_ == null) {
-                    ensureSpheresIsMutable();
-                    spheres_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    spheresBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder addAllSpheres(
-                    java.lang.Iterable<? extends org.vertexarmy.omniray.server.protocol.Protocol.Sphere> values) {
-                if (spheresBuilder_ == null) {
-                    ensureSpheresIsMutable();
-                    super.addAll(values, spheres_);
-                    onChanged();
-                } else {
-                    spheresBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder clearSpheres() {
-                if (spheresBuilder_ == null) {
-                    spheres_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    onChanged();
-                } else {
-                    spheresBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public Builder removeSpheres(int index) {
-                if (spheresBuilder_ == null) {
-                    ensureSpheresIsMutable();
-                    spheres_.remove(index);
-                    onChanged();
-                } else {
-                    spheresBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder getSpheresBuilder(
-                    int index) {
-                return getSpheresFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder getSpheresOrBuilder(
-                    int index) {
-                if (spheresBuilder_ == null) {
-                    return spheres_.get(index);
-                } else {
-                    return spheresBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder>
-            getSpheresOrBuilderList() {
-                if (spheresBuilder_ != null) {
-                    return spheresBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(spheres_);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder addSpheresBuilder() {
-                return getSpheresFieldBuilder().addBuilder(
-                        org.vertexarmy.omniray.server.protocol.Protocol.Sphere.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder addSpheresBuilder(
-                    int index) {
-                return getSpheresFieldBuilder().addBuilder(
-                        index, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Sphere spheres = 1;</code>
-             */
-            public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder>
-            getSpheresBuilderList() {
-                return getSpheresFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Sphere, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder>
-            getSpheresFieldBuilder() {
-                if (spheresBuilder_ == null) {
-                    spheresBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Sphere, org.vertexarmy.omniray.server.protocol.Protocol.Sphere.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SphereOrBuilder>(
-                            spheres_,
-                            ((bitField0_ & 0x00000001) == 0x00000001),
-                            getParentForChildren(),
-                            isClean());
-                    spheres_ = null;
-                }
-                return spheresBuilder_;
-            }
-
-            // repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;
-            private java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube> cubes_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureCubesIsMutable() {
-                if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-                    cubes_ = new java.util.ArrayList<org.vertexarmy.omniray.server.protocol.Protocol.Cube>(cubes_);
-                    bitField0_ |= 0x00000002;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Cube, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder, org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder> cubesBuilder_;
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube> getCubesList() {
-                if (cubesBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(cubes_);
-                } else {
-                    return cubesBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public int getCubesCount() {
-                if (cubesBuilder_ == null) {
-                    return cubes_.size();
-                } else {
-                    return cubesBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube getCubes(int index) {
-                if (cubesBuilder_ == null) {
-                    return cubes_.get(index);
-                } else {
-                    return cubesBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder setCubes(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Cube value) {
-                if (cubesBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCubesIsMutable();
-                    cubes_.set(index, value);
-                    onChanged();
-                } else {
-                    cubesBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder setCubes(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder builderForValue) {
-                if (cubesBuilder_ == null) {
-                    ensureCubesIsMutable();
-                    cubes_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    cubesBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder addCubes(org.vertexarmy.omniray.server.protocol.Protocol.Cube value) {
-                if (cubesBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCubesIsMutable();
-                    cubes_.add(value);
-                    onChanged();
-                } else {
-                    cubesBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder addCubes(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Cube value) {
-                if (cubesBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureCubesIsMutable();
-                    cubes_.add(index, value);
-                    onChanged();
-                } else {
-                    cubesBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder addCubes(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder builderForValue) {
-                if (cubesBuilder_ == null) {
-                    ensureCubesIsMutable();
-                    cubes_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    cubesBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder addCubes(
-                    int index, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder builderForValue) {
-                if (cubesBuilder_ == null) {
-                    ensureCubesIsMutable();
-                    cubes_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    cubesBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder addAllCubes(
-                    java.lang.Iterable<? extends org.vertexarmy.omniray.server.protocol.Protocol.Cube> values) {
-                if (cubesBuilder_ == null) {
-                    ensureCubesIsMutable();
-                    super.addAll(values, cubes_);
-                    onChanged();
-                } else {
-                    cubesBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder clearCubes() {
-                if (cubesBuilder_ == null) {
-                    cubes_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000002);
-                    onChanged();
-                } else {
-                    cubesBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public Builder removeCubes(int index) {
-                if (cubesBuilder_ == null) {
-                    ensureCubesIsMutable();
-                    cubes_.remove(index);
-                    onChanged();
-                } else {
-                    cubesBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder getCubesBuilder(
-                    int index) {
-                return getCubesFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder getCubesOrBuilder(
-                    int index) {
-                if (cubesBuilder_ == null) {
-                    return cubes_.get(index);
-                } else {
-                    return cubesBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public java.util.List<? extends org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder>
-            getCubesOrBuilderList() {
-                if (cubesBuilder_ != null) {
-                    return cubesBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(cubes_);
-                }
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder addCubesBuilder() {
-                return getCubesFieldBuilder().addBuilder(
-                        org.vertexarmy.omniray.server.protocol.Protocol.Cube.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder addCubesBuilder(
-                    int index) {
-                return getCubesFieldBuilder().addBuilder(
-                        index, org.vertexarmy.omniray.server.protocol.Protocol.Cube.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated .org.vertexarmy.omniray.server.protocol.Cube cubes = 2;</code>
-             */
-            public java.util.List<org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder>
-            getCubesBuilderList() {
-                return getCubesFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Cube, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder, org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder>
-            getCubesFieldBuilder() {
-                if (cubesBuilder_ == null) {
-                    cubesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Cube, org.vertexarmy.omniray.server.protocol.Protocol.Cube.Builder, org.vertexarmy.omniray.server.protocol.Protocol.CubeOrBuilder>(
-                            cubes_,
-                            ((bitField0_ & 0x00000002) == 0x00000002),
-                            getParentForChildren(),
-                            isClean());
-                    cubes_ = null;
-                }
-                return cubesBuilder_;
-            }
-
-            // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;
-            private org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder> renderOptionsBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public boolean hasRenderOptions() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions() {
-                if (renderOptionsBuilder_ == null) {
-                    return renderOptions_;
-                } else {
-                    return renderOptionsBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public Builder setRenderOptions(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions value) {
-                if (renderOptionsBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    renderOptions_ = value;
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public Builder setRenderOptions(
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder builderForValue) {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public Builder mergeRenderOptions(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions value) {
-                if (renderOptionsBuilder_ == null) {
-                    if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            renderOptions_ != org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance()) {
-                        renderOptions_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.newBuilder(renderOptions_).mergeFrom(value).buildPartial();
-                    } else {
-                        renderOptions_ = value;
-                    }
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public Builder clearRenderOptions() {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder getRenderOptionsBuilder() {
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return getRenderOptionsFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder() {
-                if (renderOptionsBuilder_ != null) {
-                    return renderOptionsBuilder_.getMessageOrBuilder();
-                } else {
-                    return renderOptions_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 3;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder>
-            getRenderOptionsFieldBuilder() {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder>(
-                            renderOptions_,
-                            getParentForChildren(),
-                            isClean());
-                    renderOptions_ = null;
-                }
-                return renderOptionsBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Scene)
-        }
-
-        static {
-            defaultInstance = new Scene(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Scene)
-    }
-
-    public interface RectangleOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required float x = 1;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        boolean hasX();
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        float getX();
-
-        // required float y = 2;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        boolean hasY();
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        float getY();
-
-        // required float w = 3;
-
-        /**
-         * <code>required float w = 3;</code>
-         */
-        boolean hasW();
-
-        /**
-         * <code>required float w = 3;</code>
-         */
-        float getW();
-
-        // required float h = 4;
-
-        /**
-         * <code>required float h = 4;</code>
-         */
-        boolean hasH();
-
-        /**
-         * <code>required float h = 4;</code>
-         */
-        float getH();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Rectangle}
-     */
-    public static final class Rectangle extends
-            com.google.protobuf.GeneratedMessage
-            implements RectangleOrBuilder {
-        // Use Rectangle.newBuilder() to construct.
-        private Rectangle(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Rectangle(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Rectangle defaultInstance;
-
-        public static Rectangle getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Rectangle getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Rectangle(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 13: {
-                            bitField0_ |= 0x00000001;
-                            x_ = input.readFloat();
-                            break;
-                        }
-                        case 21: {
-                            bitField0_ |= 0x00000002;
-                            y_ = input.readFloat();
-                            break;
-                        }
-                        case 29: {
-                            bitField0_ |= 0x00000004;
-                            w_ = input.readFloat();
-                            break;
-                        }
-                        case 37: {
-                            bitField0_ |= 0x00000008;
-                            h_ = input.readFloat();
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.class, org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Rectangle> PARSER =
-                new com.google.protobuf.AbstractParser<Rectangle>() {
-                    public Rectangle parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Rectangle(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Rectangle> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required float x = 1;
-        public static final int X_FIELD_NUMBER = 1;
-        private float x_;
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public boolean hasX() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required float x = 1;</code>
-         */
-        public float getX() {
-            return x_;
-        }
-
-        // required float y = 2;
-        public static final int Y_FIELD_NUMBER = 2;
-        private float y_;
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required float y = 2;</code>
-         */
-        public float getY() {
-            return y_;
-        }
-
-        // required float w = 3;
-        public static final int W_FIELD_NUMBER = 3;
-        private float w_;
-
-        /**
-         * <code>required float w = 3;</code>
-         */
-        public boolean hasW() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required float w = 3;</code>
-         */
-        public float getW() {
-            return w_;
-        }
-
-        // required float h = 4;
-        public static final int H_FIELD_NUMBER = 4;
-        private float h_;
-
-        /**
-         * <code>required float h = 4;</code>
-         */
-        public boolean hasH() {
-            return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-
-        /**
-         * <code>required float h = 4;</code>
-         */
-        public float getH() {
-            return h_;
-        }
-
-        private void initFields() {
-            x_ = 0F;
-            y_ = 0F;
-            w_ = 0F;
-            h_ = 0F;
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasX()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasY()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasW()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasH()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeFloat(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeFloat(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeFloat(3, w_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                output.writeFloat(4, h_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(1, x_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(2, y_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(3, w_);
-            }
-            if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeFloatSize(4, h_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Rectangle prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Rectangle}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.class, org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                x_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000001);
-                y_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000002);
-                w_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000004);
-                h_ = 0F;
-                bitField0_ = (bitField0_ & ~0x00000008);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Rectangle result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Rectangle result = new org.vertexarmy.omniray.server.protocol.Protocol.Rectangle(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.x_ = x_;
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                result.y_ = y_;
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                result.w_ = w_;
-                if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-                    to_bitField0_ |= 0x00000008;
-                }
-                result.h_ = h_;
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Rectangle) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Rectangle) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Rectangle other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance())
-                    return this;
-                if (other.hasX()) {
-                    setX(other.getX());
-                }
-                if (other.hasY()) {
-                    setY(other.getY());
-                }
-                if (other.hasW()) {
-                    setW(other.getW());
-                }
-                if (other.hasH()) {
-                    setH(other.getH());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasX()) {
-
-                    return false;
-                }
-                if (!hasY()) {
-
-                    return false;
-                }
-                if (!hasW()) {
-
-                    return false;
-                }
-                if (!hasH()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Rectangle parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Rectangle) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required float x = 1;
-            private float x_;
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public boolean hasX() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public float getX() {
-                return x_;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder setX(float value) {
-                bitField0_ |= 0x00000001;
-                x_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float x = 1;</code>
-             */
-            public Builder clearX() {
-                bitField0_ = (bitField0_ & ~0x00000001);
-                x_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float y = 2;
-            private float y_;
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public boolean hasY() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public float getY() {
-                return y_;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder setY(float value) {
-                bitField0_ |= 0x00000002;
-                y_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float y = 2;</code>
-             */
-            public Builder clearY() {
-                bitField0_ = (bitField0_ & ~0x00000002);
-                y_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float w = 3;
-            private float w_;
-
-            /**
-             * <code>required float w = 3;</code>
-             */
-            public boolean hasW() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required float w = 3;</code>
-             */
-            public float getW() {
-                return w_;
-            }
-
-            /**
-             * <code>required float w = 3;</code>
-             */
-            public Builder setW(float value) {
-                bitField0_ |= 0x00000004;
-                w_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float w = 3;</code>
-             */
-            public Builder clearW() {
-                bitField0_ = (bitField0_ & ~0x00000004);
-                w_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // required float h = 4;
-            private float h_;
-
-            /**
-             * <code>required float h = 4;</code>
-             */
-            public boolean hasH() {
-                return ((bitField0_ & 0x00000008) == 0x00000008);
-            }
-
-            /**
-             * <code>required float h = 4;</code>
-             */
-            public float getH() {
-                return h_;
-            }
-
-            /**
-             * <code>required float h = 4;</code>
-             */
-            public Builder setH(float value) {
-                bitField0_ |= 0x00000008;
-                h_ = value;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>required float h = 4;</code>
-             */
-            public Builder clearH() {
-                bitField0_ = (bitField0_ & ~0x00000008);
-                h_ = 0F;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Rectangle)
-        }
-
-        static {
-            defaultInstance = new Rectangle(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Rectangle)
-    }
-
-    public interface TaskOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
-
-        // required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        boolean hasScene();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Scene getScene();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder getSceneOrBuilder();
-
-        // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        boolean hasRenderOptions();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder();
-
-        // required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        boolean hasArea();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.Rectangle getArea();
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder getAreaOrBuilder();
-    }
-
-    /**
-     * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Task}
-     */
-    public static final class Task extends
-            com.google.protobuf.GeneratedMessage
-            implements TaskOrBuilder {
-        // Use Task.newBuilder() to construct.
-        private Task(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-            this.unknownFields = builder.getUnknownFields();
-        }
-
-        private Task(boolean noInit) {
-            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
-        }
-
-        private static final Task defaultInstance;
-
-        public static Task getDefaultInstance() {
-            return defaultInstance;
-        }
-
-        public Task getDefaultInstanceForType() {
-            return defaultInstance;
-        }
-
-        private final com.google.protobuf.UnknownFieldSet unknownFields;
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-            return this.unknownFields;
-        }
-
-        private Task(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            initFields();
-            int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
-            try {
-                boolean done = false;
-                while (!done) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            done = true;
-                            break;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                done = true;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                                subBuilder = scene_.toBuilder();
-                            }
-                            scene_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Scene.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(scene_);
-                                scene_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000001;
-                            break;
-                        }
-                        case 18: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                                subBuilder = renderOptions_.toBuilder();
-                            }
-                            renderOptions_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(renderOptions_);
-                                renderOptions_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000002;
-                            break;
-                        }
-                        case 26: {
-                            org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder subBuilder = null;
-                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                                subBuilder = area_.toBuilder();
-                            }
-                            area_ = input.readMessage(org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.PARSER, extensionRegistry);
-                            if (subBuilder != null) {
-                                subBuilder.mergeFrom(area_);
-                                area_ = subBuilder.buildPartial();
-                            }
-                            bitField0_ |= 0x00000004;
-                            break;
-                        }
-                    }
-                }
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(this);
-            } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
-            } finally {
-                this.unknownFields = unknownFields.build();
-                makeExtensionsImmutable();
-            }
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Task_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            org.vertexarmy.omniray.server.protocol.Protocol.Task.class, org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder.class);
-        }
-
-        public static com.google.protobuf.Parser<Task> PARSER =
-                new com.google.protobuf.AbstractParser<Task>() {
-                    public Task parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new Task(input, extensionRegistry);
-                    }
-                };
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Task> getParserForType() {
-            return PARSER;
-        }
-
-        private int bitField0_;
-        // required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;
-        public static final int SCENE_FIELD_NUMBER = 1;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Scene scene_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        public boolean hasScene() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Scene getScene() {
-            return scene_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder getSceneOrBuilder() {
-            return scene_;
-        }
-
-        // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;
-        public static final int RENDEROPTIONS_FIELD_NUMBER = 2;
-        private org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions renderOptions_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        public boolean hasRenderOptions() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions() {
-            return renderOptions_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder() {
-            return renderOptions_;
-        }
-
-        // required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;
-        public static final int AREA_FIELD_NUMBER = 3;
-        private org.vertexarmy.omniray.server.protocol.Protocol.Rectangle area_;
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        public boolean hasArea() {
-            return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle getArea() {
-            return area_;
-        }
-
-        /**
-         * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-         */
-        public org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder getAreaOrBuilder() {
-            return area_;
-        }
-
-        private void initFields() {
-            scene_ = org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance();
-            renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-            area_ = org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance();
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
-
-            if (!hasScene()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasRenderOptions()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!hasArea()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getScene().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getRenderOptions().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            if (!getArea().isInitialized()) {
-                memoizedIsInitialized = 0;
-                return false;
-            }
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            getSerializedSize();
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                output.writeMessage(1, scene_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                output.writeMessage(2, renderOptions_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                output.writeMessage(3, area_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        private int memoizedSerializedSize = -1;
-
-        public int getSerializedSize() {
-            int size = memoizedSerializedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (((bitField0_ & 0x00000001) == 0x00000001)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, scene_);
-            }
-            if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(2, renderOptions_);
-            }
-            if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(3, area_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSerializedSize = size;
-            return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-
-        @java.lang.Override
-        protected java.lang.Object writeReplace()
-                throws java.io.ObjectStreamException {
-            return super.writeReplace();
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input);
-        }
-
-        public static org.vertexarmy.omniray.server.protocol.Protocol.Task parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public static Builder newBuilder() {
-            return Builder.create();
-        }
-
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder(org.vertexarmy.omniray.server.protocol.Protocol.Task prototype) {
-            return newBuilder().mergeFrom(prototype);
-        }
-
-        public Builder toBuilder() {
-            return newBuilder(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type {@code org.vertexarmy.omniray.server.protocol.Task}
-         */
-        public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements org.vertexarmy.omniray.server.protocol.Protocol.TaskOrBuilder {
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor;
-            }
-
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Task_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                org.vertexarmy.omniray.server.protocol.Protocol.Task.class, org.vertexarmy.omniray.server.protocol.Protocol.Task.Builder.class);
-            }
-
-            // Construct using org.vertexarmy.omniray.server.protocol.Protocol.Task.newBuilder()
-            private Builder() {
-                maybeForceBuilderInitialization();
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-                maybeForceBuilderInitialization();
-            }
-
-            private void maybeForceBuilderInitialization() {
-                if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-                    getSceneFieldBuilder();
-                    getRenderOptionsFieldBuilder();
-                    getAreaFieldBuilder();
-                }
-            }
-
-            private static Builder create() {
-                return new Builder();
-            }
-
-            public Builder clear() {
-                super.clear();
-                if (sceneBuilder_ == null) {
-                    scene_ = org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance();
-                } else {
-                    sceneBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-                } else {
-                    renderOptionsBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                if (areaBuilder_ == null) {
-                    area_ = org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance();
-                } else {
-                    areaBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            public Builder clone() {
-                return create().mergeFrom(buildPartial());
-            }
-
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Task getDefaultInstanceForType() {
-                return org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance();
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Task build() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Task result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            public org.vertexarmy.omniray.server.protocol.Protocol.Task buildPartial() {
-                org.vertexarmy.omniray.server.protocol.Protocol.Task result = new org.vertexarmy.omniray.server.protocol.Protocol.Task(this);
-                int from_bitField0_ = bitField0_;
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-                    to_bitField0_ |= 0x00000001;
-                }
-                if (sceneBuilder_ == null) {
-                    result.scene_ = scene_;
-                } else {
-                    result.scene_ = sceneBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-                    to_bitField0_ |= 0x00000002;
-                }
-                if (renderOptionsBuilder_ == null) {
-                    result.renderOptions_ = renderOptions_;
-                } else {
-                    result.renderOptions_ = renderOptionsBuilder_.build();
-                }
-                if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-                    to_bitField0_ |= 0x00000004;
-                }
-                if (areaBuilder_ == null) {
-                    result.area_ = area_;
-                } else {
-                    result.area_ = areaBuilder_.build();
-                }
-                result.bitField0_ = to_bitField0_;
-                onBuilt();
-                return result;
-            }
-
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof org.vertexarmy.omniray.server.protocol.Protocol.Task) {
-                    return mergeFrom((org.vertexarmy.omniray.server.protocol.Protocol.Task) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(org.vertexarmy.omniray.server.protocol.Protocol.Task other) {
-                if (other == org.vertexarmy.omniray.server.protocol.Protocol.Task.getDefaultInstance()) return this;
-                if (other.hasScene()) {
-                    mergeScene(other.getScene());
-                }
-                if (other.hasRenderOptions()) {
-                    mergeRenderOptions(other.getRenderOptions());
-                }
-                if (other.hasArea()) {
-                    mergeArea(other.getArea());
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                return this;
-            }
-
-            public final boolean isInitialized() {
-                if (!hasScene()) {
-
-                    return false;
-                }
-                if (!hasRenderOptions()) {
-
-                    return false;
-                }
-                if (!hasArea()) {
-
-                    return false;
-                }
-                if (!getScene().isInitialized()) {
-
-                    return false;
-                }
-                if (!getRenderOptions().isInitialized()) {
-
-                    return false;
-                }
-                if (!getArea().isInitialized()) {
-
-                    return false;
-                }
-                return true;
-            }
-
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                org.vertexarmy.omniray.server.protocol.Protocol.Task parsedMessage = null;
-                try {
-                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    parsedMessage = (org.vertexarmy.omniray.server.protocol.Protocol.Task) e.getUnfinishedMessage();
-                    throw e;
-                } finally {
-                    if (parsedMessage != null) {
-                        mergeFrom(parsedMessage);
-                    }
-                }
-                return this;
-            }
-
-            private int bitField0_;
-
-            // required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Scene scene_ = org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Scene, org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder> sceneBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public boolean hasScene() {
-                return ((bitField0_ & 0x00000001) == 0x00000001);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Scene getScene() {
-                if (sceneBuilder_ == null) {
-                    return scene_;
-                } else {
-                    return sceneBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public Builder setScene(org.vertexarmy.omniray.server.protocol.Protocol.Scene value) {
-                if (sceneBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    scene_ = value;
-                    onChanged();
-                } else {
-                    sceneBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public Builder setScene(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder builderForValue) {
-                if (sceneBuilder_ == null) {
-                    scene_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    sceneBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public Builder mergeScene(org.vertexarmy.omniray.server.protocol.Protocol.Scene value) {
-                if (sceneBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                            scene_ != org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance()) {
-                        scene_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Scene.newBuilder(scene_).mergeFrom(value).buildPartial();
-                    } else {
-                        scene_ = value;
-                    }
-                    onChanged();
-                } else {
-                    sceneBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000001;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public Builder clearScene() {
-                if (sceneBuilder_ == null) {
-                    scene_ = org.vertexarmy.omniray.server.protocol.Protocol.Scene.getDefaultInstance();
-                    onChanged();
-                } else {
-                    sceneBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder getSceneBuilder() {
-                bitField0_ |= 0x00000001;
-                onChanged();
-                return getSceneFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder getSceneOrBuilder() {
-                if (sceneBuilder_ != null) {
-                    return sceneBuilder_.getMessageOrBuilder();
-                } else {
-                    return scene_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Scene scene = 1;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Scene, org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder>
-            getSceneFieldBuilder() {
-                if (sceneBuilder_ == null) {
-                    sceneBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Scene, org.vertexarmy.omniray.server.protocol.Protocol.Scene.Builder, org.vertexarmy.omniray.server.protocol.Protocol.SceneOrBuilder>(
-                            scene_,
-                            getParentForChildren(),
-                            isClean());
-                    scene_ = null;
-                }
-                return sceneBuilder_;
-            }
-
-            // required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;
-            private org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder> renderOptionsBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public boolean hasRenderOptions() {
-                return ((bitField0_ & 0x00000002) == 0x00000002);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions getRenderOptions() {
-                if (renderOptionsBuilder_ == null) {
-                    return renderOptions_;
-                } else {
-                    return renderOptionsBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public Builder setRenderOptions(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions value) {
-                if (renderOptionsBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    renderOptions_ = value;
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public Builder setRenderOptions(
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder builderForValue) {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public Builder mergeRenderOptions(org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions value) {
-                if (renderOptionsBuilder_ == null) {
-                    if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            renderOptions_ != org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance()) {
-                        renderOptions_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.newBuilder(renderOptions_).mergeFrom(value).buildPartial();
-                    } else {
-                        renderOptions_ = value;
-                    }
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public Builder clearRenderOptions() {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptions_ = org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.getDefaultInstance();
-                    onChanged();
-                } else {
-                    renderOptionsBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000002);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder getRenderOptionsBuilder() {
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return getRenderOptionsFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder getRenderOptionsOrBuilder() {
-                if (renderOptionsBuilder_ != null) {
-                    return renderOptionsBuilder_.getMessageOrBuilder();
-                } else {
-                    return renderOptions_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.RenderOptions renderOptions = 2;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder>
-            getRenderOptionsFieldBuilder() {
-                if (renderOptionsBuilder_ == null) {
-                    renderOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptions.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RenderOptionsOrBuilder>(
-                            renderOptions_,
-                            getParentForChildren(),
-                            isClean());
-                    renderOptions_ = null;
-                }
-                return renderOptionsBuilder_;
-            }
-
-            // required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;
-            private org.vertexarmy.omniray.server.protocol.Protocol.Rectangle area_ = org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance();
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Rectangle, org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder> areaBuilder_;
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public boolean hasArea() {
-                return ((bitField0_ & 0x00000004) == 0x00000004);
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle getArea() {
-                if (areaBuilder_ == null) {
-                    return area_;
-                } else {
-                    return areaBuilder_.getMessage();
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public Builder setArea(org.vertexarmy.omniray.server.protocol.Protocol.Rectangle value) {
-                if (areaBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    area_ = value;
-                    onChanged();
-                } else {
-                    areaBuilder_.setMessage(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public Builder setArea(
-                    org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder builderForValue) {
-                if (areaBuilder_ == null) {
-                    area_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    areaBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public Builder mergeArea(org.vertexarmy.omniray.server.protocol.Protocol.Rectangle value) {
-                if (areaBuilder_ == null) {
-                    if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            area_ != org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance()) {
-                        area_ =
-                                org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.newBuilder(area_).mergeFrom(value).buildPartial();
-                    } else {
-                        area_ = value;
-                    }
-                    onChanged();
-                } else {
-                    areaBuilder_.mergeFrom(value);
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public Builder clearArea() {
-                if (areaBuilder_ == null) {
-                    area_ = org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.getDefaultInstance();
-                    onChanged();
-                } else {
-                    areaBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000004);
-                return this;
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder getAreaBuilder() {
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return getAreaFieldBuilder().getBuilder();
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            public org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder getAreaOrBuilder() {
-                if (areaBuilder_ != null) {
-                    return areaBuilder_.getMessageOrBuilder();
-                } else {
-                    return area_;
-                }
-            }
-
-            /**
-             * <code>required .org.vertexarmy.omniray.server.protocol.Rectangle area = 3;</code>
-             */
-            private com.google.protobuf.SingleFieldBuilder<
-                    org.vertexarmy.omniray.server.protocol.Protocol.Rectangle, org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder>
-            getAreaFieldBuilder() {
-                if (areaBuilder_ == null) {
-                    areaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            org.vertexarmy.omniray.server.protocol.Protocol.Rectangle, org.vertexarmy.omniray.server.protocol.Protocol.Rectangle.Builder, org.vertexarmy.omniray.server.protocol.Protocol.RectangleOrBuilder>(
-                            area_,
-                            getParentForChildren(),
-                            isClean());
-                    area_ = null;
-                }
-                return areaBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:org.vertexarmy.omniray.server.protocol.Task)
-        }
-
-        static {
-            defaultInstance = new Task(true);
-            defaultInstance.initFields();
-        }
-
-        // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Task)
-    }
-
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Vertex_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Material_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Sphere_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Cube_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Scene_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_org_vertexarmy_omniray_server_protocol_Task_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
 
     static {
-        java.lang.String[] descriptorData = {
-                "\n\016protocol.proto\022&org.vertexarmy.omniray" +
-                        ".server.protocol\"\220\002\n\007Request\022B\n\004type\030\001 \002" +
-                        "(\01624.org.vertexarmy.omniray.server.proto" +
-                        "col.Request.Type\022H\n\007connect\030\002 \001(\01327.org." +
-                        "vertexarmy.omniray.server.protocol.Reque" +
-                        "st.Connect\032\025\n\007Connect\022\n\n\002id\030\001 \002(\t\"`\n\004Typ" +
-                        "e\022\013\n\007CONNECT\020\001\022\r\n\tPEER_LIST\020\002\022\010\n\004PING\020\003\022" +
-                        "\014\n\010NEW_TASK\020\004\022\023\n\017PROGRESS_REPORT\020\005\022\017\n\013TA" +
-                        "SK_RESULT\020\006\"\355\004\n\005Reply\022@\n\004type\030\001 \002(\01622.or" +
-                        "g.vertexarmy.omniray.server.protocol.Rep",
-                "ly.Type\022F\n\007connect\030\002 \001(\01325.org.vertexarm" +
-                        "y.omniray.server.protocol.Reply.Connect\022" +
-                        "H\n\010peerList\030\003 \001(\01326.org.vertexarmy.omnir" +
-                        "ay.server.protocol.Reply.PeerList\022F\n\007new" +
-                        "Task\030\004 \001(\01325.org.vertexarmy.omniray.serv" +
-                        "er.protocol.Reply.NewTask\022B\n\005error\030\005 \001(\013" +
-                        "23.org.vertexarmy.omniray.server.protoco" +
-                        "l.Reply.Error\032\033\n\007Connect\022\020\n\010accepted\030\001 \002" +
-                        "(\010\032\031\n\010PeerList\022\r\n\005peers\030\001 \003(\t\032E\n\007NewTask" +
-                        "\022:\n\004task\030\001 \002(\0132,.org.vertexarmy.omniray.",
-                "server.protocol.Task\032\030\n\005Error\022\017\n\007message" +
-                        "\030\001 \002(\t\"k\n\004Type\022\013\n\007CONNECT\020\001\022\r\n\tPEER_LIST" +
-                        "\020\002\022\010\n\004PONG\020\003\022\t\n\005ERROR\020\004\022\014\n\010NEW_TASK\020\005\022\023\n" +
-                        "\017PROGRESS_REPORT\020\006\022\017\n\013TASK_RESULT\020\007\")\n\006V" +
-                        "ertex\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\022\t\n\001z\030\003 \002(\002\"8" +
-                        "\n\nQuaternion\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\022\t\n\001z\030" +
-                        "\003 \002(\002\022\t\n\001w\030\004 \002(\002\"\031\n\010Material\022\r\n\005color\030\001 " +
-                        "\002(\002\"\236\001\n\006Sphere\022@\n\010position\030\001 \002(\0132..org.v" +
-                        "ertexarmy.omniray.server.protocol.Vertex" +
-                        "\022\016\n\006radius\030\002 \002(\002\022B\n\010material\030\003 \001(\01320.org",
-                ".vertexarmy.omniray.server.protocol.Mate" +
-                        "rial\"\342\001\n\004Cube\022@\n\010position\030\001 \002(\0132..org.ve" +
-                        "rtexarmy.omniray.server.protocol.Vertex\022" +
-                        "D\n\010rotation\030\002 \002(\01322.org.vertexarmy.omnir" +
-                        "ay.server.protocol.Quaternion\022\016\n\006length\030" +
-                        "\003 \002(\002\022B\n\010material\030\004 \001(\01320.org.vertexarmy" +
-                        ".omniray.server.protocol.Material\".\n\rRen" +
-                        "derOptions\022\r\n\005width\030\001 \002(\002\022\016\n\006height\030\002 \002(" +
-                        "\002\"\323\001\n\005Scene\022?\n\007spheres\030\001 \003(\0132..org.verte" +
-                        "xarmy.omniray.server.protocol.Sphere\022;\n\005",
-                "cubes\030\002 \003(\0132,.org.vertexarmy.omniray.ser" +
-                        "ver.protocol.Cube\022L\n\rrenderOptions\030\003 \002(\013" +
-                        "25.org.vertexarmy.omniray.server.protoco" +
-                        "l.RenderOptions\"7\n\tRectangle\022\t\n\001x\030\001 \002(\002\022" +
-                        "\t\n\001y\030\002 \002(\002\022\t\n\001w\030\003 \002(\002\022\t\n\001h\030\004 \002(\002\"\323\001\n\004Tas" +
-                        "k\022<\n\005scene\030\001 \002(\0132-.org.vertexarmy.omnira" +
-                        "y.server.protocol.Scene\022L\n\rrenderOptions" +
-                        "\030\002 \002(\01325.org.vertexarmy.omniray.server.p" +
-                        "rotocol.RenderOptions\022?\n\004area\030\003 \002(\01321.or" +
-                        "g.vertexarmy.omniray.server.protocol.Rec",
-                "tangle"
-        };
-        com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-                new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                            com.google.protobuf.Descriptors.FileDescriptor root) {
-                        descriptor = root;
-                        internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor =
-                                getDescriptor().getMessageTypes().get(0);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor,
-                                new java.lang.String[]{"Type", "Connect",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor =
-                                internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor.getNestedTypes().get(0);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Request_Connect_descriptor,
-                                new java.lang.String[]{"Id",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor =
-                                getDescriptor().getMessageTypes().get(1);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor,
-                                new java.lang.String[]{"Type", "Connect", "PeerList", "NewTask", "Error",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor =
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(0);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_Connect_descriptor,
-                                new java.lang.String[]{"Accepted",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor =
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(1);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_PeerList_descriptor,
-                                new java.lang.String[]{"Peers",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor =
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(2);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_NewTask_descriptor,
-                                new java.lang.String[]{"Task",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor =
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(3);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Reply_Error_descriptor,
-                                new java.lang.String[]{"Message",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor =
-                                getDescriptor().getMessageTypes().get(2);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Vertex_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Vertex_descriptor,
-                                new java.lang.String[]{"X", "Y", "Z",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor =
-                                getDescriptor().getMessageTypes().get(3);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Quaternion_descriptor,
-                                new java.lang.String[]{"X", "Y", "Z", "W",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor =
-                                getDescriptor().getMessageTypes().get(4);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Material_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Material_descriptor,
-                                new java.lang.String[]{"Color",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor =
-                                getDescriptor().getMessageTypes().get(5);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Sphere_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Sphere_descriptor,
-                                new java.lang.String[]{"Position", "Radius", "Material",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor =
-                                getDescriptor().getMessageTypes().get(6);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Cube_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Cube_descriptor,
-                                new java.lang.String[]{"Position", "Rotation", "Length", "Material",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor =
-                                getDescriptor().getMessageTypes().get(7);
-                        internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_RenderOptions_descriptor,
-                                new java.lang.String[]{"Width", "Height",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor =
-                                getDescriptor().getMessageTypes().get(8);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Scene_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Scene_descriptor,
-                                new java.lang.String[]{"Spheres", "Cubes", "RenderOptions",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor =
-                                getDescriptor().getMessageTypes().get(9);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Rectangle_descriptor,
-                                new java.lang.String[]{"X", "Y", "W", "H",});
-                        internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor =
-                                getDescriptor().getMessageTypes().get(10);
-                        internal_static_org_vertexarmy_omniray_server_protocol_Task_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_org_vertexarmy_omniray_server_protocol_Task_descriptor,
-                                new java.lang.String[]{"Scene", "RenderOptions", "Area",});
-                        return null;
-                    }
-                };
-        com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        }, assigner);
+      defaultInstance = new Reply(true);
+      defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    // @@protoc_insertion_point(class_scope:org.vertexarmy.omniray.server.protocol.Reply)
+  }
+
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\016protocol.proto\022&org.vertexarmy.omniray" +
+      ".server.protocol\032\024datastructures.proto\"\201" +
+      "\006\n\007Request\022B\n\004type\030\001 \002(\01624.org.vertexarm" +
+      "y.omniray.server.protocol.Request.Type\022g" +
+      "\n\030client_request_post_task\030\002 \001(\0132E.org.v" +
+      "ertexarmy.omniray.server.protocol.Reques" +
+      "t.ClientRequestPostTask\022k\n\032client_reques" +
+      "t_task_result\030\003 \001(\0132G.org.vertexarmy.omn" +
+      "iray.server.protocol.Request.ClientReque" +
+      "stTaskResult\022`\n\024worker_task_finished\030\004 \001",
+      "(\0132B.org.vertexarmy.omniray.server.proto" +
+      "col.Request.WorkerTaskFinished\032M\n\025Client" +
+      "RequestPostTask\0224\n\004task\030\001 \002(\0132&.org.vert" +
+      "exarmy.omniray.raytracer.Task\032*\n\027ClientR" +
+      "equestTaskResult\022\017\n\007task_id\030\001 \002(\t\032i\n\022Wor" +
+      "kerTaskFinished\022\017\n\007task_id\030\001 \002(\t\022B\n\013task" +
+      "_result\030\002 \002(\0132-.org.vertexarmy.omniray.r" +
+      "aytracer.ColorBuffer\"\223\001\n\004Type\022\026\n\022REQUEST" +
+      "_CONNECTION\020\001\022\034\n\030CLIENT_REQUEST_POST_TAS" +
+      "K\020\002\022\036\n\032CLIENT_REQUEST_TASK_RESULT\020\003\022\033\n\027W",
+      "ORKER_REQUEST_NEW_TASK\020\004\022\030\n\024WORKER_TASK_" +
+      "FINISHED\020\005\"\347\005\n\005Reply\022@\n\004type\030\001 \002(\01622.org" +
+      ".vertexarmy.omniray.server.protocol.Repl" +
+      "y.Type\022a\n\026client_reply_post_task\030\002 \001(\0132A" +
+      ".org.vertexarmy.omniray.server.protocol." +
+      "Reply.ClientReplyPostTask\022e\n\030client_repl" +
+      "y_task_result\030\003 \001(\0132C.org.vertexarmy.omn" +
+      "iray.server.protocol.Reply.ClientReplyTa" +
+      "skResult\022_\n\025worker_reply_new_task\030\004 \001(\0132" +
+      "@.org.vertexarmy.omniray.server.protocol",
+      ".Reply.WorkerReplyNewTask\032!\n\023ClientReply" +
+      "PostTask\022\n\n\002id\030\001 \002(\t\032]\n\025ClientReplyTaskR" +
+      "esult\022D\n\rresult_buffer\030\001 \003(\0132-.org.verte" +
+      "xarmy.omniray.raytracer.ColorBuffer\032[\n\022W" +
+      "orkerReplyNewTask\022\017\n\007task_id\030\001 \001(\t\0224\n\004ta" +
+      "sk\030\002 \001(\0132&.org.vertexarmy.omniray.raytra" +
+      "cer.Task\"\221\001\n\004Type\022\024\n\020REPLY_CONNECTION\020\001\022" +
+      "\032\n\026CLIENT_REPLY_POST_TASK\020\003\022\034\n\030CLIENT_RE" +
+      "PLY_TASK_RESULT\020\004\022\031\n\025WORKER_REPLY_NEW_TA" +
+      "SK\020\002\022\036\n\032WORKER_REPLY_TASK_FINISHED\020\005"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+        public com.google.protobuf.ExtensionRegistry assignDescriptors(
+            com.google.protobuf.Descriptors.FileDescriptor root) {
+          descriptor = root;
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor,
+              new java.lang.String[] { "Type", "ClientRequestPostTask", "ClientRequestTaskResult", "WorkerTaskFinished", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor.getNestedTypes().get(0);
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestPostTask_descriptor,
+              new java.lang.String[] { "Task", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor.getNestedTypes().get(1);
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Request_ClientRequestTaskResult_descriptor,
+              new java.lang.String[] { "TaskId", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Request_descriptor.getNestedTypes().get(2);
+          internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Request_WorkerTaskFinished_descriptor,
+              new java.lang.String[] { "TaskId", "TaskResult", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor,
+              new java.lang.String[] { "Type", "ClientReplyPostTask", "ClientReplyTaskResult", "WorkerReplyNewTask", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(0);
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyPostTask_descriptor,
+              new java.lang.String[] { "Id", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(1);
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Reply_ClientReplyTaskResult_descriptor,
+              new java.lang.String[] { "ResultBuffer", });
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor =
+            internal_static_org_vertexarmy_omniray_server_protocol_Reply_descriptor.getNestedTypes().get(2);
+          internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_vertexarmy_omniray_server_protocol_Reply_WorkerReplyNewTask_descriptor,
+              new java.lang.String[] { "TaskId", "Task", });
+          return null;
+        }
+      };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.vertexarmy.omniray.raytracer.Datastructures.getDescriptor(),
+        }, assigner);
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

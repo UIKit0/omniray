@@ -15,15 +15,15 @@ public class TaskManager {
     private static final int TASK_CHUNK_SIZE = 100;
 
     private final Multimap<String, String> tasks = LinkedListMultimap.create();
-    private final Map<String, Datastructures.Task> subtasks = new HashMap<String, Datastructures.Task>();
-    private final Set<String> completedSubtasks = new HashSet<String>();
+    private final Map<String, Datastructures.Task> subTasks = new HashMap<String, Datastructures.Task>();
+    private final Set<String> completedSubTasks = new HashSet<String>();
     private final Set<String> completedTasks = new HashSet<String>();
-    private final Set<String> updatedSubtasks = new HashSet<String>();
-    private final Set<String> sentSubtasks = new HashSet<String>();
-    private final Map<String, Datastructures.ColorBuffer> subtaskResults = new HashMap<String, Datastructures.ColorBuffer>();
+    private final Set<String> updatedSubTasks = new HashSet<String>();
+    private final Set<String> dispatchedSubTasks = new HashSet<String>();
+    private final Map<String, Datastructures.ColorBuffer> subTaskResults = new HashMap<String, Datastructures.ColorBuffer>();
 
     public Datastructures.Task getTask(String taskId) {
-        return subtasks.get(taskId);
+        return subTasks.get(taskId);
     }
 
     public String pushTask(Datastructures.Task task) {
@@ -34,8 +34,8 @@ public class TaskManager {
 
     public String getQueuedSubtask() {
         for (String subtaskId : tasks.values()) {
-            if (!completedSubtasks.contains(subtaskId) && !sentSubtasks.contains(subtaskId)) {
-                sentSubtasks.add(subtaskId);
+            if (!completedSubTasks.contains(subtaskId) && !dispatchedSubTasks.contains(subtaskId)) {
+                dispatchedSubTasks.add(subtaskId);
                 return subtaskId;
             }
         }
@@ -43,9 +43,9 @@ public class TaskManager {
     }
 
     public void completeTask(String taskId, Datastructures.ColorBuffer result) {
-        completedSubtasks.add(taskId);
-        sentSubtasks.remove(taskId);
-        subtaskResults.put(taskId, result);
+        completedSubTasks.add(taskId);
+        dispatchedSubTasks.remove(taskId);
+        subTaskResults.put(taskId, result);
     }
 
     public List<Datastructures.ColorBuffer> getTaskUpdates(String taskId) {
@@ -58,10 +58,10 @@ public class TaskManager {
         int incompleteSubtasks = 0;
 
         for (String subtaskId : tasks.get(taskId)) {
-            if (completedSubtasks.contains(subtaskId)) {
-                if (!updatedSubtasks.contains(subtaskId)) {
-                    updatedSubtasks.add(subtaskId);
-                    results.add(subtaskResults.get(subtaskId));
+            if (completedSubTasks.contains(subtaskId)) {
+                if (!updatedSubTasks.contains(subtaskId)) {
+                    updatedSubTasks.add(subtaskId);
+                    results.add(subTaskResults.get(subtaskId));
                 }
             } else {
                 incompleteSubtasks += 1;
@@ -98,7 +98,7 @@ public class TaskManager {
 
                 String subtaskId = UUID.randomUUID().toString();
 
-                subtasks.put(subtaskId, subtask);
+                subTasks.put(subtaskId, subtask);
                 tasks.put(taskId, subtaskId);
             }
         }

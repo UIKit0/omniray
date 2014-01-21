@@ -12,7 +12,7 @@ import org.vertexarmy.omniray.raytracer.Tracer;
 import org.vertexarmy.omniray.raytracer.geometry.GeometryToolkit;
 import org.vertexarmy.omniray.server.protocol.Protocol;
 
-import javax.swing.*;
+import javax.swing.UIManager;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
@@ -71,6 +71,11 @@ public class Launcher {
                             .setClientRequestPostTask(Protocol.Request.ClientRequestPostTask.newBuilder()
                                     .setTask(renderTask))
                             .build());
+
+                    configurationWindow.setRenderButtonEnabled(false);
+
+                    // wait for results
+
                 } else {
                     renderWorld(renderTask, window);
                 }

@@ -30,7 +30,7 @@ message Request {
 
     message WorkerTaskFinished {
         required string task_id = 1;
-        repeated int32 task_result = 2;
+        required org.vertexarmy.omniray.raytracer.ColorBuffer task_result = 2;
     }
 
     required Type type = 1;

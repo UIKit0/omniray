@@ -2,7 +2,10 @@ package org.vertexarmy.omniray.server;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import org.apache.log4j.Logger;
+import org.vertexarmy.omniray.raytracer.Datastructures;
 import org.zeromq.ZMQ;
+
+import java.util.List;
 
 import static org.vertexarmy.omniray.server.protocol.Protocol.Reply;
 import static org.vertexarmy.omniray.server.protocol.Protocol.Request;
@@ -13,9 +16,7 @@ import static org.vertexarmy.omniray.server.protocol.Protocol.Request;
  */
 public class Server {
     private static final String BIND_ADDRESS = "tcp://*:5555";
-
     private final TaskManager taskManager = new TaskManager();
-
     private ZMQ.Context context;
     private ZMQ.Socket socket;
     private Logger logger;
@@ -95,17 +96,33 @@ public class Server {
     }
 
     private Reply handleClientTaskResultRequest(Request request) {
+        List<Datastructures.ColorBuffer> results = taskManager.getTaskUpdates(request.getClientRequestTaskResult().getTaskId());
+
         return Reply.newBuilder()
+                .setType(Reply.Type.CLIENT_REPLY_TASK_RESULT)
+                .setClientReplyTaskResult(Reply.ClientReplyTaskResult.newBuilder()
+                        .addAllResultBuffer(results))
                 .build();
     }
 
     private Reply handleWorkerNewTaskRequest(Request request) {
+        String taskId = taskManager.getQueuedSubtask();
+        Datastructures.Task task = taskManager.getTask(taskId);
+
         return Reply.newBuilder()
+                .setType(Reply.Type.WORKER_REPLY_NEW_TASK)
+                .setWorkerReplyNewTask(Reply.WorkerReplyNewTask.newBuilder()
+                        .setTaskId(taskId)
+                        .setTask(task))
                 .build();
     }
 
     private Reply handleWorkerTaskFinishedRequest(Request request) {
+        taskManager.completeTask(request.getWorkerTaskFinished().getTaskId(),
+                request.getWorkerTaskFinished().getTaskResult());
+
         return Reply.newBuilder()
+                .setType(Reply.Type.WORKER_REPLY_TASK_FINISHED)
                 .build();
     }
 }
