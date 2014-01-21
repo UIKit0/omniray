@@ -1,121 +1,83 @@
+import "datastructures.proto";
+
 package org.vertexarmy.omniray.server.protocol;
 
 message Request {
     enum Type {
-        // meta and misc
-        CONNECT = 1;
-        PEER_LIST = 2;
-        PING = 3;
+        // used to test the responsiveness of the server
+        REQUEST_CONNECTION = 1;
 
-        // worker
-        NEW_TASK = 4;
-        PROGRESS_REPORT = 5;
-        TASK_RESULT = 6;
+        // used by the client to post a task
+        CLIENT_REQUEST_POST_TASK = 2;
 
-        // client
+        // used by the client to request the results for a task
+        CLIENT_REQUEST_TASK_RESULT = 3;
+
+        // used by the worker to request a new task
+        WORKER_REQUEST_NEW_TASK = 4;
+
+        // used by the worker to return the result of a task
+        WORKER_TASK_FINISHED = 5;
     }
 
-    message Connect {
-        required string id = 1;
+    message ClientRequestPostTask {
+        required org.vertexarmy.omniray.raytracer.Task task = 1;
+    }
+
+    message ClientRequestTaskResult {
+        required string task_id = 1;
+    }
+
+    message WorkerTaskFinished {
+        required string task_id = 1;
+        repeated int32 task_result = 2;
     }
 
     required Type type = 1;
 
-    optional Connect connect = 2;
+    optional ClientRequestPostTask client_request_post_task = 2;
+
+    optional ClientRequestTaskResult client_request_task_result = 3;
+
+    optional WorkerTaskFinished worker_task_finished = 4;
 }
 
 message Reply {
     enum Type {
-        // meta and misc
-        CONNECT = 1;
-        PEER_LIST = 2;
-        PONG = 3;
-        ERROR = 4;
+        // response indicating the server is alive
+        REPLY_CONNECTION = 1;
 
-        // worker
-        NEW_TASK = 5;
-        PROGRESS_REPORT = 6;
-        TASK_RESULT = 7;
+        // response to a client's request to post a new task
+        CLIENT_REPLY_POST_TASK = 3;
 
-        // client
+        // response to a client's request for task results
+        CLIENT_REPLY_TASK_RESULT = 4;
+
+        // response for a new task request from a worker
+        WORKER_REPLY_NEW_TASK = 2;
+
+        // response acknowledging the results of a task from a worker
+        WORKER_REPLY_TASK_FINISHED = 5;
     }
 
-    message Connect {
-        required bool accepted = 1;
+    message ClientReplyPostTask {
+        required string id = 1;
     }
 
-    message PeerList {
-        repeated string peers = 1;
+    message ClientReplyTaskResult {
+        repeated org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;
     }
 
-    message NewTask {
-        required Task task = 1;
-    }
-
-    message Error {
-        required string message = 1;
+    message WorkerReplyNewTask {
+        optional string task_id = 1;
+        optional org.vertexarmy.omniray.raytracer.Task task = 2;
     }
 
     required Type type = 1;
 
-    optional Connect connect = 2;
-    optional PeerList peerList = 3;
-    optional NewTask newTask = 4;
-    optional Error error = 5;
-}
+    optional ClientReplyPostTask client_reply_post_task = 2;
 
-message Vertex {
-    required float x = 1;
-    required float y = 2;
-    required float z = 3;
-}
+    optional ClientReplyTaskResult client_reply_task_result = 3;
 
-message Quaternion {
-    required float x = 1;
-    required float y = 2;
-    required float z = 3;
-    required float w = 4;
-}
-
-message Material {
-    required float color = 1;
-}
-
-message Sphere {
-    required Vertex position = 1;
-    required float radius = 2;
-
-    optional Material material = 3;
-}
-
-message Cube {
-    required Vertex position = 1;
-    required Quaternion rotation = 2;
-    required float length = 3;
-
-    optional Material material = 4;
-}
-
-message RenderOptions {
-    required float width = 1;
-    required float height = 2;
-}
-
-message Scene {
-    repeated Sphere spheres = 1;
-    repeated Cube cubes = 2;
-    required RenderOptions renderOptions = 3;
-}
-
-message Rectangle {
-    required float x = 1;
-    required float y = 2;
-    required float w = 3;
-    required float h = 4;
-}
-
-message Task {
-    required Scene scene = 1;
-    required RenderOptions renderOptions = 2;
-    required Rectangle area = 3;
+    optional WorkerReplyNewTask worker_reply_new_task = 4;
 }
