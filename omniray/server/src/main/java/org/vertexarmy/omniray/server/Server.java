@@ -96,17 +96,28 @@ public class Server {
     }
 
     private Reply handleClientTaskResultRequest(Request request) {
-        List<Datastructures.ColorBuffer> results = taskManager.getTaskUpdates(request.getClientRequestTaskResult().getTaskId());
+        String taskId = request.getClientRequestTaskResult().getTaskId();
+        boolean taskComplete = taskManager.isTaskComplete(taskId);
+
+        List<Datastructures.ColorBuffer> results = taskManager.getTaskUpdates(taskId);
 
         return Reply.newBuilder()
                 .setType(Reply.Type.CLIENT_REPLY_TASK_RESULT)
                 .setClientReplyTaskResult(Reply.ClientReplyTaskResult.newBuilder()
+                        .setTaskComplete(taskComplete)
                         .addAllResultBuffer(results))
                 .build();
     }
 
     private Reply handleWorkerNewTaskRequest(Request request) {
         String taskId = taskManager.getQueuedSubtask();
+
+        if (taskId == null) {
+            return Reply.newBuilder()
+                    .setType(Reply.Type.WORKER_REPLY_NEW_TASK)
+                    .build();
+        }
+
         Datastructures.Task task = taskManager.getTask(taskId);
 
         return Reply.newBuilder()

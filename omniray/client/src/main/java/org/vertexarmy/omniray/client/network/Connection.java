@@ -29,34 +29,6 @@ public class Connection {
         requestSocket = context.socket(ZMQ.REQ);
 
         logger = Logger.getLogger(getClass());
-
-//        requestSocket.connect("tcp://localhost:5555");
-//
-//        String[] users = {"shiki", "dru", "anon"};
-//        for (String user : users) {
-//            Request request = Request.newBuilder()
-//                    .setType(Request.Type.CONNECT)
-//                    .setConnect(Request.Connect.newBuilder()
-//                            .setId(user)
-//                            .build())
-//                    .build();
-//            requestSocket.send(request.toByteArray(), 0);
-//
-//            Reply reply = Reply.parseFrom(requestSocket.recv(0));
-//            assert (reply.getConnect().hasAccepted());
-//        }
-//
-//        Request request = Request.newBuilder().setType(Request.Type.PEER_LIST).build();
-//        requestSocket.send(request.toByteArray(), 0);
-//
-//        Reply reply = Reply.parseFrom(requestSocket.recv(0));
-//
-//        for (String peer : reply.getPeerList().getPeersList()) {
-//            System.out.println(peer);
-//        }
-//
-//        requestSocket.close();
-//        context.term();
     }
 
     public boolean attemptConnection(String host) {

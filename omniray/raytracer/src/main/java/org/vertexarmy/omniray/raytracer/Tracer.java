@@ -5,7 +5,7 @@ import org.vertexarmy.omniray.raytracer.geometry.HitResolverFactory;
 import org.vertexarmy.omniray.raytracer.material.ColorToolkit;
 import org.vertexarmy.omniray.raytracer.material.texture.RadialGradientTexture;
 import org.vertexarmy.omniray.raytracer.material.texture.TextureSampler;
-import org.vertexarmy.omniray.raytracer.sampling.RandomSampler;
+import org.vertexarmy.omniray.raytracer.sampling.NullSampler;
 import org.vertexarmy.omniray.raytracer.sampling.Sampler;
 
 /**
@@ -41,12 +41,15 @@ public class Tracer {
         final RadialGradientTexture backgroundTexture = new RadialGradientTexture(ColorToolkit.fromRGB(80, 80, 80), ColorToolkit.fromRGB(40, 40, 40));
         final TextureSampler backgroundSampler = new TextureSampler(backgroundTexture, TextureSampler.FilterType.NEAREST);
 
-        Sampler antialiasSampler = new RandomSampler(16);
+        Sampler antialiasSampler = new NullSampler();
 
         Datastructures.Rect renderRect = task.getRenderSection();
         Ray ray = new Ray(new Vec3(0, 0, 0), new Vec3(0, 0, 1));
-        for (int r = renderRect.getX(); r < renderRect.getWidth(); ++r) {
-            for (int c = renderRect.getY(); c < renderRect.getHeight(); ++c) {
+        for (int r = renderRect.getX(); r < renderRect.getWidth() + renderRect.getX(); ++r) {
+            for (int c = renderRect.getY(); c < renderRect.getHeight() + renderRect.getY(); ++c) {
+
+                int x = viewPlane.getViewport().getX() + r;
+                int y = viewPlane.getViewport().getY() + c;
 
                 int redAccumulator = 0;
                 int greenAccumulator = 0;
@@ -59,14 +62,14 @@ public class Tracer {
                     float sampleY = sampleOffset.getY() - 0.5f;
 
                     // create the ray
-                    ray.setOrigin(new Vec3(r + sampleX, c + sampleY, 0));
+                    ray.setOrigin(new Vec3(x + sampleX, y + sampleY, 0));
                     ray.setDirection(Vec3.UNIT_Z);
 
                     // trace the ray
                     HitResult hitResult = traceRay(task.getWorld(), ray);
 
-                    float u = (float) (r - renderRect.getX()) / (renderRect.getWidth() - renderRect.getX());
-                    float v = (float) (c - renderRect.getY()) / (renderRect.getHeight() - renderRect.getY());
+                    float u = (float) (r) / (viewPlane.getViewport().getWidth());
+                    float v = (float) (c) / (viewPlane.getViewport().getHeight());
 
                     // calculate the color
                     int sampleColor = hitResult == HitResult.NO_HIT ?

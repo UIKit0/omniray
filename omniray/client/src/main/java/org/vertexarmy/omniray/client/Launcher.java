@@ -1,5 +1,6 @@
 package org.vertexarmy.omniray.client;
 
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.vertexarmy.omniray.client.network.Connection;
 import org.vertexarmy.omniray.client.ui.ConfigurationWindow;
@@ -12,8 +13,9 @@ import org.vertexarmy.omniray.raytracer.Tracer;
 import org.vertexarmy.omniray.raytracer.geometry.GeometryToolkit;
 import org.vertexarmy.omniray.server.protocol.Protocol;
 
-import javax.swing.UIManager;
+import javax.swing.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -38,14 +40,17 @@ public class Launcher {
         PropertyConfigurator.configure(log4jProperties);
     }
 
-    public static void main(String[] argv) throws IOException {
+    final static Connection connection = new Connection();
+    final static ConfigurationWindow configurationWindow = new ConfigurationWindow(connection);
+    final static Logger logger = Logger.getLogger(Launcher.class);
+    final static OutputWindow window = new OutputWindow();
 
-        final Connection connection = new Connection();
+    static String taskId;
+
+    public static void main(String[] argv) throws IOException {
 
         long time;
 
-        final OutputWindow window = new OutputWindow();
-        final ConfigurationWindow configurationWindow = new ConfigurationWindow(connection);
         Toolkit.attachFrame(window, configurationWindow);
 
         // create view plane
@@ -72,10 +77,10 @@ public class Launcher {
                                     .setTask(renderTask))
                             .build());
 
+                    taskId = connection.acceptReply().getClientReplyPostTask().getId();
                     configurationWindow.setRenderButtonEnabled(false);
 
-                    // wait for results
-
+                    awaitResults();
                 } else {
                     renderWorld(renderTask, window);
                 }
@@ -89,12 +94,71 @@ public class Launcher {
         });
     }
 
+    private static void awaitResults() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                window.getCanvas().getImageBuilder().begin();
+                while (true) {
+                    connection.sendRequest(Protocol.Request.newBuilder()
+                            .setType(Protocol.Request.Type.CLIENT_REQUEST_TASK_RESULT)
+                            .setClientRequestTaskResult(Protocol.Request.ClientRequestTaskResult.newBuilder()
+                                    .setTaskId(taskId))
+                            .build());
+
+                    Protocol.Reply reply = connection.acceptReply();
+
+                    List<Datastructures.ColorBuffer> results = reply.getClientReplyTaskResult().getResultBufferList();
+
+                    if (results.size() > 0) {
+                        logger.info("Received " + results.size() + " results from server.");
+                    }
+
+                    for (Datastructures.ColorBuffer result : results) {
+                        applyResult(result);
+                    }
+
+                    // end if the task is complete
+                    if (reply.getClientReplyTaskResult().getTaskComplete()) {
+                        logger.info("Received all results from server. Task is finished.");
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                configurationWindow.setRenderButtonEnabled(true);
+                            }
+                        });
+                        window.getCanvas().getImageBuilder().end();
+                        return;
+                    }
+
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ignored) {
+                    }
+                }
+            }
+
+            private void applyResult(Datastructures.ColorBuffer result) {
+                Datastructures.Rect resultSize = result.getSize();
+
+                int offset = 0;
+                for (int i = resultSize.getX(); i < resultSize.getWidth() + resultSize.getX(); ++i) {
+                    for (int j = resultSize.getY(); j < resultSize.getHeight() + resultSize.getY(); ++j) {
+                        window.getCanvas().getImageBuilder().setColor(i, j, result.getValue(offset++));
+                    }
+                }
+                window.repaint();
+            }
+
+        }).start();
+    }
+
     private static Datastructures.Task createTask(Datastructures.ViewPlane viewPlane, Datastructures.Settings settings, Datastructures.World world) {
         return Datastructures.Task.newBuilder()
                 .setViewPlane(viewPlane)
                 .setSettings(settings)
                 .setWorld(world)
-                .setRenderSection(viewPlane.getViewport())
+                .setRenderSection(Datastructures.Rect.newBuilder().setX(0).setY(0).setWidth(800).setHeight(600))
                 .build();
     }
 
@@ -110,8 +174,8 @@ public class Launcher {
                 .setViewport(Datastructures.Rect.newBuilder()
                         .setX(-400)
                         .setY(-300)
-                        .setWidth(400)
-                        .setHeight(300)
+                        .setWidth(800)
+                        .setHeight(600)
                         .build())
                 .build();
     }

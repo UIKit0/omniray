@@ -11,6 +11,37 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>worker</artifactId>
-
-
+    <dependencies>
+        <dependency>
+            <groupId>org.zeromq</groupId>
+            <artifactId>jeromq</artifactId>
+            <version>0.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r09</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.1.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.vertexarmy.omniray</groupId>
+            <artifactId>raytracer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vertexarmy.omniray</groupId>
+            <artifactId>server</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 </project>

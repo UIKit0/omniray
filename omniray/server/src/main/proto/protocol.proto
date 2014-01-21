@@ -65,7 +65,8 @@ message Reply {
     }
 
     message ClientReplyTaskResult {
-        repeated org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 1;
+        required bool task_complete = 1;
+        repeated org.vertexarmy.omniray.raytracer.ColorBuffer result_buffer = 2;
     }
 
     message WorkerReplyNewTask {

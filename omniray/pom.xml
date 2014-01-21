@@ -48,6 +48,7 @@
             <plugin>
                 <groupId>com.google.protobuf.tools</groupId>
                 <artifactId>maven-protoc-plugin</artifactId>
+                <version>0.3.2</version>
                 <configuration>
                     <outputDirectory>${project.basedir}/target/generated-sources</outputDirectory>
                 </configuration>
