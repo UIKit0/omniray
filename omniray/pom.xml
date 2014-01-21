@@ -9,6 +9,11 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.language>java</sonar.language>
+    </properties>
+
     <modules>
         <module>raytracer</module>
         <module>jglm</module>
@@ -25,21 +30,32 @@
         </dependency>
     </dependencies>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>protoc-plugin</id>
+            <url>http://sergei-ivanov.github.com/maven-protoc-plugin/repo/releases/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/proto</directory>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
-                <groupId>com.github.igor-petruk.protobuf</groupId>
-                <artifactId>protobuf-maven-plugin</artifactId>
-                <version>0.6.3</version>
+                <groupId>com.google.protobuf.tools</groupId>
+                <artifactId>maven-protoc-plugin</artifactId>
                 <configuration>
-                    <inputDirectories>
-                        <directory>src/main/proto</directory>
-                    </inputDirectories>
+                    <outputDirectory>${project.basedir}/target/generated-sources</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>run</goal>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
                         </goals>
                     </execution>
                 </executions>
