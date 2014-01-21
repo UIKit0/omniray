@@ -14,14 +14,29 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.vertexarmy.omniray</groupId>
-            <artifactId>raytracer</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.zeromq</groupId>
+            <artifactId>jeromq</artifactId>
+            <version>0.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout</artifactId>
             <version>3.7.4</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vertexarmy.omniray</groupId>
+            <artifactId>raytracer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vertexarmy.omniray</groupId>
+            <artifactId>server</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>

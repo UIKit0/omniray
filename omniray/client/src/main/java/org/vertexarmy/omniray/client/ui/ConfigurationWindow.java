@@ -1,5 +1,9 @@
 package org.vertexarmy.omniray.client.ui;
 
+import org.apache.log4j.Logger;
+import org.vertexarmy.omniray.client.network.Connection;
+import org.vertexarmy.omniray.client.ui.components.HorizontalSeparator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,13 +18,20 @@ import java.util.List;
 public class ConfigurationWindow extends JFrame {
     private JButton renderButton;
     private JButton clearButton;
-
     private JComboBox<String> samplingTechniqueComboBox;
     private JComboBox<String> sampleCountComboBox;
+    private JButton connectButton;
+    private JTextField connectionField;
 
     private final List<Listener> listeners = new ArrayList<Listener>();
+    private Connection connection;
 
-    public ConfigurationWindow() {
+    private final Logger logger;
+
+    public ConfigurationWindow(Connection connection) {
+        this.connection = connection;
+        logger = Logger.getLogger(getClass());
+
         initComponents();
         initLayout();
         initListeners();
@@ -41,12 +52,28 @@ public class ConfigurationWindow extends JFrame {
                 notifyClearRequested();
             }
         });
+
+        connectButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!connection.isConnected()) {
+                    if (connection.attemptConnection(connectionField.getText())) {
+                        connectionField.setEditable(false);
+                        connectButton.setText("Disconnect");
+                    } else {
+                    }
+                } else {
+                    connection.disconnect();
+                    connectionField.setEditable(true);
+                    connectButton.setText("Connect");
+                }
+            }
+        });
     }
 
     private void initFrame() {
         setTitle("Config");
         pack();
-        setSize(200, 200);
         setVisible(true);
     }
 
@@ -56,6 +83,12 @@ public class ConfigurationWindow extends JFrame {
 
         clearButton = new JButton("Clear");
         clearButton.setFocusable(false);
+
+        connectButton = new JButton("Connect");
+        connectButton.setFocusable(false);
+
+        connectionField = new JTextField("127.0.0.1:5555");
+        connectionField.setPreferredSize(new Dimension(200, 16));
 
         samplingTechniqueComboBox = new JComboBox<String>(new String[]{"None", "Random"/*, "Multi-Jittered"*/});
         samplingTechniqueComboBox.setFocusable(false);
@@ -73,10 +106,17 @@ public class ConfigurationWindow extends JFrame {
         JLabel sampleCountLabel = new JLabel("Sample Count");
         sampleCountLabel.setForeground(Color.BLACK);
 
+        JLabel serverConnectionLabel = new JLabel("Server Connection");
+        serverConnectionLabel.setForeground(Color.BLACK);
+
         JPanel configurationPanel = new JPanel();
-        configurationPanel.setLayout(new GridLayout(4, 1));
+        configurationPanel.setLayout(new GridLayout(8, 1));
         configurationPanel.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
+        configurationPanel.add(serverConnectionLabel);
+        configurationPanel.add(connectionField);
+        configurationPanel.add(connectButton);
+        configurationPanel.add(new HorizontalSeparator(3));
         configurationPanel.add(samplingLabel);
         configurationPanel.add(samplingTechniqueComboBox);
         configurationPanel.add(sampleCountLabel);

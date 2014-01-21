@@ -17,7 +17,7 @@ public class Toolkit {
     }
 
     public static void attachFrame(JFrame leftFrame, JFrame rightFrame) {
-        rightFrame.setBounds(leftFrame.getX() + leftFrame.getWidth(), leftFrame.getY(), rightFrame.getWidth(), rightFrame.getHeight());
+        rightFrame.setBounds(leftFrame.getX() + leftFrame.getWidth() + 6, leftFrame.getY() - 5, rightFrame.getWidth(), rightFrame.getHeight());
     }
 
     public static long currentTime() {
